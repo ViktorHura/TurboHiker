@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include "Source/turbohiker/Entity.h"
 
 int main()
 {
