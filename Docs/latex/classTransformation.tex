@@ -1,0 +1,95 @@
+\hypertarget{classTransformation}{}\doxysection{Transformation Class Reference}
+\label{classTransformation}\index{Transformation@{Transformation}}
+
+
+converts 2D game world space of \mbox{[}-\/4,4\mbox{]} x \mbox{[}-\/3, 3\mbox{]} to pixel values  
+
+
+
+
+{\ttfamily \#include $<$Transformation.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classTransformation_a4477861d1791774ca2f5f833913bc11f}{text\+Size}} (const double \&size) const
+\item 
+float \mbox{\hyperlink{classTransformation_a12b00137a4082309bcf4390bfa303481}{x}} (const double \&x) const
+\item 
+float \mbox{\hyperlink{classTransformation_ae487158558c1fb1eee55da4673aec46c}{y}} (const double \&y) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classTransformation}{Transformation}} $\ast$ \mbox{\hyperlink{classTransformation_aed2b2c17b812a4f9b0764d0238a3da83}{instance}} (std\+::weak\+\_\+ptr$<$ sf\+::\+Render\+Window $>$ w=\{\})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+converts 2D game world space of \mbox{[}-\/4,4\mbox{]} x \mbox{[}-\/3, 3\mbox{]} to pixel values 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTransformation_aed2b2c17b812a4f9b0764d0238a3da83}\label{classTransformation_aed2b2c17b812a4f9b0764d0238a3da83}} 
+\index{Transformation@{Transformation}!instance@{instance}}
+\index{instance@{instance}!Transformation@{Transformation}}
+\doxysubsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransformation}{Transformation}} $\ast$ Transformation\+::instance (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ sf\+::\+Render\+Window $>$}]{w = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+returns the singleton instance
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & weak pointer to the window, must be provided on first call to init the internal window pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+singleton instance 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransformation_a4477861d1791774ca2f5f833913bc11f}\label{classTransformation_a4477861d1791774ca2f5f833913bc11f}} 
+\index{Transformation@{Transformation}!textSize@{textSize}}
+\index{textSize@{textSize}!Transformation@{Transformation}}
+\doxysubsubsection{\texorpdfstring{textSize()}{textSize()}}
+{\footnotesize\ttfamily int Transformation\+::text\+Size (\begin{DoxyParamCaption}\item[{const double \&}]{size }\end{DoxyParamCaption}) const}
+
+converts 1 text\+Size unit to 1/10 screen diagonal 
+\begin{DoxyParams}{Parameters}
+{\em size} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransformation_a12b00137a4082309bcf4390bfa303481}\label{classTransformation_a12b00137a4082309bcf4390bfa303481}} 
+\index{Transformation@{Transformation}!x@{x}}
+\index{x@{x}!Transformation@{Transformation}}
+\doxysubsubsection{\texorpdfstring{x()}{x()}}
+{\footnotesize\ttfamily float Transformation\+::x (\begin{DoxyParamCaption}\item[{const double \&}]{x }\end{DoxyParamCaption}) const}
+
+converts \mbox{[}-\/4,4\mbox{]} x coords to pixel coords in \mbox{[}0, window\+\_\+width\mbox{]} 
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransformation_ae487158558c1fb1eee55da4673aec46c}\label{classTransformation_ae487158558c1fb1eee55da4673aec46c}} 
+\index{Transformation@{Transformation}!y@{y}}
+\index{y@{y}!Transformation@{Transformation}}
+\doxysubsubsection{\texorpdfstring{y()}{y()}}
+{\footnotesize\ttfamily float Transformation\+::y (\begin{DoxyParamCaption}\item[{const double \&}]{y }\end{DoxyParamCaption}) const}
+
+converts \mbox{[}-\/3,3\mbox{]} y coords to pixel coords in \mbox{[}window\+\_\+height, 0\mbox{]} 
+\begin{DoxyParams}{Parameters}
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Source/presentation/Transformation.\+h\item 
+Source/presentation/Transformation.\+cpp\end{DoxyCompactItemize}
