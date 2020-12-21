@@ -7,18 +7,21 @@
 #include <cmath>
 #include <utility>
 
-turbohikerSFML::Transformation::Transformation(std::weak_ptr<sf::RenderWindow> w) {
+turbohikerSFML::Transformation::Transformation(
+    std::weak_ptr<sf::RenderWindow> w) {
   window = std::move(w);
 }
 
-turbohikerSFML::Transformation *turbohikerSFML::Transformation::instance(std::weak_ptr<sf::RenderWindow> w) {
+turbohikerSFML::Transformation *
+turbohikerSFML::Transformation::instance(std::weak_ptr<sf::RenderWindow> w) {
   if (!_instance) {
     _instance = new Transformation(std::move(w));
   }
   return _instance;
 }
 
-turbohikerSFML::Transformation *turbohikerSFML::Transformation::_instance = nullptr;
+turbohikerSFML::Transformation *turbohikerSFML::Transformation::_instance =
+    nullptr;
 
 int turbohikerSFML::Transformation::textSize(const double &size) const {
   std::shared_ptr<sf::RenderWindow> w =
@@ -36,7 +39,7 @@ float turbohikerSFML::Transformation::y(const double &y) const {
       window.lock(); // share window temporarily
 
   return (double(w->getSize().y) / 2.0 -
-          double(w->getSize().y) / 6.0 * (y-y_pos)); // narrowing to float
+          double(w->getSize().y) / 6.0 * (y - y_pos)); // narrowing to float
 }
 
 float turbohikerSFML::Transformation::x(const double &x) const {
@@ -47,34 +50,35 @@ float turbohikerSFML::Transformation::x(const double &x) const {
           double(w->getSize().x) / 2.0); // narrowing to float
 }
 
-sf::Vector2f turbohikerSFML::Transformation::pos(const turbohiker::Utils::Vector &vec) const {
-    return {x(vec.x()), y(vec.y())};
+sf::Vector2f turbohikerSFML::Transformation::pos(
+    const turbohiker::Utils::Vector &vec) const {
+  return {x(vec.x()), y(vec.y())};
 }
 
-sf::Vector2f turbohikerSFML::Transformation::size(const turbohiker::Utils::Vector &vec) const {
-    std::shared_ptr<sf::RenderWindow> w =
-            window.lock();
+sf::Vector2f turbohikerSFML::Transformation::size(
+    const turbohiker::Utils::Vector &vec) const {
+  std::shared_ptr<sf::RenderWindow> w = window.lock();
 
-    float x_ = double(w->getSize().x) / 8.0 * vec.x();
-    float y_ = double(w->getSize().y) / 6.0 * vec.y();
+  float x_ = double(w->getSize().x) / 8.0 * vec.x();
+  float y_ = double(w->getSize().y) / 6.0 * vec.y();
 
-    return {x_,y_};
+  return {x_, y_};
 }
 
 void turbohikerSFML::Transformation::setYpos(const double &ypos) {
-    if (ypos >= max_y_pos){
-        y_pos = max_y_pos;
-        return;
-    }
-    y_pos = ypos;
+  if (ypos >= max_y_pos) {
+    y_pos = max_y_pos;
+    return;
+  }
+  y_pos = ypos;
 }
 
-void turbohikerSFML::Transformation::rescaleSprite(const turbohiker::Utils::Vector &s, sf::Sprite &sprite) {
-    sf::Vector2f sp = Transformation::instance()->size(s);
+void turbohikerSFML::Transformation::rescaleSprite(
+    const turbohiker::Utils::Vector &s, sf::Sprite &sprite) {
+  sf::Vector2f sp = Transformation::instance()->size(s);
 
-    float x_scale = sp.x / sprite.getTextureRect().width;
-    float y_scale = sp.y / sprite.getTextureRect().height;
+  float x_scale = sp.x / sprite.getTextureRect().width;
+  float y_scale = sp.y / sprite.getTextureRect().height;
 
-    sprite.setScale(x_scale,y_scale);
-
+  sprite.setScale(x_scale, y_scale);
 }
