@@ -10,6 +10,8 @@ void turbohikerSFML::Player::draw(const double &delta) {
 
   frametime += delta; // update frametime
 
+  framerate = getSpeed() / speed_normal * defaultframerate;
+
   Transformation::instance()->setYpos(
       position().y() + 2.75); // update the camera position to player
 

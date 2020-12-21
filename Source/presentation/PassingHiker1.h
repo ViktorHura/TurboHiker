@@ -24,7 +24,8 @@ namespace turbohikerSFML {
         sf::Texture texture;
         sf::Sprite sprite;
 
-        double framerate = 10;  // animation framerate
+        double defaultframerate = 10;
+        double framerate = defaultframerate;  // animation framerate
         int frame=0;            // current frame
         int maxframes = 4;      // amount of frames
         double frametime = 0;   // amount of time current frame has lasted in seconds

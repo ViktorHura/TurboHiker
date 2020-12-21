@@ -42,7 +42,7 @@ namespace turbohiker {
 
         bool outOfBounds(std::unique_ptr<Entity>& entity, const Vector& newpos);
 
-
+        int getSection(std::unique_ptr<Entity>& entity);
 
     public:
         eType type() override;

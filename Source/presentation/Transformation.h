@@ -45,6 +45,12 @@ namespace turbohikerSFML {
         void setYpos(const double& ypos);
 
         /**
+         * has the screen gone up as much as it can(for parallax effect)
+         * @return
+         */
+        bool Yismax();
+
+        /**
          * converts 1 textSize unit to 1/10 screen diagonal
          * @param size
          * @return

@@ -15,6 +15,8 @@ namespace turbohiker {
      * \brief abstract class to handle static hiker logic
      */
     class PassingHiker1 : public Entity {
+    protected:
+        double speed = 2;
     public:
         PassingHiker1();
 

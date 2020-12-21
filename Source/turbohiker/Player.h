@@ -21,6 +21,11 @@ namespace turbohiker {
         bool r = false;
         bool d = false;
 
+    protected:
+        const double speed_normal = 6;
+        const double speed_slow = 3;
+        const double speed_fast = 9;
+
     public:
         Player();
 

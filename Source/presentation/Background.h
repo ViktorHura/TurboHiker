@@ -32,6 +32,9 @@ namespace turbohikerSFML {
 
         std::vector<sf::Sprite> laneSprites;
 
+        double parallax_offset = 0; // current offset of the background for the parallax effect
+        double parallax_speed = 3; // speed /s of the background in parallax
+
         int tileamount = 14; //amount of time to repeat background
 
     public:

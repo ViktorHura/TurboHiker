@@ -6,6 +6,7 @@
 #include "Random.h"
 #include <iostream>
 #include <memory>
+#include <cmath>
 
 void turbohiker::World::update(const double &delta) {
   updateSection();
@@ -104,7 +105,7 @@ void turbohiker::World::newSection() {
     spawncount = 4;
   }
 
-  std::vector<int> toOccupy = chooseLanes(spawncount);
+  std::vector<int> toOccupy = chooseLanes(spawncount); // chosen lanes to spawn an enemy
 
   for (const auto &lane : toOccupy) {
     spawnHiker(lane);
@@ -114,11 +115,11 @@ void turbohiker::World::newSection() {
 std::vector<int> turbohiker::World::chooseLanes(const int &count) {
   std::vector<int> lanes = {};
 
-  std::vector<int> choice = {0, 1, 2, 3};
-  for (int i = 0; i < count; i++) {
-    int r = Random::instance()->Int(0, choice.size() - 1);
-    lanes.push_back(choice[r]);
-    choice.erase(choice.begin() + r);
+  std::vector<int> choice = {0, 1, 2, 3}; // remaining choice of lanes
+  for (int i = 0; i < count; i++) { // amount of times to choose
+    int r = Random::instance()->Int(0, choice.size() - 1); // choose from remaining choices
+    lanes.push_back(choice[r]); // save choice
+    choice.erase(choice.begin() + r); // remove from remaining choices
   }
   return lanes;
 }
@@ -144,17 +145,22 @@ void turbohiker::World::spawnHiker(const int &lane) {
     h1ToSpawn--;
   }
 
+  // position at top of section + a random distance < maxSpawnVar
   double posY =
       (section + 1) * sectionSize + Random::instance()->Double(0, maxSpawnVar);
 
-  double posX = -3 + 2 * lane;
+  double posX = -3 + 2 * lane; // positon in correct lane
 
   hiker->setPos(Vector(posX, posY));
 
-  hiker->setVel(Vector(0, -1));
-  hiker->setSpeed(2);
+  hiker->setVel(Vector(0, -1)); // moving toward player
 
-  std::cout << hiker->position().toString() << std::endl;
+
+  //std::cout << spawntype << " " << h1ToSpawn << " " << h2ToSpawn << std::endl;
 
   entities.push_back(std::unique_ptr<Entity>(hiker));
+}
+
+int turbohiker::World::getSection(std::unique_ptr<Entity> &entity) {
+    return std::floor(entity->position().y() / sectionSize);
 }
