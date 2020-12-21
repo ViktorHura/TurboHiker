@@ -1,0 +1,4 @@
+<map id="turbohikerSFML::Factory" name="turbohikerSFML::Factory">
+<area shape="rect" id="node1" title="concrete factory for creating SFML entities" alt="" coords="7,80,185,107"/>
+<area shape="rect" id="node2" href="$classturbohiker_1_1EntityFactory.html" title="Abstract factory for creating entities." alt="" coords="5,5,187,32"/>
+</map>

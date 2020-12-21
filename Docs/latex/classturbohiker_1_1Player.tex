@@ -1,0 +1,95 @@
+\hypertarget{classturbohiker_1_1Player}{}\doxysection{turbohiker\+::Player Class Reference}
+\label{classturbohiker_1_1Player}\index{turbohiker::Player@{turbohiker::Player}}
+
+
+abstract class to handle player logic  
+
+
+
+
+{\ttfamily \#include $<$Player.\+h$>$}
+
+
+
+Inheritance diagram for turbohiker\+::Player\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{classturbohiker_1_1Player__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for turbohiker\+::Player\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{classturbohiker_1_1Player__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+e\+Type \mbox{\hyperlink{classturbohiker_1_1Player_aa1979e28b052e4755f397bb0be37ffa6}{type}} () override
+\item 
+void \mbox{\hyperlink{classturbohiker_1_1Player_ae6e21f0e5f81e0314ac7115f5c71ddc9}{update}} (const double \&delta) override
+\item 
+void \mbox{\hyperlink{classturbohiker_1_1Player_adf4934ae25e54e9807ad3fc1e908ccb2}{handle\+Input}} (const int \&key, bool keydown)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classturbohiker_1_1Player_aa4df710e3993fc26e42dcb9a5e9ea335}\label{classturbohiker_1_1Player_aa4df710e3993fc26e42dcb9a5e9ea335}} 
+const double {\bfseries speed\+\_\+normal} = 6
+\item 
+\mbox{\Hypertarget{classturbohiker_1_1Player_a910e422bdf66b642eab1943698234fc0}\label{classturbohiker_1_1Player_a910e422bdf66b642eab1943698234fc0}} 
+const double {\bfseries speed\+\_\+slow} = 3
+\item 
+\mbox{\Hypertarget{classturbohiker_1_1Player_aebf9e3565e50c9351c6ab478af8d0759}\label{classturbohiker_1_1Player_aebf9e3565e50c9351c6ab478af8d0759}} 
+const double {\bfseries speed\+\_\+fast} = 9
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+abstract class to handle player logic 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classturbohiker_1_1Player_adf4934ae25e54e9807ad3fc1e908ccb2}\label{classturbohiker_1_1Player_adf4934ae25e54e9807ad3fc1e908ccb2}} 
+\index{turbohiker::Player@{turbohiker::Player}!handleInput@{handleInput}}
+\index{handleInput@{handleInput}!turbohiker::Player@{turbohiker::Player}}
+\doxysubsubsection{\texorpdfstring{handleInput()}{handleInput()}}
+{\footnotesize\ttfamily void turbohiker\+::\+Player\+::handle\+Input (\begin{DoxyParamCaption}\item[{const int \&}]{key,  }\item[{bool}]{keydown }\end{DoxyParamCaption})}
+
+take input, updates u l d r, vars 
+\begin{DoxyParams}{Parameters}
+{\em key} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classturbohiker_1_1Player_aa1979e28b052e4755f397bb0be37ffa6}\label{classturbohiker_1_1Player_aa1979e28b052e4755f397bb0be37ffa6}} 
+\index{turbohiker::Player@{turbohiker::Player}!type@{type}}
+\index{type@{type}!turbohiker::Player@{turbohiker::Player}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily turbohiker\+::e\+Type turbohiker\+::\+Player\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+get entity type 
+
+Reimplemented from \mbox{\hyperlink{classturbohiker_1_1Entity_a541abe045ccb89baee34df5613b03d1a}{turbohiker\+::\+Entity}}.
+
+\mbox{\Hypertarget{classturbohiker_1_1Player_ae6e21f0e5f81e0314ac7115f5c71ddc9}\label{classturbohiker_1_1Player_ae6e21f0e5f81e0314ac7115f5c71ddc9}} 
+\index{turbohiker::Player@{turbohiker::Player}!update@{update}}
+\index{update@{update}!turbohiker::Player@{turbohiker::Player}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void turbohiker\+::\+Player\+::update (\begin{DoxyParamCaption}\item[{const double \&}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+will update the entity\textquotesingle{}s internal state 
+
+Implements \mbox{\hyperlink{classturbohiker_1_1Entity_ab3900ff699741280f5d7dbfee3dfe039}{turbohiker\+::\+Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Source/turbohiker/Player.\+h\item 
+Source/turbohiker/Player.\+cpp\end{DoxyCompactItemize}

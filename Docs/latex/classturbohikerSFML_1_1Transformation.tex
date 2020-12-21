@@ -1,0 +1,166 @@
+\hypertarget{classturbohikerSFML_1_1Transformation}{}\doxysection{turbohiker\+S\+F\+ML\+::Transformation Class Reference}
+\label{classturbohikerSFML_1_1Transformation}\index{turbohikerSFML::Transformation@{turbohikerSFML::Transformation}}
+
+
+converts pixel values to the visible 2D game world space of \mbox{[}-\/4,4\mbox{]} x \mbox{[}-\/3, 3\mbox{]}  
+
+
+
+
+{\ttfamily \#include $<$Transformation.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_aea2238fad74093fad5a32dc80d7ac76d}{set\+Ypos}} (const double \&ypos)
+\item 
+bool \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_a58283ef6292fb326c75734d5c7826ec4}{Yismax}} ()
+\item 
+int \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_a4477861d1791774ca2f5f833913bc11f}{text\+Size}} (const double \&\mbox{\hyperlink{classturbohikerSFML_1_1Transformation_a805a15ec4011e7a11d2fd5a82d6e00c6}{size}}) const
+\item 
+float \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_a12b00137a4082309bcf4390bfa303481}{x}} (const double \&x) const
+\item 
+float \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_ae487158558c1fb1eee55da4673aec46c}{y}} (const double \&y) const
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_a06b6820eeb9e01d762f2592c638a6c8f}{pos}} (const \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{turbohiker\+::\+Utils\+::\+Vector}} \&vec) const
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_a805a15ec4011e7a11d2fd5a82d6e00c6}{size}} (const \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{turbohiker\+::\+Utils\+::\+Vector}} \&vec) const
+\item 
+void \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_aef09c712fb5c0f8de3f6ba4b2a1a9ad1}{rescale\+Sprite}} (const \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{turbohiker\+::\+Utils\+::\+Vector}} \&\mbox{\hyperlink{classturbohikerSFML_1_1Transformation_a805a15ec4011e7a11d2fd5a82d6e00c6}{size}}, sf\+::\+Sprite \&sprite)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classturbohikerSFML_1_1Transformation}{Transformation}} $\ast$ \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_a2b622e0b12304d6609d9169ad23180d8}{instance}} (std\+::weak\+\_\+ptr$<$ sf\+::\+Render\+Window $>$ w=\{\})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+converts pixel values to the visible 2D game world space of \mbox{[}-\/4,4\mbox{]} x \mbox{[}-\/3, 3\mbox{]} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classturbohikerSFML_1_1Transformation_a2b622e0b12304d6609d9169ad23180d8}\label{classturbohikerSFML_1_1Transformation_a2b622e0b12304d6609d9169ad23180d8}} 
+\index{turbohikerSFML::Transformation@{turbohikerSFML::Transformation}!instance@{instance}}
+\index{instance@{instance}!turbohikerSFML::Transformation@{turbohikerSFML::Transformation}}
+\doxysubsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classturbohikerSFML_1_1Transformation}{turbohiker\+S\+F\+M\+L\+::\+Transformation}} $\ast$ Transformation\+::instance (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ sf\+::\+Render\+Window $>$}]{w = {\ttfamily \{\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+returns the singleton instance
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & weak pointer to the window, must be provided on first call to init the internal window pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+singleton instance 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohikerSFML_1_1Transformation_a06b6820eeb9e01d762f2592c638a6c8f}\label{classturbohikerSFML_1_1Transformation_a06b6820eeb9e01d762f2592c638a6c8f}} 
+\index{turbohikerSFML::Transformation@{turbohikerSFML::Transformation}!pos@{pos}}
+\index{pos@{pos}!turbohikerSFML::Transformation@{turbohikerSFML::Transformation}}
+\doxysubsubsection{\texorpdfstring{pos()}{pos()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Transformation\+::pos (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{turbohiker\+::\+Utils\+::\+Vector}} \&}]{vec }\end{DoxyParamCaption}) const}
+
+converts position vector 
+\begin{DoxyParams}{Parameters}
+{\em vec} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohikerSFML_1_1Transformation_aef09c712fb5c0f8de3f6ba4b2a1a9ad1}\label{classturbohikerSFML_1_1Transformation_aef09c712fb5c0f8de3f6ba4b2a1a9ad1}} 
+\index{turbohikerSFML::Transformation@{turbohikerSFML::Transformation}!rescaleSprite@{rescaleSprite}}
+\index{rescaleSprite@{rescaleSprite}!turbohikerSFML::Transformation@{turbohikerSFML::Transformation}}
+\doxysubsubsection{\texorpdfstring{rescaleSprite()}{rescaleSprite()}}
+{\footnotesize\ttfamily void Transformation\+::rescale\+Sprite (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{turbohiker\+::\+Utils\+::\+Vector}} \&}]{size,  }\item[{sf\+::\+Sprite \&}]{sprite }\end{DoxyParamCaption})}
+
+rescales sprite to a size\+Vector 
+\begin{DoxyParams}{Parameters}
+{\em size} & \\
+\hline
+{\em sprite} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classturbohikerSFML_1_1Transformation_aea2238fad74093fad5a32dc80d7ac76d}\label{classturbohikerSFML_1_1Transformation_aea2238fad74093fad5a32dc80d7ac76d}} 
+\index{turbohikerSFML::Transformation@{turbohikerSFML::Transformation}!setYpos@{setYpos}}
+\index{setYpos@{setYpos}!turbohikerSFML::Transformation@{turbohikerSFML::Transformation}}
+\doxysubsubsection{\texorpdfstring{setYpos()}{setYpos()}}
+{\footnotesize\ttfamily void Transformation\+::set\+Ypos (\begin{DoxyParamCaption}\item[{const double \&}]{ypos }\end{DoxyParamCaption})}
+
+set the Y position of camera, usually player y position 
+\begin{DoxyParams}{Parameters}
+{\em ypos} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classturbohikerSFML_1_1Transformation_a805a15ec4011e7a11d2fd5a82d6e00c6}\label{classturbohikerSFML_1_1Transformation_a805a15ec4011e7a11d2fd5a82d6e00c6}} 
+\index{turbohikerSFML::Transformation@{turbohikerSFML::Transformation}!size@{size}}
+\index{size@{size}!turbohikerSFML::Transformation@{turbohikerSFML::Transformation}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Transformation\+::size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{turbohiker\+::\+Utils\+::\+Vector}} \&}]{vec }\end{DoxyParamCaption}) const}
+
+converts size vector 
+\begin{DoxyParams}{Parameters}
+{\em vec} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohikerSFML_1_1Transformation_a4477861d1791774ca2f5f833913bc11f}\label{classturbohikerSFML_1_1Transformation_a4477861d1791774ca2f5f833913bc11f}} 
+\index{turbohikerSFML::Transformation@{turbohikerSFML::Transformation}!textSize@{textSize}}
+\index{textSize@{textSize}!turbohikerSFML::Transformation@{turbohikerSFML::Transformation}}
+\doxysubsubsection{\texorpdfstring{textSize()}{textSize()}}
+{\footnotesize\ttfamily int Transformation\+::text\+Size (\begin{DoxyParamCaption}\item[{const double \&}]{size }\end{DoxyParamCaption}) const}
+
+converts 1 text\+Size unit to 1/10 screen diagonal 
+\begin{DoxyParams}{Parameters}
+{\em size} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohikerSFML_1_1Transformation_a12b00137a4082309bcf4390bfa303481}\label{classturbohikerSFML_1_1Transformation_a12b00137a4082309bcf4390bfa303481}} 
+\index{turbohikerSFML::Transformation@{turbohikerSFML::Transformation}!x@{x}}
+\index{x@{x}!turbohikerSFML::Transformation@{turbohikerSFML::Transformation}}
+\doxysubsubsection{\texorpdfstring{x()}{x()}}
+{\footnotesize\ttfamily float Transformation\+::x (\begin{DoxyParamCaption}\item[{const double \&}]{x }\end{DoxyParamCaption}) const}
+
+converts \mbox{[}-\/4,4\mbox{]} x coords to pixel coords in \mbox{[}0, window\+\_\+width\mbox{]} 
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohikerSFML_1_1Transformation_ae487158558c1fb1eee55da4673aec46c}\label{classturbohikerSFML_1_1Transformation_ae487158558c1fb1eee55da4673aec46c}} 
+\index{turbohikerSFML::Transformation@{turbohikerSFML::Transformation}!y@{y}}
+\index{y@{y}!turbohikerSFML::Transformation@{turbohikerSFML::Transformation}}
+\doxysubsubsection{\texorpdfstring{y()}{y()}}
+{\footnotesize\ttfamily float Transformation\+::y (\begin{DoxyParamCaption}\item[{const double \&}]{y }\end{DoxyParamCaption}) const}
+
+converts \mbox{[}-\/3,3\mbox{]} y coords to pixel coords in \mbox{[}window\+\_\+height, 0\mbox{]} 
+\begin{DoxyParams}{Parameters}
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohikerSFML_1_1Transformation_a58283ef6292fb326c75734d5c7826ec4}\label{classturbohikerSFML_1_1Transformation_a58283ef6292fb326c75734d5c7826ec4}} 
+\index{turbohikerSFML::Transformation@{turbohikerSFML::Transformation}!Yismax@{Yismax}}
+\index{Yismax@{Yismax}!turbohikerSFML::Transformation@{turbohikerSFML::Transformation}}
+\doxysubsubsection{\texorpdfstring{Yismax()}{Yismax()}}
+{\footnotesize\ttfamily bool Transformation\+::\+Yismax (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+has the screen gone up as much as it can(for parallax effect) \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Source/presentation/Transformation.\+h\item 
+Source/presentation/Transformation.\+cpp\end{DoxyCompactItemize}

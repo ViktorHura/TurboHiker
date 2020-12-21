@@ -1,0 +1,107 @@
+\hypertarget{classturbohikerSFML_1_1Factory}{}\doxysection{turbohiker\+S\+F\+ML\+::Factory Class Reference}
+\label{classturbohikerSFML_1_1Factory}\index{turbohikerSFML::Factory@{turbohikerSFML::Factory}}
+
+
+concrete factory for creating S\+F\+ML entities  
+
+
+
+
+{\ttfamily \#include $<$Factory.\+h$>$}
+
+
+
+Inheritance diagram for turbohiker\+S\+F\+ML\+::Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classturbohikerSFML_1_1Factory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for turbohiker\+S\+F\+ML\+::Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classturbohikerSFML_1_1Factory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classturbohikerSFML_1_1Factory_ae973152074abda37d2f1e5a91beb6edb}{Factory}} (std\+::weak\+\_\+ptr$<$ sf\+::\+Render\+Window $>$ w)
+\item 
+\mbox{\hyperlink{classturbohiker_1_1Player}{turbohiker\+::\+Player}} $\ast$ \mbox{\hyperlink{classturbohikerSFML_1_1Factory_a7268838138a7bd2baf11aae0058f8c8a}{make\+Player}} () override
+\item 
+\mbox{\hyperlink{classturbohiker_1_1Background}{turbohiker\+::\+Background}} $\ast$ \mbox{\hyperlink{classturbohikerSFML_1_1Factory_ac87e30173675832031bae7d9ff6ba4ae}{make\+Background}} () override
+\item 
+\mbox{\hyperlink{classturbohiker_1_1PassingHiker1}{turbohiker\+::\+Passing\+Hiker1}} $\ast$ \mbox{\hyperlink{classturbohikerSFML_1_1Factory_a65b7ea7729dfd34274c179932a8c1058}{make\+Passing\+Hiker1}} () override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+concrete factory for creating S\+F\+ML entities 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classturbohikerSFML_1_1Factory_ae973152074abda37d2f1e5a91beb6edb}\label{classturbohikerSFML_1_1Factory_ae973152074abda37d2f1e5a91beb6edb}} 
+\index{turbohikerSFML::Factory@{turbohikerSFML::Factory}!Factory@{Factory}}
+\index{Factory@{Factory}!turbohikerSFML::Factory@{turbohikerSFML::Factory}}
+\doxysubsubsection{\texorpdfstring{Factory()}{Factory()}}
+{\footnotesize\ttfamily turbohiker\+S\+F\+M\+L\+::\+Factory\+::\+Factory (\begin{DoxyParamCaption}\item[{std\+::weak\+\_\+ptr$<$ sf\+::\+Render\+Window $>$}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+must provide S\+F\+ML window for S\+F\+ML entity factory 
+\begin{DoxyParams}{Parameters}
+{\em w} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classturbohikerSFML_1_1Factory_ac87e30173675832031bae7d9ff6ba4ae}\label{classturbohikerSFML_1_1Factory_ac87e30173675832031bae7d9ff6ba4ae}} 
+\index{turbohikerSFML::Factory@{turbohikerSFML::Factory}!makeBackground@{makeBackground}}
+\index{makeBackground@{makeBackground}!turbohikerSFML::Factory@{turbohikerSFML::Factory}}
+\doxysubsubsection{\texorpdfstring{makeBackground()}{makeBackground()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classturbohiker_1_1Background}{turbohiker\+::\+Background}} $\ast$ turbohiker\+S\+F\+M\+L\+::\+Factory\+::make\+Background (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+makes background \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classturbohiker_1_1EntityFactory}{turbohiker\+::\+Entity\+Factory}}.
+
+\mbox{\Hypertarget{classturbohikerSFML_1_1Factory_a65b7ea7729dfd34274c179932a8c1058}\label{classturbohikerSFML_1_1Factory_a65b7ea7729dfd34274c179932a8c1058}} 
+\index{turbohikerSFML::Factory@{turbohikerSFML::Factory}!makePassingHiker1@{makePassingHiker1}}
+\index{makePassingHiker1@{makePassingHiker1}!turbohikerSFML::Factory@{turbohikerSFML::Factory}}
+\doxysubsubsection{\texorpdfstring{makePassingHiker1()}{makePassingHiker1()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classturbohiker_1_1PassingHiker1}{turbohiker\+::\+Passing\+Hiker1}} $\ast$ turbohiker\+S\+F\+M\+L\+::\+Factory\+::make\+Passing\+Hiker1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+makes passinghiker1 \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classturbohiker_1_1EntityFactory}{turbohiker\+::\+Entity\+Factory}}.
+
+\mbox{\Hypertarget{classturbohikerSFML_1_1Factory_a7268838138a7bd2baf11aae0058f8c8a}\label{classturbohikerSFML_1_1Factory_a7268838138a7bd2baf11aae0058f8c8a}} 
+\index{turbohikerSFML::Factory@{turbohikerSFML::Factory}!makePlayer@{makePlayer}}
+\index{makePlayer@{makePlayer}!turbohikerSFML::Factory@{turbohikerSFML::Factory}}
+\doxysubsubsection{\texorpdfstring{makePlayer()}{makePlayer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classturbohiker_1_1Player}{turbohiker\+::\+Player}} $\ast$ turbohiker\+S\+F\+M\+L\+::\+Factory\+::make\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+makes player \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classturbohiker_1_1EntityFactory}{turbohiker\+::\+Entity\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Source/presentation/Factory.\+h\item 
+Source/presentation/Factory.\+cpp\end{DoxyCompactItemize}

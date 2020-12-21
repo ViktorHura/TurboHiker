@@ -65,8 +65,11 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classturbohiker_1_1Entity-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">turbohiker::Entity Class Reference<div class="ingroups"><a class="el" href="group__turbohiker.html">Turbohiker</a></div></div>  </div>
+<div class="title">turbohiker::Entity Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span><div class="ingroups"><a class="el" href="group__turbohiker.html">Turbohiker</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -74,10 +77,311 @@ $(function() {
  <a href="classturbohiker_1_1Entity.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Entity_8h_source.html">Entity.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for turbohiker::Entity:</div>
+<div class="dyncontent">
+<div class="center"><img src="classturbohiker_1_1Entity__inherit__graph.png" border="0" usemap="#turbohiker_1_1Entity_inherit__map" alt="Inheritance graph"/></div>
+<map name="turbohiker_1_1Entity_inherit__map" id="turbohiker_1_1Entity_inherit__map">
+<area shape="rect" title="most abstract game object" alt="" coords="5,81,140,108"/>
+<area shape="rect" href="classturbohiker_1_1Background.html" title="abstract class to draw background elements" alt="" coords="195,5,368,32"/>
+<area shape="rect" href="classturbohiker_1_1PassingHiker1.html" title="abstract class to handle static hiker logic" alt="" coords="188,56,375,83"/>
+<area shape="rect" href="classturbohiker_1_1Player.html" title="abstract class to handle player logic" alt="" coords="213,107,350,133"/>
+<area shape="rect" href="classturbohiker_1_1World.html" title="represents the game world, handles physics, hold entities and delegates draw requests" alt="" coords="215,157,348,184"/>
+<area shape="rect" href="classturbohikerSFML_1_1Background.html" title="SFML background presentation." alt="" coords="430,5,638,32"/>
+<area shape="rect" href="classturbohikerSFML_1_1PassingHiker1.html" title="SFML passinghiker1 presentation." alt="" coords="423,56,645,83"/>
+<area shape="rect" href="classturbohikerSFML_1_1Player.html" title="SFML player presentation." alt="" coords="448,107,620,133"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a541abe045ccb89baee34df5613b03d1a"><td class="memItemLeft" align="right" valign="top">virtual eType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classturbohiker_1_1Entity.html#a541abe045ccb89baee34df5613b03d1a">type</a> ()</td></tr>
+<tr class="separator:a541abe045ccb89baee34df5613b03d1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a093ac07845ad9b0abc077d986e04cccc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classturbohiker_1_1Entity.html#a093ac07845ad9b0abc077d986e04cccc">draw</a> (const double &amp;delta)=0</td></tr>
+<tr class="separator:a093ac07845ad9b0abc077d986e04cccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3900ff699741280f5d7dbfee3dfe039"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classturbohiker_1_1Entity.html#ab3900ff699741280f5d7dbfee3dfe039">update</a> (const double &amp;delta)=0</td></tr>
+<tr class="separator:ab3900ff699741280f5d7dbfee3dfe039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7585e267315cd297ad28fac4061064c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classturbohiker_1_1Utils_1_1Vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classturbohiker_1_1Entity.html#a7585e267315cd297ad28fac4061064c3">position</a> () const</td></tr>
+<tr class="separator:a7585e267315cd297ad28fac4061064c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3afc0a506f76d27128db48712058e614"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classturbohiker_1_1Utils_1_1Vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classturbohiker_1_1Entity.html#a3afc0a506f76d27128db48712058e614">velocity</a> () const</td></tr>
+<tr class="separator:a3afc0a506f76d27128db48712058e614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cb21337c2d6d1c53d61f6cf7ba7bd9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classturbohiker_1_1Utils_1_1Vector.html">Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classturbohiker_1_1Entity.html#a8cb21337c2d6d1c53d61f6cf7ba7bd9d">size</a> () const</td></tr>
+<tr class="separator:a8cb21337c2d6d1c53d61f6cf7ba7bd9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65316c05ed5f94f7fe8a5d7e9f323278"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classturbohiker_1_1Entity.html#a65316c05ed5f94f7fe8a5d7e9f323278">getSpeed</a> () const</td></tr>
+<tr class="separator:a65316c05ed5f94f7fe8a5d7e9f323278"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff1f054d13477b98fc52b09502296198"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classturbohiker_1_1Entity.html">Entity</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classturbohiker_1_1Entity.html#aff1f054d13477b98fc52b09502296198">setSpeed</a> (const double &amp;s)</td></tr>
+<tr class="separator:aff1f054d13477b98fc52b09502296198"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba2e994fc1e9c7e8727de6125db138aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classturbohiker_1_1Entity.html">Entity</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classturbohiker_1_1Entity.html#aba2e994fc1e9c7e8727de6125db138aa">setPos</a> (const <a class="el" href="classturbohiker_1_1Utils_1_1Vector.html">Vector</a> &amp;<a class="el" href="classturbohiker_1_1Entity.html#a7585e267315cd297ad28fac4061064c3">position</a>)</td></tr>
+<tr class="separator:aba2e994fc1e9c7e8727de6125db138aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05f2e859579b77559036c635d045d6c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classturbohiker_1_1Entity.html">Entity</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classturbohiker_1_1Entity.html#a05f2e859579b77559036c635d045d6c8">setVel</a> (const <a class="el" href="classturbohiker_1_1Utils_1_1Vector.html">Vector</a> &amp;<a class="el" href="classturbohiker_1_1Entity.html#a3afc0a506f76d27128db48712058e614">velocity</a>)</td></tr>
+<tr class="separator:a05f2e859579b77559036c635d045d6c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6e718e33c8887a10cef3177792c15e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classturbohiker_1_1Entity.html">Entity</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classturbohiker_1_1Entity.html#ab6e718e33c8887a10cef3177792c15e8">setSize</a> (const <a class="el" href="classturbohiker_1_1Utils_1_1Vector.html">Vector</a> &amp;<a class="el" href="classturbohiker_1_1Entity.html#a8cb21337c2d6d1c53d61f6cf7ba7bd9d">size</a>)</td></tr>
+<tr class="separator:ab6e718e33c8887a10cef3177792c15e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>most abstract game object </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a093ac07845ad9b0abc077d986e04cccc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a093ac07845ad9b0abc077d986e04cccc">&#9670;&nbsp;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void turbohiker::Entity::draw </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>delta</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>draws the entity on screen </p>
+
+<p>Implemented in <a class="el" href="classturbohiker_1_1World.html#a817977fa83d814d6baea11a8840320d5">turbohiker::World</a>, <a class="el" href="classturbohikerSFML_1_1Player.html#a1ffb0ee98993e9bce284f710a1a8a30f">turbohikerSFML::Player</a>, <a class="el" href="classturbohikerSFML_1_1Background.html#a8430aa287e15a560d48935e54a66df97">turbohikerSFML::Background</a>, and <a class="el" href="classturbohikerSFML_1_1PassingHiker1.html#a3f9046972ebfeef2ef9a61588e068f71">turbohikerSFML::PassingHiker1</a>.</p>
+
+</div>
+</div>
+<a id="a65316c05ed5f94f7fe8a5d7e9f323278"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65316c05ed5f94f7fe8a5d7e9f323278">&#9670;&nbsp;</a></span>getSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double turbohiker::Entity::getSpeed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>get speed </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a7585e267315cd297ad28fac4061064c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7585e267315cd297ad28fac4061064c3">&#9670;&nbsp;</a></span>position()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classturbohiker_1_1Utils_1_1Vector.html">Vector</a> turbohiker::Entity::position </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>gets position </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="aba2e994fc1e9c7e8727de6125db138aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba2e994fc1e9c7e8727de6125db138aa">&#9670;&nbsp;</a></span>setPos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classturbohiker_1_1Entity.html">turbohiker::Entity</a> &amp; turbohiker::Entity::setPos </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classturbohiker_1_1Utils_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>set position vector </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="ab6e718e33c8887a10cef3177792c15e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6e718e33c8887a10cef3177792c15e8">&#9670;&nbsp;</a></span>setSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classturbohiker_1_1Entity.html">turbohiker::Entity</a> &amp; turbohiker::Entity::setSize </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classturbohiker_1_1Utils_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>set size vector </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="aff1f054d13477b98fc52b09502296198"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff1f054d13477b98fc52b09502296198">&#9670;&nbsp;</a></span>setSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classturbohiker_1_1Entity.html">turbohiker::Entity</a> &amp; turbohiker::Entity::setSpeed </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>set speed </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a05f2e859579b77559036c635d045d6c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05f2e859579b77559036c635d045d6c8">&#9670;&nbsp;</a></span>setVel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classturbohiker_1_1Entity.html">turbohiker::Entity</a> &amp; turbohiker::Entity::setVel </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classturbohiker_1_1Utils_1_1Vector.html">Vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>velocity</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>set velocity vector </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">velocity</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a8cb21337c2d6d1c53d61f6cf7ba7bd9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cb21337c2d6d1c53d61f6cf7ba7bd9d">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classturbohiker_1_1Utils_1_1Vector.html">Vector</a> turbohiker::Entity::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>gets size </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a541abe045ccb89baee34df5613b03d1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a541abe045ccb89baee34df5613b03d1a">&#9670;&nbsp;</a></span>type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">turbohiker::eType turbohiker::Entity::type </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>get entity type </p>
+
+<p>Reimplemented in <a class="el" href="classturbohiker_1_1World.html#a13a6afa24dd061015914bc185ea15c25">turbohiker::World</a>, <a class="el" href="classturbohiker_1_1Player.html#aa1979e28b052e4755f397bb0be37ffa6">turbohiker::Player</a>, <a class="el" href="classturbohiker_1_1PassingHiker1.html#ab4434514f063b580129cf810c162eb34">turbohiker::PassingHiker1</a>, and <a class="el" href="classturbohiker_1_1Background.html#a666b1c379fa1e9a97dd66f14b12ae464">turbohiker::Background</a>.</p>
+
+</div>
+</div>
+<a id="ab3900ff699741280f5d7dbfee3dfe039"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3900ff699741280f5d7dbfee3dfe039">&#9670;&nbsp;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void turbohiker::Entity::update </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>delta</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>will update the entity's internal state </p>
+
+<p>Implemented in <a class="el" href="classturbohiker_1_1World.html#a4de8a90f1bfa63770a410e21dfc25f2e">turbohiker::World</a>, <a class="el" href="classturbohiker_1_1Player.html#ae6e21f0e5f81e0314ac7115f5c71ddc9">turbohiker::Player</a>, <a class="el" href="classturbohiker_1_1Background.html#a28ae195a2dd1b87c89023fe07176d692">turbohiker::Background</a>, and <a class="el" href="classturbohiker_1_1PassingHiker1.html#a7b3af29134e5bee67dd0156e1e709250">turbohiker::PassingHiker1</a>.</p>
+
+</div>
+</div>
+<a id="a3afc0a506f76d27128db48712058e614"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3afc0a506f76d27128db48712058e614">&#9670;&nbsp;</a></span>velocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classturbohiker_1_1Utils_1_1Vector.html">Vector</a> turbohiker::Entity::velocity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>gets velocity </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>Source/turbohiker/<a class="el" href="Entity_8h_source.html">Entity.h</a></li>
+<li>Source/turbohiker/Entity.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

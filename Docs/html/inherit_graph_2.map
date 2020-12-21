@@ -1,0 +1,10 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classturbohiker_1_1Entity.html" title="most abstract game object" alt="" coords="5,81,140,108"/>
+<area shape="rect" id="node2" href="$classturbohiker_1_1Background.html" title="abstract class to draw background elements" alt="" coords="195,5,368,32"/>
+<area shape="rect" id="node4" href="$classturbohiker_1_1PassingHiker1.html" title="abstract class to handle static hiker logic" alt="" coords="188,56,375,83"/>
+<area shape="rect" id="node6" href="$classturbohiker_1_1Player.html" title="abstract class to handle player logic" alt="" coords="213,107,350,133"/>
+<area shape="rect" id="node8" href="$classturbohiker_1_1World.html" title="represents the game world, handles physics, hold entities and delegates draw requests" alt="" coords="215,157,348,184"/>
+<area shape="rect" id="node3" href="$classturbohikerSFML_1_1Background.html" title="SFML background presentation." alt="" coords="430,5,638,32"/>
+<area shape="rect" id="node5" href="$classturbohikerSFML_1_1PassingHiker1.html" title="SFML passinghiker1 presentation." alt="" coords="423,56,645,83"/>
+<area shape="rect" id="node7" href="$classturbohikerSFML_1_1Player.html" title="SFML player presentation." alt="" coords="448,107,620,133"/>
+</map>

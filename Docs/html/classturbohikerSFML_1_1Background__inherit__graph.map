@@ -1,0 +1,5 @@
+<map id="turbohikerSFML::Background" name="turbohikerSFML::Background">
+<area shape="rect" id="node1" title="SFML background presentation." alt="" coords="5,155,213,181"/>
+<area shape="rect" id="node2" href="$classturbohiker_1_1Background.html" title="abstract class to draw background elements" alt="" coords="23,80,196,107"/>
+<area shape="rect" id="node3" href="$classturbohiker_1_1Entity.html" title="most abstract game object" alt="" coords="42,5,177,32"/>
+</map>

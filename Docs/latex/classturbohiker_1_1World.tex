@@ -1,0 +1,116 @@
+\hypertarget{classturbohiker_1_1World}{}\doxysection{turbohiker\+::World Class Reference}
+\label{classturbohiker_1_1World}\index{turbohiker::World@{turbohiker::World}}
+
+
+represents the game world, handles physics, hold entities and delegates draw requests  
+
+
+
+
+{\ttfamily \#include $<$World.\+h$>$}
+
+
+
+Inheritance diagram for turbohiker\+::World\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classturbohiker_1_1World__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for turbohiker\+::World\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classturbohiker_1_1World__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+e\+Type \mbox{\hyperlink{classturbohiker_1_1World_a13a6afa24dd061015914bc185ea15c25}{type}} () override
+\item 
+\mbox{\hyperlink{classturbohiker_1_1World_affbedeb932e12f0482248586588ed0b3}{World}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classturbohiker_1_1EntityFactory}{Entity\+Factory}} $>$ f)
+\item 
+void \mbox{\hyperlink{classturbohiker_1_1World_a817977fa83d814d6baea11a8840320d5}{draw}} (const double \&delta) override
+\item 
+void \mbox{\hyperlink{classturbohiker_1_1World_a4de8a90f1bfa63770a410e21dfc25f2e}{update}} (const double \&delta) override
+\item 
+void \mbox{\hyperlink{classturbohiker_1_1World_ae14589f74fea888654b460b9cd82c358}{handle\+Input}} (const int \&key, bool keydown)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+represents the game world, handles physics, hold entities and delegates draw requests 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classturbohiker_1_1World_affbedeb932e12f0482248586588ed0b3}\label{classturbohiker_1_1World_affbedeb932e12f0482248586588ed0b3}} 
+\index{turbohiker::World@{turbohiker::World}!World@{World}}
+\index{World@{World}!turbohiker::World@{turbohiker::World}}
+\doxysubsubsection{\texorpdfstring{World()}{World()}}
+{\footnotesize\ttfamily turbohiker\+::\+World\+::\+World (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classturbohiker_1_1EntityFactory}{Entity\+Factory}} $>$}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+create the world, must provide a concrete entity factory 
+\begin{DoxyParams}{Parameters}
+{\em f} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classturbohiker_1_1World_a817977fa83d814d6baea11a8840320d5}\label{classturbohiker_1_1World_a817977fa83d814d6baea11a8840320d5}} 
+\index{turbohiker::World@{turbohiker::World}!draw@{draw}}
+\index{draw@{draw}!turbohiker::World@{turbohiker::World}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void turbohiker\+::\+World\+::draw (\begin{DoxyParamCaption}\item[{const double \&}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+will draw all entities on screen 
+
+Implements \mbox{\hyperlink{classturbohiker_1_1Entity_a093ac07845ad9b0abc077d986e04cccc}{turbohiker\+::\+Entity}}.
+
+\mbox{\Hypertarget{classturbohiker_1_1World_ae14589f74fea888654b460b9cd82c358}\label{classturbohiker_1_1World_ae14589f74fea888654b460b9cd82c358}} 
+\index{turbohiker::World@{turbohiker::World}!handleInput@{handleInput}}
+\index{handleInput@{handleInput}!turbohiker::World@{turbohiker::World}}
+\doxysubsubsection{\texorpdfstring{handleInput()}{handleInput()}}
+{\footnotesize\ttfamily void turbohiker\+::\+World\+::handle\+Input (\begin{DoxyParamCaption}\item[{const int \&}]{key,  }\item[{bool}]{keydown }\end{DoxyParamCaption})}
+
+forwards inputs to player 
+\begin{DoxyParams}{Parameters}
+{\em key} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classturbohiker_1_1World_a13a6afa24dd061015914bc185ea15c25}\label{classturbohiker_1_1World_a13a6afa24dd061015914bc185ea15c25}} 
+\index{turbohiker::World@{turbohiker::World}!type@{type}}
+\index{type@{type}!turbohiker::World@{turbohiker::World}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily turbohiker\+::e\+Type turbohiker\+::\+World\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+get entity type 
+
+Reimplemented from \mbox{\hyperlink{classturbohiker_1_1Entity_a541abe045ccb89baee34df5613b03d1a}{turbohiker\+::\+Entity}}.
+
+\mbox{\Hypertarget{classturbohiker_1_1World_a4de8a90f1bfa63770a410e21dfc25f2e}\label{classturbohiker_1_1World_a4de8a90f1bfa63770a410e21dfc25f2e}} 
+\index{turbohiker::World@{turbohiker::World}!update@{update}}
+\index{update@{update}!turbohiker::World@{turbohiker::World}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void turbohiker\+::\+World\+::update (\begin{DoxyParamCaption}\item[{const double \&}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+update game logic 
+\begin{DoxyParams}{Parameters}
+{\em delta} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classturbohiker_1_1Entity_ab3900ff699741280f5d7dbfee3dfe039}{turbohiker\+::\+Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Source/turbohiker/World.\+h\item 
+Source/turbohiker/World.\+cpp\end{DoxyCompactItemize}

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['transformation_12',['Transformation',['../classTransformation.html',1,'']]]
+  ['factory_45',['Factory',['../classturbohikerSFML_1_1Factory.html',1,'turbohikerSFML']]]
 ];

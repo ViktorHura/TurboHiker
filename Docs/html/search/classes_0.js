@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['entity_10',['Entity',['../classturbohiker_1_1Entity.html',1,'turbohiker']]]
+  ['background_42',['Background',['../classturbohikerSFML_1_1Background.html',1,'turbohikerSFML::Background'],['../classturbohiker_1_1Background.html',1,'turbohiker::Background']]]
 ];

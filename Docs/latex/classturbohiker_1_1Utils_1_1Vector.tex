@@ -12,22 +12,146 @@ represents a 2d vector
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classturbohiker_1_1Utils_1_1Vector_a06b6bc5882af62d75cf2c4a601e6bd07}\label{classturbohiker_1_1Utils_1_1Vector_a06b6bc5882af62d75cf2c4a601e6bd07}} 
-{\bfseries Vector} (const double \&x, const double \&y)
+\mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector_a06b6bc5882af62d75cf2c4a601e6bd07}{Vector}} (const double \&\mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector_ac714fe7e508c9035f34f32b9e49cb231}{x}}, const double \&\mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector_a9a35b0070a4a9cb4d54baf972abed2fd}{y}})
 \item 
-\mbox{\Hypertarget{classturbohiker_1_1Utils_1_1Vector_abc9a575295849f1ee4d2f5c11cccacf2}\label{classturbohiker_1_1Utils_1_1Vector_abc9a575295849f1ee4d2f5c11cccacf2}} 
-\mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{Vector}} $\ast$ {\bfseries set} (const double \&x, const double \&y)
+\mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{Vector}} \& \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector_a71520586e4c9f9ed655d8552de038a1a}{set}} (const double \&\mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector_ac714fe7e508c9035f34f32b9e49cb231}{x}}, const double \&\mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector_a9a35b0070a4a9cb4d54baf972abed2fd}{y}})
 \item 
-\mbox{\Hypertarget{classturbohiker_1_1Utils_1_1Vector_ac714fe7e508c9035f34f32b9e49cb231}\label{classturbohiker_1_1Utils_1_1Vector_ac714fe7e508c9035f34f32b9e49cb231}} 
-double {\bfseries x} () const
+\mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{Vector}} \& \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector_ab320673891b570a9cb7ff4a395921ddf}{set}} (const \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{Vector}} \&vec2)
 \item 
-\mbox{\Hypertarget{classturbohiker_1_1Utils_1_1Vector_a9a35b0070a4a9cb4d54baf972abed2fd}\label{classturbohiker_1_1Utils_1_1Vector_a9a35b0070a4a9cb4d54baf972abed2fd}} 
-double {\bfseries y} () const
+double \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector_ac714fe7e508c9035f34f32b9e49cb231}{x}} () const
+\item 
+double \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector_a9a35b0070a4a9cb4d54baf972abed2fd}{y}} () const
+\item 
+\mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{Vector}} \& \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector_a072cded4c785eafddbb84cc32dcf3998}{add}} (const \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{Vector}} \&vec2)
+\item 
+\mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{Vector}} \& \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector_a50054f7d7fdf33e81313c98ab53baada}{scalar}} (const double \&s)
+\item 
+double \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector_a72fa8802862b18638ab58c2076cac69b}{magnitude}} () const
+\item 
+\mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{Vector}} \& \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector_aefdcc98104ff8da28ce30fec88265233}{normalize}} ()
+\item 
+\mbox{\Hypertarget{classturbohiker_1_1Utils_1_1Vector_aeeb18ab55cfa42e2d406810a2185561e}\label{classturbohiker_1_1Utils_1_1Vector_aeeb18ab55cfa42e2d406810a2185561e}} 
+std\+::string {\bfseries to\+String} ()
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 represents a 2d vector 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classturbohiker_1_1Utils_1_1Vector_a06b6bc5882af62d75cf2c4a601e6bd07}\label{classturbohiker_1_1Utils_1_1Vector_a06b6bc5882af62d75cf2c4a601e6bd07}} 
+\index{turbohiker::Utils::Vector@{turbohiker::Utils::Vector}!Vector@{Vector}}
+\index{Vector@{Vector}!turbohiker::Utils::Vector@{turbohiker::Utils::Vector}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}}
+{\footnotesize\ttfamily turbohiker\+::\+Utils\+::\+Vector\+::\+Vector (\begin{DoxyParamCaption}\item[{const double \&}]{x,  }\item[{const double \&}]{y }\end{DoxyParamCaption})}
+
+Create a 2D vector 
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classturbohiker_1_1Utils_1_1Vector_a072cded4c785eafddbb84cc32dcf3998}\label{classturbohiker_1_1Utils_1_1Vector_a072cded4c785eafddbb84cc32dcf3998}} 
+\index{turbohiker::Utils::Vector@{turbohiker::Utils::Vector}!add@{add}}
+\index{add@{add}!turbohiker::Utils::Vector@{turbohiker::Utils::Vector}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{turbohiker\+::\+Utils\+::\+Vector}} \& turbohiker\+::\+Utils\+::\+Vector\+::add (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{Vector}} \&}]{vec2 }\end{DoxyParamCaption})}
+
+add another vector to this vector 
+\begin{DoxyParams}{Parameters}
+{\em vec2} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohiker_1_1Utils_1_1Vector_a72fa8802862b18638ab58c2076cac69b}\label{classturbohiker_1_1Utils_1_1Vector_a72fa8802862b18638ab58c2076cac69b}} 
+\index{turbohiker::Utils::Vector@{turbohiker::Utils::Vector}!magnitude@{magnitude}}
+\index{magnitude@{magnitude}!turbohiker::Utils::Vector@{turbohiker::Utils::Vector}}
+\doxysubsubsection{\texorpdfstring{magnitude()}{magnitude()}}
+{\footnotesize\ttfamily double turbohiker\+::\+Utils\+::\+Vector\+::magnitude (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get the magnitude(length) of this vector \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohiker_1_1Utils_1_1Vector_aefdcc98104ff8da28ce30fec88265233}\label{classturbohiker_1_1Utils_1_1Vector_aefdcc98104ff8da28ce30fec88265233}} 
+\index{turbohiker::Utils::Vector@{turbohiker::Utils::Vector}!normalize@{normalize}}
+\index{normalize@{normalize}!turbohiker::Utils::Vector@{turbohiker::Utils::Vector}}
+\doxysubsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{turbohiker\+::\+Utils\+::\+Vector}} \& turbohiker\+::\+Utils\+::\+Vector\+::normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+normalize this vector \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohiker_1_1Utils_1_1Vector_a50054f7d7fdf33e81313c98ab53baada}\label{classturbohiker_1_1Utils_1_1Vector_a50054f7d7fdf33e81313c98ab53baada}} 
+\index{turbohiker::Utils::Vector@{turbohiker::Utils::Vector}!scalar@{scalar}}
+\index{scalar@{scalar}!turbohiker::Utils::Vector@{turbohiker::Utils::Vector}}
+\doxysubsubsection{\texorpdfstring{scalar()}{scalar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{turbohiker\+::\+Utils\+::\+Vector}} \& turbohiker\+::\+Utils\+::\+Vector\+::scalar (\begin{DoxyParamCaption}\item[{const double \&}]{s }\end{DoxyParamCaption})}
+
+scalar multiply this vector 
+\begin{DoxyParams}{Parameters}
+{\em s} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohiker_1_1Utils_1_1Vector_a71520586e4c9f9ed655d8552de038a1a}\label{classturbohiker_1_1Utils_1_1Vector_a71520586e4c9f9ed655d8552de038a1a}} 
+\index{turbohiker::Utils::Vector@{turbohiker::Utils::Vector}!set@{set}}
+\index{set@{set}!turbohiker::Utils::Vector@{turbohiker::Utils::Vector}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{turbohiker\+::\+Utils\+::\+Vector}} \& turbohiker\+::\+Utils\+::\+Vector\+::set (\begin{DoxyParamCaption}\item[{const double \&}]{x,  }\item[{const double \&}]{y }\end{DoxyParamCaption})}
+
+override values of the vector 
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohiker_1_1Utils_1_1Vector_ab320673891b570a9cb7ff4a395921ddf}\label{classturbohiker_1_1Utils_1_1Vector_ab320673891b570a9cb7ff4a395921ddf}} 
+\index{turbohiker::Utils::Vector@{turbohiker::Utils::Vector}!set@{set}}
+\index{set@{set}!turbohiker::Utils::Vector@{turbohiker::Utils::Vector}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{turbohiker\+::\+Utils\+::\+Vector}} \& turbohiker\+::\+Utils\+::\+Vector\+::set (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{Vector}} \&}]{vec2 }\end{DoxyParamCaption})}
+
+override values of the vector 
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohiker_1_1Utils_1_1Vector_ac714fe7e508c9035f34f32b9e49cb231}\label{classturbohiker_1_1Utils_1_1Vector_ac714fe7e508c9035f34f32b9e49cb231}} 
+\index{turbohiker::Utils::Vector@{turbohiker::Utils::Vector}!x@{x}}
+\index{x@{x}!turbohiker::Utils::Vector@{turbohiker::Utils::Vector}}
+\doxysubsubsection{\texorpdfstring{x()}{x()}}
+{\footnotesize\ttfamily double turbohiker\+::\+Utils\+::\+Vector\+::x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+x getter \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohiker_1_1Utils_1_1Vector_a9a35b0070a4a9cb4d54baf972abed2fd}\label{classturbohiker_1_1Utils_1_1Vector_a9a35b0070a4a9cb4d54baf972abed2fd}} 
+\index{turbohiker::Utils::Vector@{turbohiker::Utils::Vector}!y@{y}}
+\index{y@{y}!turbohiker::Utils::Vector@{turbohiker::Utils::Vector}}
+\doxysubsubsection{\texorpdfstring{y()}{y()}}
+{\footnotesize\ttfamily double turbohiker\+::\+Utils\+::\+Vector\+::y (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+y getter \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

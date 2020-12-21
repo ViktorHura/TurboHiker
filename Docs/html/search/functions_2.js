@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['textsize_16',['textSize',['../classTransformation.html#a4477861d1791774ca2f5f833913bc11f',1,'Transformation']]]
+  ['factory_55',['Factory',['../classturbohikerSFML_1_1Factory.html#ae973152074abda37d2f1e5a91beb6edb',1,'turbohikerSFML::Factory']]]
 ];

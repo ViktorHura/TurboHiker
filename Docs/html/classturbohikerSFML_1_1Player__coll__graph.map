@@ -1,0 +1,5 @@
+<map id="turbohikerSFML::Player" name="turbohikerSFML::Player">
+<area shape="rect" id="node1" title="SFML player presentation." alt="" coords="5,155,177,181"/>
+<area shape="rect" id="node2" href="$classturbohiker_1_1Player.html" title="abstract class to handle player logic" alt="" coords="23,80,160,107"/>
+<area shape="rect" id="node3" href="$classturbohiker_1_1Entity.html" title="most abstract game object" alt="" coords="24,5,159,32"/>
+</map>
