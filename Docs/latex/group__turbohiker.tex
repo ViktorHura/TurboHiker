@@ -5,13 +5,32 @@
 static library that holds game logic  
 
 
+Collaboration diagram for Turbohiker\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{group__turbohiker}
+\end{center}
+\end{figure}
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__Utils}{Utils}}
+\begin{DoxyCompactList}\small\item\em holds utility functions and classes \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+class \mbox{\hyperlink{classturbohiker_1_1Background}{turbohiker\+::\+Background}}
+\begin{DoxyCompactList}\small\item\em abstract class to draw background elements \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classturbohiker_1_1Entity}{turbohiker\+::\+Entity}}
 \begin{DoxyCompactList}\small\item\em most abstract game object \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classturbohiker_1_1EntityFactory}{turbohiker\+::\+Entity\+Factory}}
 \begin{DoxyCompactList}\small\item\em Abstract factory for creating entities. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classturbohiker_1_1PassingHiker1}{turbohiker\+::\+Passing\+Hiker1}}
+\begin{DoxyCompactList}\small\item\em abstract class to handle static hiker logic \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classturbohiker_1_1Random}{turbohiker\+::\+Random}}
+\begin{DoxyCompactList}\small\item\em singleton to generate pseudo random numbers \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classturbohiker_1_1World}{turbohiker\+::\+World}}
 \begin{DoxyCompactList}\small\item\em represents the game world, handles physics, hold entities and delegates draw requests \end{DoxyCompactList}\end{DoxyCompactItemize}
 

@@ -8,6 +8,7 @@
 namespace turbohiker {
     /**
      * \class Random
+     * \ingroup turbohiker
      * \brief singleton to generate pseudo random numbers
      */
     class Random {

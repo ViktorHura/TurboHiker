@@ -11,7 +11,7 @@ namespace turbohiker {
 
     /**
      * \class PassingHiker1
-     *
+     * \ingroup turbohiker
      * \brief abstract class to handle static hiker logic
      */
     class PassingHiker1 : public Entity {

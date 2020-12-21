@@ -12,7 +12,7 @@ namespace turbohiker {
 
     /**
      * \class Background
-     *
+     * \ingroup turbohiker
      * \brief abstract class to draw background elements
      */
     class Background : public Entity {

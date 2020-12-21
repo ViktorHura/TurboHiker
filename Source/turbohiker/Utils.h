@@ -8,7 +8,7 @@ namespace turbohiker {
     namespace Utils{
         /**
          * \defgroup Utils
-         *
+         * \ingroup turbohiker
          * \brief holds utility functions and classes
          */
 
