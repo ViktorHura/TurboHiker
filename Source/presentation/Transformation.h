@@ -9,47 +9,85 @@
 
 #include <memory>
 #include <SFML/Graphics.hpp>
+#include "../turbohiker/Utils.h"
 
-class Transformation {
-    static Transformation* _instance;
-
-    /// weak pointer to the window object
-    std::weak_ptr<sf::RenderWindow> window;
-
-    explicit Transformation(std::weak_ptr<sf::RenderWindow> w);
-
-public:
+namespace turbohikerSFML {
     /**
-     * returns the singleton instance
-     *
-     * @param w weak pointer to the window, must be provided on first call to init the internal window pointer
-     * @return singleton instance
+     * \class Transformation
+     * \ingroup turbohikerSFML
+     * \brief converts pixel values to the visible 2D game world space of [-4,4] x [-3, 3]
      */
-    static Transformation* instance(std::weak_ptr<sf::RenderWindow> w = {});
+    class Transformation {
+        static Transformation *_instance;
 
-    /**
-     * converts 1 textSize unit to 1/10 screen diagonal
-     * @param size
-     * @return
-     */
-    int textSize(const double& size) const;
+        /// weak pointer to the window object
+        std::weak_ptr<sf::RenderWindow> window;
 
-    /**
-     * converts [-4,4] x coords to pixel coords in [0, window_width]
-     * @param x
-     * @return
-     */
-    float x(const double& x) const;
+        explicit Transformation(std::weak_ptr<sf::RenderWindow> w);
 
-    /**
-     * converts [-3,3] y coords to pixel coords in [window_height, 0]
-     * @param y
-     * @return
-     */
-    float y(const double& y) const;
+        double y_pos = 0; // y positions of camera
 
-};
+        double max_y_pos = 258;
 
+    public:
+        /**
+         * returns the singleton instance
+         *
+         * @param w weak pointer to the window, must be provided on first call to init the internal window pointer
+         * @return singleton instance
+         */
+        static Transformation *instance(std::weak_ptr<sf::RenderWindow> w = {});
+
+        /**
+         * set the Y position of camera, usually player y position
+         * @param ypos
+         */
+        void setYpos(const double& ypos);
+
+        /**
+         * converts 1 textSize unit to 1/10 screen diagonal
+         * @param size
+         * @return
+         */
+        int textSize(const double &size) const;
+
+        /**
+         * converts [-4,4] x coords to pixel coords in [0, window_width]
+         * @param x
+         * @return
+         */
+        float x(const double &x) const;
+
+        /**
+         * converts [-3,3] y coords to pixel coords in [window_height, 0]
+         * @param y
+         * @return
+         */
+        float y(const double &y) const;
+
+        /**
+         * converts position vector
+         * @param vec
+         * @return
+         */
+        sf::Vector2f pos(const turbohiker::Utils::Vector& vec) const;
+
+        /**
+         * converts size vector
+         * @param vec
+         * @return
+         */
+        sf::Vector2f size(const turbohiker::Utils::Vector& vec) const;
+
+        /**
+         * rescales sprite to a sizeVector
+         * @param size
+         * @param sprite
+         */
+        void rescaleSprite(const turbohiker::Utils::Vector& size, sf::Sprite& sprite);
+
+    };
+}
 
 
 

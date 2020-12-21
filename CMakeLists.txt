@@ -15,12 +15,12 @@ find_package(SFML 2.5.1 COMPONENTS system window graphics network audio)
 #
 
 # Static game logic lib
-SET( turbohiker_src Source/turbohiker/Entity.cpp Source/turbohiker/Utils.cpp Source/turbohiker/Utils.h)
+SET( turbohiker_src Source/turbohiker/Entity.cpp Source/turbohiker/Utils.cpp Source/turbohiker/World.cpp Source/turbohiker/EntityFactory.h Source/turbohiker/Player.cpp Source/turbohiker/Background.cpp Source/turbohiker/PassingHiker1.cpp Source/turbohiker/PassingHiker1.h Source/turbohiker/Random.cpp Source/turbohiker/Random.h)
 
 ADD_LIBRARY( turbohiker STATIC ${turbohiker_src} )
 #
 
-SET( src Source/Game.cpp Source/presentation/Transformation.cpp)
+SET( src Source/Game.cpp Source/presentation/Transformation.cpp Source/presentation/Factory.cpp Source/presentation/Player.cpp Source/presentation/Background.cpp Source/presentation/PassingHiker1.cpp Source/presentation/PassingHiker1.h)
 add_executable(TurboHiker main.cpp ${src})
 
 target_link_libraries (TurboHiker turbohiker sfml-graphics sfml-window sfml-system)

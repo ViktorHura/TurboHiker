@@ -221,7 +221,7 @@ public:
     union
     {
         SizeEvent             size;              ///< Size event parameters (Event::Resized)
-        KeyEvent              key;               ///< Key event parameters (Event::KeyPressed, Event::KeyReleased)
+        int key;               ///< Key event parameters (Event::KeyPressed, Event::KeyReleased)
         TextEvent             text;              ///< Text event parameters (Event::TextEntered)
         MouseMoveEvent        mouseMove;         ///< Mouse move event parameters (Event::MouseMoved)
         MouseButtonEvent      mouseButton;       ///< Mouse button event parameters (Event::MouseButtonPressed, Event::MouseButtonReleased)

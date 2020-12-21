@@ -10,6 +10,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <memory>
+#include "turbohiker/World.h"
 
 class Game {
     std::shared_ptr<sf::RenderWindow> window;
@@ -18,6 +19,8 @@ class Game {
     sf::Text startText;
 
     bool gameStarted = false;
+
+    std::unique_ptr<turbohiker::World> world;
 
     /// start the game loop after construction
     void run();
