@@ -10,15 +10,18 @@ void turbohikerSFML::Background::draw(const double &delta) {
   std::shared_ptr<sf::RenderWindow> w =
       window.lock(); // borrow ownership of window
 
-      if (not Transformation::instance()->Yismax()){ // as long as the camera is still moving, keep scrolling background
-          parallax_offset += parallax_speed*delta;
-      }
+  if (not Transformation::instance()
+              ->Yismax()) { // as long as the camera is still moving, keep
+                            // scrolling background
+    parallax_offset += parallax_speed * delta;
+  }
 
   for (int i = 0; i < backgroundSprites.size(); i++) {
-    Vector nmpos = Vector(position().x(), position().y() + 18.75 * i); // position of each tile
+    Vector nmpos = Vector(position().x(),
+                          position().y() + 18.75 * i); // position of each tile
 
-    Vector nbpos = Vector().set(nmpos).add(Vector(0,parallax_offset)); // add parallax offset to background
-
+    Vector nbpos = Vector().set(nmpos).add(
+        Vector(0, parallax_offset)); // add parallax offset to background
 
     backgroundSprites[i].setPosition(Transformation::instance()->pos(nbpos));
     midgroundSprites[i].setPosition(Transformation::instance()->pos(nmpos));
@@ -26,7 +29,8 @@ void turbohikerSFML::Background::draw(const double &delta) {
     w->draw(backgroundSprites[i]);
     w->draw(midgroundSprites[i]);
 
-    for (int j = 0; j < 3; j++) { // set position of the chain tiles as well, 3 chains per background tile
+    for (int j = 0; j < 3; j++) { // set position of the chain tiles as well, 3
+                                  // chains per background tile
       int c = i * 3 + j;
 
       Vector cpos = Vector(position().x() + 2 * (j + 1) - 0.1075,

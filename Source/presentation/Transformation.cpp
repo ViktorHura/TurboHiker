@@ -83,6 +83,4 @@ void turbohikerSFML::Transformation::rescaleSprite(
   sprite.setScale(x_scale, y_scale);
 }
 
-bool turbohikerSFML::Transformation::Yismax() {
-    return y_pos == max_y_pos;
-}
+bool turbohikerSFML::Transformation::Yismax() { return y_pos == max_y_pos; }

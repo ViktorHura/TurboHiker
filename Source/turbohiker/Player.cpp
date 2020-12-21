@@ -6,9 +6,9 @@
 #include <iostream>
 
 void turbohiker::Player::update(const double &delta) {
-  Vector vel = Vector(0,1);
+  Vector vel = Vector(0, 1);
   if (u) {
-    //vel.add(Vector(0, 1));
+    // vel.add(Vector(0, 1));
     setSpeed(speed_fast);
   }
   if (l) {
@@ -18,12 +18,12 @@ void turbohiker::Player::update(const double &delta) {
     vel.add(Vector(1, 0));
   }
   if (d) {
-    //vel.add(Vector(0, -1));
+    // vel.add(Vector(0, -1));
     setSpeed(speed_slow);
   }
 
-  if (not u and not d){
-      setSpeed(speed_normal);
+  if (not u and not d) {
+    setSpeed(speed_normal);
   }
 
   setVel(vel);

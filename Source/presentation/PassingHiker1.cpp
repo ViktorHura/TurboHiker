@@ -7,7 +7,8 @@
 
 void turbohikerSFML::PassingHiker1::draw(const double &delta) {
 
-    framerate = getSpeed() / speed * defaultframerate; // adjust animation speed to speed of hiker
+  framerate = getSpeed() / speed *
+              defaultframerate; // adjust animation speed to speed of hiker
 
   frametime += delta; // update frametime
 
