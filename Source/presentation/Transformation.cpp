@@ -87,14 +87,8 @@ void turbohikerSFML::Transformation::rescaleSprite(
 
 bool turbohikerSFML::Transformation::Yismax() { return y_pos == max_y_pos; }
 
-double turbohikerSFML::Transformation::getYdelta() const {
-    return y_delta;
-}
+double turbohikerSFML::Transformation::getYdelta() const { return y_delta; }
 
-double turbohikerSFML::Transformation::getPspeed() {
-    return p_speed;
-}
+double turbohikerSFML::Transformation::getPspeed() { return p_speed; }
 
-void turbohikerSFML::Transformation::setPspeed(const double &p) {
-    p_speed = p;
-}
+void turbohikerSFML::Transformation::setPspeed(const double &p) { p_speed = p; }

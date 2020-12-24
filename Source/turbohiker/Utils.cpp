@@ -60,5 +60,5 @@ std::string turbohiker::Utils::Vector::toString() {
 }
 
 int turbohiker::Utils::Vector::getLane() const {
-    return std::floor((x() + 4) / 2);
+  return std::floor((x() + 4) / 2);
 }

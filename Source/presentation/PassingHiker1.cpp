@@ -17,8 +17,8 @@ void turbohikerSFML::PassingHiker1::draw(const double &delta) {
     nextFrame();
   }
 
-  sprite.setPosition(Transformation::instance()->pos(
-      position().add(Vector(size().x() / 2, -size().y()/2)))); // update position
+  sprite.setPosition(Transformation::instance()->pos(position().add(
+      Vector(size().x() / 2, -size().y() / 2)))); // update position
 
   std::shared_ptr<sf::RenderWindow> w =
       window.lock(); // borrow ownership of window
@@ -27,7 +27,8 @@ void turbohikerSFML::PassingHiker1::draw(const double &delta) {
 
   // bouding rectangle for debugging
   /*sf::RectangleShape rectangle(Transformation::instance()->size(size()));
-  rectangle.setPosition(Transformation::instance()->pos(position().add(Vector(-size().x()/2, -size().y()/2))));
+  rectangle.setPosition(Transformation::instance()->pos(position().add(Vector(-size().x()/2,
+  -size().y()/2))));
 
   w->draw(rectangle);*/
 }

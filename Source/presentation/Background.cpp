@@ -13,9 +13,11 @@ void turbohikerSFML::Background::draw(const double &delta) {
   if (not Transformation::instance()
               ->Yismax()) { // as long as the camera is still moving, keep
                             // scrolling background
-    // get how far to move the parallax background, proportional to the distance the player moved in last frame and to
-    // the difference in speed of player and background
-    double diff = parallax_speed / Transformation::instance()->getPspeed() * Transformation::instance()->getYdelta();
+    // get how far to move the parallax background, proportional to the distance
+    // the player moved in last frame and to the difference in speed of player
+    // and background
+    double diff = parallax_speed / Transformation::instance()->getPspeed() *
+                  Transformation::instance()->getYdelta();
     parallax_offset += diff; // update the offset
   }
 

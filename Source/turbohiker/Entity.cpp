@@ -36,20 +36,16 @@ turbohiker::Entity &turbohiker::Entity::setSpeed(const double &s) {
 
 double turbohiker::Entity::getSpeed() const { return speed; }
 
-Vector turbohiker::Entity::nextpos() const {
-    return nextPos;
-}
+Vector turbohiker::Entity::nextpos() const { return nextPos; }
 
 turbohiker::Entity &turbohiker::Entity::setNextPos(const Vector &position) {
-    nextPos.set(position);
-    return *this;
+  nextPos.set(position);
+  return *this;
 }
 
-double turbohiker::Entity::mass() const {
-    return mass_;
-}
+double turbohiker::Entity::mass() const { return mass_; }
 
 turbohiker::Entity &turbohiker::Entity::setMass(const double &m) {
-    mass_ = m;
-    return *this;
+  mass_ = m;
+  return *this;
 }
