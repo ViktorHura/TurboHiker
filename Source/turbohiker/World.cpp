@@ -7,6 +7,7 @@
 #include <cmath>
 #include <iostream>
 #include <memory>
+#include <algorithm>
 
 void turbohiker::World::update(const double &delta) {
   updateSection();
@@ -39,8 +40,9 @@ turbohiker::World::World(std::unique_ptr<EntityFactory> f) {
 void turbohiker::World::handleInput(const int &key, bool keydown) {
   auto player = static_cast<turbohiker::Player *>(
       entities[1].get()); // second entity will always be player thus static
-  if (key == 57) {        // space
-                          //
+  if (key == 57 and keydown) {        // space
+      player->shout();
+      handleShout(player->position());
   } else {
     player->handleInput(key, keydown); // let player handle the input
   }
@@ -49,46 +51,69 @@ void turbohiker::World::handleInput(const int &key, bool keydown) {
 turbohiker::eType turbohiker::World::type() { return WorldT; }
 
 void turbohiker::World::handlePhysics(const double &delta) {
+
   for (auto &ep : entities) {
-    double s = ep->getSpeed() * delta;
-    Vector vel = ep->velocity().scalar(s);
-    Vector newpos = ep->position().add(vel); // calculate potential new position
+      if (ep->type() == BackT){continue;} // optimisation
 
-    if (outOfBounds(ep,
-                    newpos)) { // if that pos is out of bounds, adjust velocity
-      ep->setVel(Vector(0, ep->velocity().y())); // remove horizontal component
-    }
+    handleCollisions(ep,delta); // will modify velocity if there are any collisions
 
-    vel = ep->velocity().scalar(s); // calculate final new position
-    newpos = ep->position().add(vel);
-    ep->setPos(newpos); // set new pos
+    // calculate final new position
+    ep->setPos(calcNewPos(ep,delta)); // set new pos
   }
 }
 
-bool turbohiker::World::outOfBounds(std::unique_ptr<Entity> &entity,
-                                    const Vector &newpos) {
-  if (newpos.x() + entity->size().x() / 2 > 4) { // left bound
+void turbohiker::World::handleCollisions(std::unique_ptr<Entity> &entity, const double& delta) {
+    entity->setNextPos(calcNewPos(entity,delta)); // calculate the next potential pos
+
+    for (auto &ep : entities) {
+        if (ep.get() == entity.get()){continue;} // don't check for itself
+
+        if (areColliding(ep, entity)){
+            Vector away = entity->nextpos().add(ep->nextpos().scalar(-1)); // vector from other entity to entity
+            double pushforce = (entity->mass() / ep->mass()) * (entity->getSpeed() / ep->getSpeed()); // how strong to push other entity
+
+            entity->setVel(entity->velocity().add(away).scalar(1/pushforce));  // push entity back
+            ep->setVel(ep->velocity().add(away.scalar(-pushforce))); // push other entity back as well
+        }
+    }
+
+    // lastly check if entity not going out of bounds
+    entity->setNextPos(calcNewPos(entity,delta)); // calculate potential new position
+    if (outOfBounds(entity)) { // if that pos is out of bounds, adjust velocity
+        entity->setVel(entity->velocity().add(Vector(-entity->velocity().x(), 0))); // remove horizontal component
+    }
+
+}
+
+Vector turbohiker::World::calcNewPos(std::unique_ptr<Entity> &entity, const double& delta) {
+    double s = entity->getSpeed() * delta; // adjusted speed
+    Vector vel = entity->velocity().scalar(s); // rescale current velocity vector
+    return entity->position().add(vel); // add to current position
+}
+
+bool turbohiker::World::outOfBounds(std::unique_ptr<Entity> &entity) {
+  if (entity->nextpos().x() + entity->size().x() / 2 > 4) { // left bound
     return true;
   }
 
-  return newpos.x() - entity->size().x() / 2 < -4; // right bound
+  return entity->nextpos().x() - entity->size().x() / 2 < -4; // right bound
 }
 
 void turbohiker::World::updateSection() {
   auto player = static_cast<turbohiker::Player *>(entities[1].get());
 
-  double sec = player->position().y() / sectionSize;
+  double sec = player->position().y() / sectionSize; // get player section
 
   if (sec > section + 1 &&
-      player->position().y() < 240) { // player is in new section
+      player->position().y() < 170) { // player is in new section
     section++;
-    // std::cout << "next section " << player->position().toString() <<
-    // std::endl;
     newSection();
   }
 }
 
 void turbohiker::World::newSection() {
+    prunePassingHikers(); // remove hikers that are off screen
+
   double countchance = Random::instance()->Double();
   int spawncount;
   // 20% chance to spawn just one passing hiker
@@ -143,8 +168,10 @@ void turbohiker::World::spawnHiker(const int &lane) {
     hiker = factory->makePassingHiker1();
     h2ToSpawn--;
   } else {
-    hiker = factory->makePassingHiker1();
+
+    //hiker = factory->makePassingHiker1();
     h1ToSpawn--;
+    return;
   }
 
   // position at top of section + a random distance < maxSpawnVar
@@ -155,14 +182,67 @@ void turbohiker::World::spawnHiker(const int &lane) {
 
   hiker->setPos(Vector(posX, posY));
 
-  hiker->setVel(Vector(0, -1)); // moving toward player
-
-  // std::cout << spawntype << " " << h1ToSpawn << " " << h2ToSpawn <<
-  // std::endl;
-
   entities.push_back(std::unique_ptr<Entity>(hiker));
 }
 
-int turbohiker::World::getSection(std::unique_ptr<Entity> &entity) {
-  return std::floor(entity->position().y() / sectionSize);
+void turbohiker::World::prunePassingHikers() {
+    auto player = static_cast<turbohiker::Player *>(entities[1].get()); // player always will be second entity
+
+    std::vector<int> to_delete;
+
+    for (int i=0; i < entities.size(); i++) { // find indexes of entities that are already off-screen
+        if (entities[i]->position().y() < player->position().y() - entities[i]->size().y() and entities[i]->type() != BackT){
+            to_delete.push_back(i);
+        }
+    }
+
+    // following piece of code is from stackoverflow, what I understand is that
+    // it sorts to_deleted vector and deletes the needed indexes from back to front
+    // to avoid a shift messing up the indexes
+    std::sort(to_delete.begin(), to_delete.end());  // Make sure the container is sorted
+    for (std::reverse_iterator<std::vector<int>::iterator> j = to_delete.rbegin(); j != to_delete.rend(); ++ j)
+    {
+        entities.erase(entities.begin() + *j);
+    }
+}
+
+
+void turbohiker::World::handleShout(const Vector& player_pos) {
+    int player_lane = player_pos.getLane();
+
+    for (int i=0; i < entities.size(); i++) {// find the entity to shout at
+        if (entities[i]->position().getLane() == player_lane && entities[i]->position().y() > player_pos.y() && // must be in same lane and in front of player
+                (entities[i]->type() == PassHT1 || entities[i]->type() == PassHT2)){ // must be a passing hiker
+
+            auto hiker = dynamic_cast<turbohiker::PassingHiker1 *>(entities[i].get());
+            if (hiker != nullptr){ // it's first type
+                hiker->handleShout();
+                break;
+            }
+            // second type
+
+            break;
+        }
+    }
+
+}
+
+
+bool turbohiker::World::areColliding(std::unique_ptr<Entity> &e1, std::unique_ptr<Entity> &e2) {
+    double e1w = e1->size().x(); // e1 width
+    double e1h = e1->size().y(); // e1 height
+
+    double e2w = e2->size().x(); // e2 width
+    double e2h = e2->size().y(); // e2 height
+
+    Vector e1p = Vector(e1->nextpos().x() - e1w/2, e1->nextpos().y() - e1h/2); // bottom left corner e1
+    Vector e2p = Vector(e2->nextpos().x() - e2w/2, e2->nextpos().y() - e2h/2); // bottom left corner e2
+
+    // I once understood this code, now I understand not to touch it
+    bool col =  e1p.x() + e1w >= e2p.x() &&
+            e1p.x() <= e2p.x() + e2w &&
+            e1p.y() - e1h <= e2p.y() &&
+            e1p.y() >= e2p.y() - e2h;
+
+    return col;
 }

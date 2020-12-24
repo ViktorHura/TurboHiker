@@ -26,16 +26,28 @@ namespace turbohikerSFML {
         sf::Texture texture; // player texture
         sf::Sprite sprite; // player sprite
 
+        sf::Texture sonarTexture; // sonar texture
+        sf::Sprite sonarSprite; // sonar sprite
+        double sonarFrames = 5; // amount of sonar frames
+        double sonartime = 0.5; // amount of time the sonar animation wil take in seconds
+
         double defaultframerate = 10;
         double framerate = defaultframerate;  // animation framerate
         int frame=0;            // current frame
         int maxframes = 5;      // amount of frames
         double frametime = 0;   // amount of time current frame has lasted in seconds
 
+        double shoutTimer = 0;
+
         /**
          * draws next frame of the player animation
          */
         void nextFrame();
+
+        /**
+         * draws correct frame of sonar animation
+         */
+        void animateSonar();
     public:
         /**
          * needs weak pointer to the window to be able to draw
@@ -44,6 +56,8 @@ namespace turbohikerSFML {
         explicit Player(std::weak_ptr<sf::RenderWindow> w);
 
         void draw(const double& delta) override;
+
+        void shout() override;
 
     };
 }

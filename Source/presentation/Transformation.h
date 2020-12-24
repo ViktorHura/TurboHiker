@@ -27,7 +27,13 @@ namespace turbohikerSFML {
 
         double y_pos = 0; // y positions of camera
 
-        double max_y_pos = 258;
+        double y_pos_old = 0; // previous y position of camera
+
+        double y_delta = 0; // how much camera has moved, used for parallax background
+
+        double max_y_pos = 180;
+
+        double p_speed = 1; // player speed, used for parallax background
 
     public:
         /**
@@ -49,6 +55,24 @@ namespace turbohikerSFML {
          * @return
          */
         bool Yismax();
+
+        /**
+         * get how much camera has moved last frame
+         * @return
+         */
+        double getYdelta() const;
+
+        /**
+         * get player speed
+         * @return
+         */
+        double getPspeed();
+
+        /**
+         * update player speed
+         * @param p
+         */
+        void setPspeed(const double& p);
 
         /**
          * converts 1 textSize unit to 1/10 screen diagonal

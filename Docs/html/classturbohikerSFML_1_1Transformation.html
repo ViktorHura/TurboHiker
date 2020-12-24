@@ -85,6 +85,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aea2238fad74093fad5a32dc80d7ac76d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58283ef6292fb326c75734d5c7826ec4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classturbohikerSFML_1_1Transformation.html#a58283ef6292fb326c75734d5c7826ec4">Yismax</a> ()</td></tr>
 <tr class="separator:a58283ef6292fb326c75734d5c7826ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99ffb7d666528777d03a4c06b76b9967"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classturbohikerSFML_1_1Transformation.html#a99ffb7d666528777d03a4c06b76b9967">getYdelta</a> () const</td></tr>
+<tr class="separator:a99ffb7d666528777d03a4c06b76b9967"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1250500cb61e733c73c7b5694206eab"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classturbohikerSFML_1_1Transformation.html#aa1250500cb61e733c73c7b5694206eab">getPspeed</a> ()</td></tr>
+<tr class="separator:aa1250500cb61e733c73c7b5694206eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3d14493f7f0a36f18f31fc3cad5ab54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classturbohikerSFML_1_1Transformation.html#aa3d14493f7f0a36f18f31fc3cad5ab54">setPspeed</a> (const double &amp;p)</td></tr>
+<tr class="separator:aa3d14493f7f0a36f18f31fc3cad5ab54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4477861d1791774ca2f5f833913bc11f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classturbohikerSFML_1_1Transformation.html#a4477861d1791774ca2f5f833913bc11f">textSize</a> (const double &amp;<a class="el" href="classturbohikerSFML_1_1Transformation.html#a805a15ec4011e7a11d2fd5a82d6e00c6">size</a>) const</td></tr>
 <tr class="separator:a4477861d1791774ca2f5f833913bc11f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12b00137a4082309bcf4390bfa303481"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classturbohikerSFML_1_1Transformation.html#a12b00137a4082309bcf4390bfa303481">x</a> (const double &amp;x) const</td></tr>
@@ -106,6 +112,42 @@ Static Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>converts pixel values to the visible 2D game world space of [-4,4] x [-3, 3] </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa1250500cb61e733c73c7b5694206eab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1250500cb61e733c73c7b5694206eab">&#9670;&nbsp;</a></span>getPspeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Transformation::getPspeed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>get player speed </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a99ffb7d666528777d03a4c06b76b9967"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99ffb7d666528777d03a4c06b76b9967">&#9670;&nbsp;</a></span>getYdelta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Transformation::getYdelta </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>get how much camera has moved last frame </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
 <a id="a2b622e0b12304d6609d9169ad23180d8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2b622e0b12304d6609d9169ad23180d8">&#9670;&nbsp;</a></span>instance()</h2>
 
@@ -194,6 +236,30 @@ Static Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">size</td><td></td></tr>
     <tr><td class="paramname">sprite</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa3d14493f7f0a36f18f31fc3cad5ab54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3d14493f7f0a36f18f31fc3cad5ab54">&#9670;&nbsp;</a></span>setPspeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Transformation::setPspeed </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>update player speed </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td></td></tr>
   </table>
   </dd>
 </dl>

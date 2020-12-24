@@ -23,6 +23,8 @@ namespace turbohiker {
         eType type() override;
 
         void update(const double& delta) override;
+
+        void handleShout();
     };
 
 }

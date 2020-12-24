@@ -35,18 +35,20 @@ e\+Type \mbox{\hyperlink{classturbohiker_1_1Player_aa1979e28b052e4755f397bb0be37
 void \mbox{\hyperlink{classturbohiker_1_1Player_ae6e21f0e5f81e0314ac7115f5c71ddc9}{update}} (const double \&delta) override
 \item 
 void \mbox{\hyperlink{classturbohiker_1_1Player_adf4934ae25e54e9807ad3fc1e908ccb2}{handle\+Input}} (const int \&key, bool keydown)
+\item 
+virtual void \mbox{\hyperlink{classturbohiker_1_1Player_a7bd6b86e6e6c45f64d81339864c66e04}{shout}} ()=0
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classturbohiker_1_1Player_aa4df710e3993fc26e42dcb9a5e9ea335}\label{classturbohiker_1_1Player_aa4df710e3993fc26e42dcb9a5e9ea335}} 
-const double {\bfseries speed\+\_\+normal} = 6
+const double {\bfseries speed\+\_\+normal} = 4
 \item 
 \mbox{\Hypertarget{classturbohiker_1_1Player_a910e422bdf66b642eab1943698234fc0}\label{classturbohiker_1_1Player_a910e422bdf66b642eab1943698234fc0}} 
-const double {\bfseries speed\+\_\+slow} = 3
+const double {\bfseries speed\+\_\+slow} = 2
 \item 
 \mbox{\Hypertarget{classturbohiker_1_1Player_aebf9e3565e50c9351c6ab478af8d0759}\label{classturbohiker_1_1Player_aebf9e3565e50c9351c6ab478af8d0759}} 
-const double {\bfseries speed\+\_\+fast} = 9
+const double {\bfseries speed\+\_\+fast} = 6
 \end{DoxyCompactItemize}
 
 
@@ -65,6 +67,16 @@ take input, updates u l d r, vars
 {\em key} & \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classturbohiker_1_1Player_a7bd6b86e6e6c45f64d81339864c66e04}\label{classturbohiker_1_1Player_a7bd6b86e6e6c45f64d81339864c66e04}} 
+\index{turbohiker::Player@{turbohiker::Player}!shout@{shout}}
+\index{shout@{shout}!turbohiker::Player@{turbohiker::Player}}
+\doxysubsubsection{\texorpdfstring{shout()}{shout()}}
+{\footnotesize\ttfamily virtual void turbohiker\+::\+Player\+::shout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+visual 
+
+Implemented in \mbox{\hyperlink{classturbohikerSFML_1_1Player_ad844d033fdd679e11ab2e6723167ac31}{turbohiker\+S\+F\+M\+L\+::\+Player}}.
+
 \mbox{\Hypertarget{classturbohiker_1_1Player_aa1979e28b052e4755f397bb0be37ffa6}\label{classturbohiker_1_1Player_aa1979e28b052e4755f397bb0be37ffa6}} 
 \index{turbohiker::Player@{turbohiker::Player}!type@{type}}
 \index{type@{type}!turbohiker::Player@{turbohiker::Player}}

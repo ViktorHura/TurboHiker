@@ -58,3 +58,7 @@ turbohiker::Utils::Vector::set(const turbohiker::Utils::Vector &vec2) {
 std::string turbohiker::Utils::Vector::toString() {
   return "( " + std::to_string(x()) + " ; " + std::to_string(y()) + " )";
 }
+
+int turbohiker::Utils::Vector::getLane() const {
+    return std::floor((x() + 4) / 2);
+}

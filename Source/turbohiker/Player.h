@@ -22,9 +22,9 @@ namespace turbohiker {
         bool d = false;
 
     protected:
-        const double speed_normal = 6;
-        const double speed_slow = 3;
-        const double speed_fast = 9;
+        const double speed_normal = 4;
+        const double speed_slow = 2;
+        const double speed_fast = 6;
 
     public:
         Player();
@@ -38,6 +38,11 @@ namespace turbohiker {
          * @param key
          */
         void handleInput(const int& key, bool keydown);
+
+        /**
+         * visual
+         */
+        virtual void shout() = 0;
 
     };
 }

@@ -29,15 +29,23 @@ virtual void \mbox{\hyperlink{classturbohiker_1_1Entity_ab3900ff699741280f5d7dbf
 \item 
 \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{Vector}} \mbox{\hyperlink{classturbohiker_1_1Entity_a7585e267315cd297ad28fac4061064c3}{position}} () const
 \item 
+\mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{Vector}} \mbox{\hyperlink{classturbohiker_1_1Entity_a6585ac1729db3abbfc47cd9c035c5fc8}{nextpos}} () const
+\item 
 \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{Vector}} \mbox{\hyperlink{classturbohiker_1_1Entity_a3afc0a506f76d27128db48712058e614}{velocity}} () const
 \item 
 \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{Vector}} \mbox{\hyperlink{classturbohiker_1_1Entity_a8cb21337c2d6d1c53d61f6cf7ba7bd9d}{size}} () const
 \item 
+double \mbox{\hyperlink{classturbohiker_1_1Entity_ab0ac008a92f192d574244f7aef548b47}{mass}} () const
+\item 
 double \mbox{\hyperlink{classturbohiker_1_1Entity_a65316c05ed5f94f7fe8a5d7e9f323278}{get\+Speed}} () const
+\item 
+\mbox{\hyperlink{classturbohiker_1_1Entity}{Entity}} \& \mbox{\hyperlink{classturbohiker_1_1Entity_afc34699fe9925bb7af82baea2d67dd36}{set\+Mass}} (const double \&m)
 \item 
 \mbox{\hyperlink{classturbohiker_1_1Entity}{Entity}} \& \mbox{\hyperlink{classturbohiker_1_1Entity_aff1f054d13477b98fc52b09502296198}{set\+Speed}} (const double \&s)
 \item 
 \mbox{\hyperlink{classturbohiker_1_1Entity}{Entity}} \& \mbox{\hyperlink{classturbohiker_1_1Entity_aba2e994fc1e9c7e8727de6125db138aa}{set\+Pos}} (const \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{Vector}} \&\mbox{\hyperlink{classturbohiker_1_1Entity_a7585e267315cd297ad28fac4061064c3}{position}})
+\item 
+\mbox{\hyperlink{classturbohiker_1_1Entity}{Entity}} \& \mbox{\hyperlink{classturbohiker_1_1Entity_aa2347c33e1017e3869dc64bd2953da8c}{set\+Next\+Pos}} (const \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{Vector}} \&\mbox{\hyperlink{classturbohiker_1_1Entity_a7585e267315cd297ad28fac4061064c3}{position}})
 \item 
 \mbox{\hyperlink{classturbohiker_1_1Entity}{Entity}} \& \mbox{\hyperlink{classturbohiker_1_1Entity_a05f2e859579b77559036c635d045d6c8}{set\+Vel}} (const \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{Vector}} \&\mbox{\hyperlink{classturbohiker_1_1Entity_a3afc0a506f76d27128db48712058e614}{velocity}})
 \item 
@@ -68,6 +76,24 @@ Implemented in \mbox{\hyperlink{classturbohiker_1_1World_a817977fa83d814d6baea11
 get speed \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classturbohiker_1_1Entity_ab0ac008a92f192d574244f7aef548b47}\label{classturbohiker_1_1Entity_ab0ac008a92f192d574244f7aef548b47}} 
+\index{turbohiker::Entity@{turbohiker::Entity}!mass@{mass}}
+\index{mass@{mass}!turbohiker::Entity@{turbohiker::Entity}}
+\doxysubsubsection{\texorpdfstring{mass()}{mass()}}
+{\footnotesize\ttfamily double turbohiker\+::\+Entity\+::mass (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get entity mass \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohiker_1_1Entity_a6585ac1729db3abbfc47cd9c035c5fc8}\label{classturbohiker_1_1Entity_a6585ac1729db3abbfc47cd9c035c5fc8}} 
+\index{turbohiker::Entity@{turbohiker::Entity}!nextpos@{nextpos}}
+\index{nextpos@{nextpos}!turbohiker::Entity@{turbohiker::Entity}}
+\doxysubsubsection{\texorpdfstring{nextpos()}{nextpos()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{Vector}} turbohiker\+::\+Entity\+::nextpos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+gets next potential position \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \mbox{\Hypertarget{classturbohiker_1_1Entity_a7585e267315cd297ad28fac4061064c3}\label{classturbohiker_1_1Entity_a7585e267315cd297ad28fac4061064c3}} 
 \index{turbohiker::Entity@{turbohiker::Entity}!position@{position}}
 \index{position@{position}!turbohiker::Entity@{turbohiker::Entity}}
@@ -75,6 +101,34 @@ get speed \begin{DoxyReturn}{Returns}
 {\footnotesize\ttfamily \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{Vector}} turbohiker\+::\+Entity\+::position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 gets position \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohiker_1_1Entity_afc34699fe9925bb7af82baea2d67dd36}\label{classturbohiker_1_1Entity_afc34699fe9925bb7af82baea2d67dd36}} 
+\index{turbohiker::Entity@{turbohiker::Entity}!setMass@{setMass}}
+\index{setMass@{setMass}!turbohiker::Entity@{turbohiker::Entity}}
+\doxysubsubsection{\texorpdfstring{setMass()}{setMass()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classturbohiker_1_1Entity}{turbohiker\+::\+Entity}} \& turbohiker\+::\+Entity\+::set\+Mass (\begin{DoxyParamCaption}\item[{const double \&}]{m }\end{DoxyParamCaption})}
+
+set mass 
+\begin{DoxyParams}{Parameters}
+{\em m} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohiker_1_1Entity_aa2347c33e1017e3869dc64bd2953da8c}\label{classturbohiker_1_1Entity_aa2347c33e1017e3869dc64bd2953da8c}} 
+\index{turbohiker::Entity@{turbohiker::Entity}!setNextPos@{setNextPos}}
+\index{setNextPos@{setNextPos}!turbohiker::Entity@{turbohiker::Entity}}
+\doxysubsubsection{\texorpdfstring{setNextPos()}{setNextPos()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classturbohiker_1_1Entity}{turbohiker\+::\+Entity}} \& turbohiker\+::\+Entity\+::set\+Next\+Pos (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{Vector}} \&}]{position }\end{DoxyParamCaption})}
+
+set next potential position vector 
+\begin{DoxyParams}{Parameters}
+{\em position} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classturbohiker_1_1Entity_aba2e994fc1e9c7e8727de6125db138aa}\label{classturbohiker_1_1Entity_aba2e994fc1e9c7e8727de6125db138aa}} 

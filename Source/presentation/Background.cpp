@@ -13,7 +13,10 @@ void turbohikerSFML::Background::draw(const double &delta) {
   if (not Transformation::instance()
               ->Yismax()) { // as long as the camera is still moving, keep
                             // scrolling background
-    parallax_offset += parallax_speed * delta;
+    // get how far to move the parallax background, proportional to the distance the player moved in last frame and to
+    // the difference in speed of player and background
+    double diff = parallax_speed / Transformation::instance()->getPspeed() * Transformation::instance()->getYdelta();
+    parallax_offset += diff; // update the offset
   }
 
   for (int i = 0; i < backgroundSprites.size(); i++) {
@@ -34,7 +37,7 @@ void turbohikerSFML::Background::draw(const double &delta) {
       int c = i * 3 + j;
 
       Vector cpos = Vector(position().x() + 2 * (j + 1) - 0.1075,
-                           position().y() + 18.75 * (i + 1));
+                           position().y() + 18.75 * (i + 1)); // chain position
 
       laneSprites[c].setPosition(Transformation::instance()->pos(cpos));
       w->draw(laneSprites[c]);

@@ -22,7 +22,7 @@ namespace turbohiker {
         std::vector<std::unique_ptr<Entity>> entities;
         std::unique_ptr<EntityFactory> factory;
 
-        double sectionSize = 12;
+        double sectionSize = 10;
         double section = 0;
         double maxSpawnVar = 8;
 
@@ -38,11 +38,26 @@ namespace turbohiker {
 
         void spawnHiker(const int& lane);
 
+        /// physics, called each frame
         void handlePhysics(const double& delta);
 
-        bool outOfBounds(std::unique_ptr<Entity>& entity, const Vector& newpos);
+        /// is an entity out of bounds(left-right bound)
+        bool outOfBounds(std::unique_ptr<Entity>& entity);
 
-        int getSection(std::unique_ptr<Entity>& entity);
+        /// remove hikers that are off-screen already
+        void prunePassingHikers();
+
+        /// find the right passing hiker and invoke shout on it
+        void handleShout(const Vector& player_pos);
+
+        /// check and resolve collisions for a given entity
+        void handleCollisions(std::unique_ptr<Entity>& entity, const double& delta);
+
+        /// check if two entities are colliding
+        static bool areColliding(std::unique_ptr<Entity> &e1, std::unique_ptr<Entity> &e2);
+
+        ///calculate potential new position based on current velocity
+        Vector calcNewPos(std::unique_ptr<Entity>& entity, const double& delta);
 
     public:
         eType type() override;

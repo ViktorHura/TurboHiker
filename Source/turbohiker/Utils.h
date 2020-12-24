@@ -86,6 +86,12 @@ namespace turbohiker {
             Vector& normalize();
 
             std::string toString();
+
+            /**
+             * get lane(0-3) of this vector
+             * @return
+             */
+            int getLane() const;
         };
 
     }

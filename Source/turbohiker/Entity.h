@@ -26,9 +26,11 @@ namespace turbohiker
     */
     class Entity {
         Vector pos{};
+        Vector nextPos{};
         Vector vel{};
         Vector size_{};
         double speed = 0;
+        double mass_ = 1;
     public:
         /**
          * get entity type
@@ -52,6 +54,12 @@ namespace turbohiker
         Vector position() const;
 
         /**
+         * gets next potential position
+         * @return
+         */
+        Vector nextpos() const;
+
+        /**
          * gets velocity
          * @return
          */
@@ -64,10 +72,23 @@ namespace turbohiker
         Vector size() const;
 
         /**
+         * get entity mass
+         * @return
+         */
+        double mass() const;
+
+        /**
          * get speed
          * @return
          */
         double getSpeed() const;
+
+        /**
+         * set mass
+         * @param m
+         * @return
+         */
+        Entity& setMass(const double& m);
 
         /**
          * set speed
@@ -82,6 +103,13 @@ namespace turbohiker
          * @return
          */
         Entity& setPos(const Vector& position);
+
+        /**
+         * set next potential position vector
+         * @param position
+         * @return
+         */
+        Entity& setNextPos(const Vector& position);
 
         /**
          * set velocity vector

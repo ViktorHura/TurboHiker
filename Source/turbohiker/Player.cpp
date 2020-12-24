@@ -8,22 +8,20 @@
 void turbohiker::Player::update(const double &delta) {
   Vector vel = Vector(0, 1);
   if (u) {
-    // vel.add(Vector(0, 1));
-    setSpeed(speed_fast);
+    setSpeed(speed_fast); // speed up
   }
   if (l) {
-    vel.add(Vector(-1, 0));
+    vel.add(Vector(-1, 0)); // going left
   }
   if (r) {
-    vel.add(Vector(1, 0));
+    vel.add(Vector(1, 0)); // going right
   }
   if (d) {
-    // vel.add(Vector(0, -1));
-    setSpeed(speed_slow);
+    setSpeed(speed_slow); // slow down
   }
 
   if (not u and not d) {
-    setSpeed(speed_normal);
+    setSpeed(speed_normal); // back to normal speed
   }
 
   setVel(vel);
@@ -50,5 +48,6 @@ turbohiker::eType turbohiker::Player::type() { return PlayerT; }
 
 turbohiker::Player::Player() {
   setSize(Vector(0.5, 1.25));
-  setSpeed(6);
+  setSpeed(speed_normal);
+  setMass(1);
 }

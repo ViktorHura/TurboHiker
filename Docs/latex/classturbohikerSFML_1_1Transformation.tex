@@ -16,6 +16,12 @@ void \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_aea2238fad74093fad5a
 \item 
 bool \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_a58283ef6292fb326c75734d5c7826ec4}{Yismax}} ()
 \item 
+double \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_a99ffb7d666528777d03a4c06b76b9967}{get\+Ydelta}} () const
+\item 
+double \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_aa1250500cb61e733c73c7b5694206eab}{get\+Pspeed}} ()
+\item 
+void \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_aa3d14493f7f0a36f18f31fc3cad5ab54}{set\+Pspeed}} (const double \&p)
+\item 
 int \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_a4477861d1791774ca2f5f833913bc11f}{text\+Size}} (const double \&\mbox{\hyperlink{classturbohikerSFML_1_1Transformation_a805a15ec4011e7a11d2fd5a82d6e00c6}{size}}) const
 \item 
 float \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_a12b00137a4082309bcf4390bfa303481}{x}} (const double \&x) const
@@ -39,6 +45,24 @@ static \mbox{\hyperlink{classturbohikerSFML_1_1Transformation}{Transformation}} 
 converts pixel values to the visible 2D game world space of \mbox{[}-\/4,4\mbox{]} x \mbox{[}-\/3, 3\mbox{]} 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classturbohikerSFML_1_1Transformation_aa1250500cb61e733c73c7b5694206eab}\label{classturbohikerSFML_1_1Transformation_aa1250500cb61e733c73c7b5694206eab}} 
+\index{turbohikerSFML::Transformation@{turbohikerSFML::Transformation}!getPspeed@{getPspeed}}
+\index{getPspeed@{getPspeed}!turbohikerSFML::Transformation@{turbohikerSFML::Transformation}}
+\doxysubsubsection{\texorpdfstring{getPspeed()}{getPspeed()}}
+{\footnotesize\ttfamily double Transformation\+::get\+Pspeed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+get player speed \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohikerSFML_1_1Transformation_a99ffb7d666528777d03a4c06b76b9967}\label{classturbohikerSFML_1_1Transformation_a99ffb7d666528777d03a4c06b76b9967}} 
+\index{turbohikerSFML::Transformation@{turbohikerSFML::Transformation}!getYdelta@{getYdelta}}
+\index{getYdelta@{getYdelta}!turbohikerSFML::Transformation@{turbohikerSFML::Transformation}}
+\doxysubsubsection{\texorpdfstring{getYdelta()}{getYdelta()}}
+{\footnotesize\ttfamily double Transformation\+::get\+Ydelta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get how much camera has moved last frame \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \mbox{\Hypertarget{classturbohikerSFML_1_1Transformation_a2b622e0b12304d6609d9169ad23180d8}\label{classturbohikerSFML_1_1Transformation_a2b622e0b12304d6609d9169ad23180d8}} 
 \index{turbohikerSFML::Transformation@{turbohikerSFML::Transformation}!instance@{instance}}
 \index{instance@{instance}!turbohikerSFML::Transformation@{turbohikerSFML::Transformation}}
@@ -80,6 +104,17 @@ rescales sprite to a size\+Vector
 {\em size} & \\
 \hline
 {\em sprite} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classturbohikerSFML_1_1Transformation_aa3d14493f7f0a36f18f31fc3cad5ab54}\label{classturbohikerSFML_1_1Transformation_aa3d14493f7f0a36f18f31fc3cad5ab54}} 
+\index{turbohikerSFML::Transformation@{turbohikerSFML::Transformation}!setPspeed@{setPspeed}}
+\index{setPspeed@{setPspeed}!turbohikerSFML::Transformation@{turbohikerSFML::Transformation}}
+\doxysubsubsection{\texorpdfstring{setPspeed()}{setPspeed()}}
+{\footnotesize\ttfamily void Transformation\+::set\+Pspeed (\begin{DoxyParamCaption}\item[{const double \&}]{p }\end{DoxyParamCaption})}
+
+update player speed 
+\begin{DoxyParams}{Parameters}
+{\em p} & \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classturbohikerSFML_1_1Transformation_aea2238fad74093fad5a32dc80d7ac76d}\label{classturbohikerSFML_1_1Transformation_aea2238fad74093fad5a32dc80d7ac76d}} 
