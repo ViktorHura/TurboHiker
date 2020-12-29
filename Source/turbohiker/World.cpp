@@ -239,12 +239,13 @@ void turbohiker::World::handleShout(const Vector &player_pos) {
         hiker->handleShout();
         break;
       }
-      auto hiker2 = dynamic_cast<turbohiker::PassingHiker2 *>(entities[i].get());
+      auto hiker2 =
+          dynamic_cast<turbohiker::PassingHiker2 *>(entities[i].get());
       // second type
-        if (hiker2 != nullptr) { // it's first type
-            hiker2->handleShout();
-            break;
-        }
+      if (hiker2 != nullptr) { // it's first type
+        hiker2->handleShout();
+        break;
+      }
     }
   }
 }
