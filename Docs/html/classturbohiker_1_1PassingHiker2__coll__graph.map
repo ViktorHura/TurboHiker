@@ -1,0 +1,5 @@
+<map id="turbohiker::PassingHiker2" name="turbohiker::PassingHiker2">
+<area shape="rect" id="node1" title="abstract class to handle static hiker logic" alt="" coords="5,155,192,181"/>
+<area shape="rect" id="node2" href="$classturbohiker_1_1PassingHiker1.html" title="abstract class to handle moving hiker logic" alt="" coords="5,80,192,107"/>
+<area shape="rect" id="node3" href="$classturbohiker_1_1Entity.html" title="most abstract game object" alt="" coords="31,5,166,32"/>
+</map>

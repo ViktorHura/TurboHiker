@@ -12,11 +12,12 @@ namespace turbohiker {
     /**
      * \class PassingHiker1
      * \ingroup turbohiker
-     * \brief abstract class to handle static hiker logic
+     * \brief abstract class to handle moving hiker logic
      */
     class PassingHiker1 : public Entity {
     protected:
         double speed = 2;
+        double reactTime = 0;
     public:
         PassingHiker1();
 
@@ -24,7 +25,9 @@ namespace turbohiker {
 
         void update(const double& delta) override;
 
-        void handleShout();
+        virtual void handleShout();
+
+        virtual void react() = 0;
     };
 
 }

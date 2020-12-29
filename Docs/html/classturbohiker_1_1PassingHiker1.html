@@ -70,11 +70,11 @@ $(function() {
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classturbohiker_1_1PassingHiker1-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">turbohiker::PassingHiker1 Class Reference<div class="ingroups"><a class="el" href="group__turbohiker.html">Turbohiker</a></div></div>  </div>
+<div class="title">turbohiker::PassingHiker1 Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span><div class="ingroups"><a class="el" href="group__turbohiker.html">Turbohiker</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>abstract class to handle static hiker logic  
+<p>abstract class to handle moving hiker logic  
  <a href="classturbohiker_1_1PassingHiker1.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="turbohiker_2PassingHiker1_8h_source.html">PassingHiker1.h</a>&gt;</code></p>
@@ -83,9 +83,11 @@ Inheritance diagram for turbohiker::PassingHiker1:</div>
 <div class="dyncontent">
 <div class="center"><img src="classturbohiker_1_1PassingHiker1__inherit__graph.png" border="0" usemap="#turbohiker_1_1PassingHiker1_inherit__map" alt="Inheritance graph"/></div>
 <map name="turbohiker_1_1PassingHiker1_inherit__map" id="turbohiker_1_1PassingHiker1_inherit__map">
-<area shape="rect" title="abstract class to handle static hiker logic" alt="" coords="23,80,210,107"/>
-<area shape="rect" href="classturbohikerSFML_1_1PassingHiker1.html" title="SFML passinghiker1 presentation." alt="" coords="5,155,228,181"/>
-<area shape="rect" href="classturbohiker_1_1Entity.html" title="most abstract game object" alt="" coords="49,5,184,32"/>
+<area shape="rect" title="abstract class to handle moving hiker logic" alt="" coords="138,80,325,107"/>
+<area shape="rect" href="classturbohiker_1_1PassingHiker2.html" title="abstract class to handle static hiker logic" alt="" coords="23,155,210,181"/>
+<area shape="rect" href="classturbohikerSFML_1_1PassingHiker1.html" title="SFML passinghiker1 presentation." alt="" coords="235,155,457,181"/>
+<area shape="rect" href="classturbohiker_1_1Entity.html" title="most abstract game object" alt="" coords="164,5,299,32"/>
+<area shape="rect" href="classturbohikerSFML_1_1PassingHiker2.html" title="SFML passinghiker2 presentation." alt="" coords="5,229,228,256"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -93,7 +95,7 @@ Collaboration diagram for turbohiker::PassingHiker1:</div>
 <div class="dyncontent">
 <div class="center"><img src="classturbohiker_1_1PassingHiker1__coll__graph.png" border="0" usemap="#turbohiker_1_1PassingHiker1_coll__map" alt="Collaboration graph"/></div>
 <map name="turbohiker_1_1PassingHiker1_coll__map" id="turbohiker_1_1PassingHiker1_coll__map">
-<area shape="rect" title="abstract class to handle static hiker logic" alt="" coords="5,80,192,107"/>
+<area shape="rect" title="abstract class to handle moving hiker logic" alt="" coords="5,80,192,107"/>
 <area shape="rect" href="classturbohiker_1_1Entity.html" title="most abstract game object" alt="" coords="31,5,166,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -105,8 +107,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7b3af29134e5bee67dd0156e1e709250"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classturbohiker_1_1PassingHiker1.html#a7b3af29134e5bee67dd0156e1e709250">update</a> (const double &amp;delta) override</td></tr>
 <tr class="separator:a7b3af29134e5bee67dd0156e1e709250"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a334a0e651c5d250447cee876c17613eb"><td class="memItemLeft" align="right" valign="top"><a id="a334a0e651c5d250447cee876c17613eb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>handleShout</b> ()</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>handleShout</b> ()</td></tr>
 <tr class="separator:a334a0e651c5d250447cee876c17613eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fb96bb4a0c1c1b85d96f8921b8bd152"><td class="memItemLeft" align="right" valign="top"><a id="a0fb96bb4a0c1c1b85d96f8921b8bd152"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>react</b> ()=0</td></tr>
+<tr class="separator:a0fb96bb4a0c1c1b85d96f8921b8bd152"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classturbohiker_1_1Entity"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classturbohiker_1_1Entity')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classturbohiker_1_1Entity.html">turbohiker::Entity</a></td></tr>
 <tr class="memitem:a093ac07845ad9b0abc077d986e04cccc inherit pub_methods_classturbohiker_1_1Entity"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classturbohiker_1_1Entity.html#a093ac07845ad9b0abc077d986e04cccc">draw</a> (const double &amp;delta)=0</td></tr>
 <tr class="separator:a093ac07845ad9b0abc077d986e04cccc inherit pub_methods_classturbohiker_1_1Entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,7 +147,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>speed</b> = 2</td><
 <tr class="separator:a0e259c29727b5f63be93bc049fdbe5be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>abstract class to handle static hiker logic </p>
+<div class="textblock"><p>abstract class to handle moving hiker logic </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab4434514f063b580129cf810c162eb34"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab4434514f063b580129cf810c162eb34">&#9670;&nbsp;</a></span>type()</h2>
@@ -169,6 +174,8 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>speed</b> = 2</td><
 <p>get entity type </p>
 
 <p>Reimplemented from <a class="el" href="classturbohiker_1_1Entity.html#a541abe045ccb89baee34df5613b03d1a">turbohiker::Entity</a>.</p>
+
+<p>Reimplemented in <a class="el" href="classturbohiker_1_1PassingHiker2.html#af8b5f4e36f010bdfd1bff360a1a8b0c8">turbohiker::PassingHiker2</a>.</p>
 
 </div>
 </div>
@@ -198,6 +205,8 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>speed</b> = 2</td><
 <p>will update the entity's internal state </p>
 
 <p>Implements <a class="el" href="classturbohiker_1_1Entity.html#ab3900ff699741280f5d7dbfee3dfe039">turbohiker::Entity</a>.</p>
+
+<p>Reimplemented in <a class="el" href="classturbohiker_1_1PassingHiker2.html#a2160e15051f6270d86afdae2b1bbd7df">turbohiker::PassingHiker2</a>.</p>
 
 </div>
 </div>

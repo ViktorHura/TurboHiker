@@ -9,7 +9,11 @@
 #include <memory>
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Texture.hpp>
+#include <SFML/Graphics/CircleShape.hpp>
+#include <SFML/Graphics/Font.hpp>
+#include <SFML/Graphics/Text.hpp>
 #include "../turbohiker/PassingHiker1.h"
+#include "Animation.h"
 
 namespace turbohikerSFML {
 
@@ -23,22 +27,24 @@ namespace turbohikerSFML {
 
         sf::Texture texture;
         sf::Sprite sprite;
+        Animation anim;
 
         double defaultframerate = 10;
-        double framerate = defaultframerate;  // animation framerate
-        int frame=0;            // current frame
-        int maxframes = 4;      // amount of frames
-        double frametime = 0;   // amount of time current frame has lasted in seconds
 
-        /**
-         * draws next frame of the animation
-         */
-        void nextFrame();
+
+        sf::Font font;
+        sf::Text reactText;
+
+        static std::vector<std::wstring> reactions;
+
     public:
         explicit PassingHiker1(std::weak_ptr<sf::RenderWindow> w);
 
         void draw(const double& delta) override;
+
+        void react() override;
     };
+
 
 }
 

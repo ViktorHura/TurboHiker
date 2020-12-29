@@ -2,7 +2,7 @@
 \label{classturbohiker_1_1PassingHiker1}\index{turbohiker::PassingHiker1@{turbohiker::PassingHiker1}}
 
 
-abstract class to handle static hiker logic  
+abstract class to handle moving hiker logic  
 
 
 
@@ -15,7 +15,7 @@ Inheritance diagram for turbohiker\+::Passing\+Hiker1\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=247pt]{classturbohiker_1_1PassingHiker1__inherit__graph}
+\includegraphics[width=350pt]{classturbohiker_1_1PassingHiker1__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -35,7 +35,10 @@ e\+Type \mbox{\hyperlink{classturbohiker_1_1PassingHiker1_ab4434514f063b580129cf
 void \mbox{\hyperlink{classturbohiker_1_1PassingHiker1_a7b3af29134e5bee67dd0156e1e709250}{update}} (const double \&delta) override
 \item 
 \mbox{\Hypertarget{classturbohiker_1_1PassingHiker1_a334a0e651c5d250447cee876c17613eb}\label{classturbohiker_1_1PassingHiker1_a334a0e651c5d250447cee876c17613eb}} 
-void {\bfseries handle\+Shout} ()
+virtual void {\bfseries handle\+Shout} ()
+\item 
+\mbox{\Hypertarget{classturbohiker_1_1PassingHiker1_a0fb96bb4a0c1c1b85d96f8921b8bd152}\label{classturbohiker_1_1PassingHiker1_a0fb96bb4a0c1c1b85d96f8921b8bd152}} 
+virtual void {\bfseries react} ()=0
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -46,7 +49,7 @@ double {\bfseries speed} = 2
 
 
 \doxysubsection{Detailed Description}
-abstract class to handle static hiker logic 
+abstract class to handle moving hiker logic 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classturbohiker_1_1PassingHiker1_ab4434514f063b580129cf810c162eb34}\label{classturbohiker_1_1PassingHiker1_ab4434514f063b580129cf810c162eb34}} 
@@ -59,6 +62,10 @@ get entity type
 
 Reimplemented from \mbox{\hyperlink{classturbohiker_1_1Entity_a541abe045ccb89baee34df5613b03d1a}{turbohiker\+::\+Entity}}.
 
+
+
+Reimplemented in \mbox{\hyperlink{classturbohiker_1_1PassingHiker2_af8b5f4e36f010bdfd1bff360a1a8b0c8}{turbohiker\+::\+Passing\+Hiker2}}.
+
 \mbox{\Hypertarget{classturbohiker_1_1PassingHiker1_a7b3af29134e5bee67dd0156e1e709250}\label{classturbohiker_1_1PassingHiker1_a7b3af29134e5bee67dd0156e1e709250}} 
 \index{turbohiker::PassingHiker1@{turbohiker::PassingHiker1}!update@{update}}
 \index{update@{update}!turbohiker::PassingHiker1@{turbohiker::PassingHiker1}}
@@ -68,6 +75,10 @@ Reimplemented from \mbox{\hyperlink{classturbohiker_1_1Entity_a541abe045ccb89bae
 will update the entity\textquotesingle{}s internal state 
 
 Implements \mbox{\hyperlink{classturbohiker_1_1Entity_ab3900ff699741280f5d7dbfee3dfe039}{turbohiker\+::\+Entity}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classturbohiker_1_1PassingHiker2_a2160e15051f6270d86afdae2b1bbd7df}{turbohiker\+::\+Passing\+Hiker2}}.
 
 
 

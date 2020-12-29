@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['world_61',['World',['../classturbohiker_1_1World.html',1,'turbohiker']]]
+  ['vector_65',['Vector',['../classturbohiker_1_1Utils_1_1Vector.html',1,'turbohiker::Utils']]]
 ];

@@ -1,9 +1,3 @@
-/**
- * \class Transformation
- *
- * \brief converts 2D game world space of [-4,4] x [-3, 3] to pixel values
- */
-
 #ifndef TURBOHIKER_TRANSFORMATION_H
 #define TURBOHIKER_TRANSFORMATION_H
 

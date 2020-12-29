@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['y_102',['y',['../classturbohikerSFML_1_1Transformation.html#ae487158558c1fb1eee55da4673aec46c',1,'turbohikerSFML::Transformation::y()'],['../classturbohiker_1_1Utils_1_1Vector.html#a9a35b0070a4a9cb4d54baf972abed2fd',1,'turbohiker::Utils::Vector::y()']]],
-  ['yismax_103',['Yismax',['../classturbohikerSFML_1_1Transformation.html#a58283ef6292fb326c75734d5c7826ec4',1,'turbohikerSFML::Transformation']]]
+  ['y_108',['y',['../classturbohikerSFML_1_1Transformation.html#a128826c27f43905c1116af52e63d38a2',1,'turbohikerSFML::Transformation::y()'],['../classturbohiker_1_1Utils_1_1Vector.html#a9a35b0070a4a9cb4d54baf972abed2fd',1,'turbohiker::Utils::Vector::y()']]],
+  ['yismax_109',['Yismax',['../classturbohikerSFML_1_1Transformation.html#ae047d7cb9f94d829bde070eda2e80f8a',1,'turbohikerSFML::Transformation']]]
 ];

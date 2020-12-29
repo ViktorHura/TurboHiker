@@ -183,9 +183,8 @@ void turbohiker::World::spawnHiker(const int &lane) {
     h2ToSpawn--;
   } else {
 
-    // hiker = factory->makePassingHiker1();
+    hiker = factory->makePassingHiker2(lane);
     h1ToSpawn--;
-    return;
   }
 
   // position at top of section + a random distance < maxSpawnVar
@@ -240,9 +239,12 @@ void turbohiker::World::handleShout(const Vector &player_pos) {
         hiker->handleShout();
         break;
       }
+      auto hiker2 = dynamic_cast<turbohiker::PassingHiker2 *>(entities[i].get());
       // second type
-
-      break;
+        if (hiker2 != nullptr) { // it's first type
+            hiker2->handleShout();
+            break;
+        }
     }
   }
 }

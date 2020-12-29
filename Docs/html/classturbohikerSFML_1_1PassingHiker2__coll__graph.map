@@ -1,0 +1,6 @@
+<map id="turbohikerSFML::PassingHiker2" name="turbohikerSFML::PassingHiker2">
+<area shape="rect" id="node1" title="SFML passinghiker2 presentation." alt="" coords="5,229,228,256"/>
+<area shape="rect" id="node2" href="$classturbohiker_1_1PassingHiker2.html" title="abstract class to handle static hiker logic" alt="" coords="23,155,210,181"/>
+<area shape="rect" id="node3" href="$classturbohiker_1_1PassingHiker1.html" title="abstract class to handle moving hiker logic" alt="" coords="23,80,210,107"/>
+<area shape="rect" id="node4" href="$classturbohiker_1_1Entity.html" title="most abstract game object" alt="" coords="49,5,184,32"/>
+</map>

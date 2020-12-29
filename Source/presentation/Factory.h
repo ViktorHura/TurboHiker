@@ -47,6 +47,12 @@ namespace turbohikerSFML {
          * @return
          */
         turbohiker::PassingHiker1* makePassingHiker1() override;
+
+        /**
+         * makes passinghiker2
+         * @return
+         */
+        turbohiker::PassingHiker2* makePassingHiker2(const int& initialLane) override;
     };
 }
 

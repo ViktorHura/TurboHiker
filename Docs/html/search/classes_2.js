@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['factory_54',['Factory',['../classturbohikerSFML_1_1Factory.html',1,'turbohikerSFML']]]
+  ['entity_56',['Entity',['../classturbohiker_1_1Entity.html',1,'turbohiker']]],
+  ['entityfactory_57',['EntityFactory',['../classturbohiker_1_1EntityFactory.html',1,'turbohiker']]]
 ];

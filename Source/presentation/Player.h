@@ -12,6 +12,7 @@
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include "../turbohiker/Player.h"
+#include "Animation.h"
 
 namespace turbohikerSFML {
 
@@ -25,29 +26,13 @@ namespace turbohikerSFML {
 
         sf::Texture texture; // player texture
         sf::Sprite sprite; // player sprite
+        Animation playerAnim; // player animation object
 
         sf::Texture sonarTexture; // sonar texture
         sf::Sprite sonarSprite; // sonar sprite
-        double sonarFrames = 5; // amount of sonar frames
-        double sonartime = 0.5; // amount of time the sonar animation wil take in seconds
+        Animation sonarAnim; // sonar animation object
 
         double defaultframerate = 10;
-        double framerate = defaultframerate;  // animation framerate
-        int frame=0;            // current frame
-        int maxframes = 5;      // amount of frames
-        double frametime = 0;   // amount of time current frame has lasted in seconds
-
-        double shoutTimer = 0;
-
-        /**
-         * draws next frame of the player animation
-         */
-        void nextFrame();
-
-        /**
-         * draws correct frame of sonar animation
-         */
-        void animateSonar();
     public:
         /**
          * needs weak pointer to the window to be able to draw

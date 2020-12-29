@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['game_55',['Game',['../classGame.html',1,'']]]
+  ['factory_58',['Factory',['../classturbohikerSFML_1_1Factory.html',1,'turbohikerSFML']]]
 ];

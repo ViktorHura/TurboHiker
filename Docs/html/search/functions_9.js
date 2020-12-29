@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rescalesprite_82',['rescaleSprite',['../classturbohikerSFML_1_1Transformation.html#aef09c712fb5c0f8de3f6ba4b2a1a9ad1',1,'turbohikerSFML::Transformation']]]
+  ['rescalesprite_88',['rescaleSprite',['../classturbohikerSFML_1_1Transformation.html#a250d08dd9071e7d0180f0c9d211cb8ad',1,'turbohikerSFML::Transformation']]]
 ];

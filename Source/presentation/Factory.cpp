@@ -7,6 +7,7 @@
 #include "../turbohiker/World.h"
 #include "Background.h"
 #include "PassingHiker1.h"
+#include "PassingHiker2.h"
 #include "Player.h"
 #include <memory>
 
@@ -24,4 +25,10 @@ turbohiker::Background *turbohikerSFML::Factory::makeBackground() {
 
 turbohiker::PassingHiker1 *turbohikerSFML::Factory::makePassingHiker1() {
   return new turbohikerSFML::PassingHiker1(window);
+}
+
+turbohiker::PassingHiker2 *turbohikerSFML::Factory::makePassingHiker2(const int& initialLane) {
+    auto p = new turbohikerSFML::PassingHiker2(window);
+    p->setDesired(initialLane);
+    return p;
 }
