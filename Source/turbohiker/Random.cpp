@@ -14,8 +14,8 @@ turbohiker::Random *turbohiker::Random::instance() {
 }
 
 turbohiker::Random::Random() {
-  srand(time(nullptr) );
-  //srand(0);
+  srand(time(nullptr));
+  // srand(0);
 }
 
 turbohiker::Random *turbohiker::Random::_instance = nullptr;

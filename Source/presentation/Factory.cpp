@@ -36,6 +36,6 @@ turbohikerSFML::Factory::makePassingHiker2(const int &initialLane) {
 }
 
 turbohiker::RacingHiker *turbohikerSFML::Factory::makeRacingHiker() {
-    i++;
-    return new turbohikerSFML::RacingHiker(window, i);
+  i++;
+  return new turbohikerSFML::RacingHiker(window, i);
 }

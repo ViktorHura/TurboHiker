@@ -63,21 +63,22 @@ int turbohiker::Utils::Vector::getLane() const {
   return std::floor((x() + 4) / 2);
 }
 
-double turbohiker::Utils::Vector::distanceTo(const turbohiker::Utils::Vector &vec2) {
-    return std::sqrt(std::pow(vec2.x()-x(),2)+std::pow(vec2.y()-y(),2));
+double
+turbohiker::Utils::Vector::distanceTo(const turbohiker::Utils::Vector &vec2) {
+  return std::sqrt(std::pow(vec2.x() - x(), 2) + std::pow(vec2.y() - y(), 2));
 }
 
 int turbohiker::Utils::nextLane(int lane) {
-    switch (lane) {
-        case 0:
-            return 1;
-        case 1:
-            return 0;
-        case 2:
-            return 3;
-        case 3:
-            return 2;
-        default:
-            return 0;
-    }
+  switch (lane) {
+  case 0:
+    return 1;
+  case 1:
+    return 0;
+  case 2:
+    return 3;
+  case 3:
+    return 2;
+  default:
+    return 0;
+  }
 }

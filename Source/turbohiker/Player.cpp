@@ -50,5 +50,5 @@ turbohiker::Player::Player() {
   setSize(Vector(0.5, 1.25));
   setSpeed(speed_normal);
   setMass(1);
-  setPos(Vector(3,0));
+  setPos(Vector(3, 0));
 }

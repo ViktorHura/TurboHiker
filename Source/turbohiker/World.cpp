@@ -5,8 +5,8 @@
 #include "World.h"
 #include "Random.h"
 #include <algorithm>
-#include <memory>
 #include <iostream>
+#include <memory>
 
 void turbohiker::World::update(const double &delta) {
   updateSection();
@@ -19,7 +19,7 @@ void turbohiker::World::update(const double &delta) {
 
   updateNpcLogic(delta);
 
-    // will check if velocity valid and actually update their positions
+  // will check if velocity valid and actually update their positions
   handlePhysics(delta);
 }
 
@@ -38,17 +38,17 @@ turbohiker::World::World(std::unique_ptr<EntityFactory> f) {
   // make player entity
   entities.push_back(std::unique_ptr<Entity>(factory->makePlayer()));
   // make competing hikers
-    std::unique_ptr<Entity> c1(factory->makeRacingHiker());
-    std::unique_ptr<Entity> c2(factory->makeRacingHiker());
-    std::unique_ptr<Entity> c3(factory->makeRacingHiker());
+  std::unique_ptr<Entity> c1(factory->makeRacingHiker());
+  std::unique_ptr<Entity> c2(factory->makeRacingHiker());
+  std::unique_ptr<Entity> c3(factory->makeRacingHiker());
 
-    c1->setPos(Vector(-3,0));
-    c2->setPos(Vector(-1,0));
-    c3->setPos(Vector(1,0));
+  c1->setPos(Vector(-3, 0));
+  c2->setPos(Vector(-1, 0));
+  c3->setPos(Vector(1, 0));
 
-    entities.push_back(std::move(c1));
-    entities.push_back(std::move(c2));
-    entities.push_back(std::move(c3));
+  entities.push_back(std::move(c1));
+  entities.push_back(std::move(c2));
+  entities.push_back(std::move(c3));
 }
 
 void turbohiker::World::handleInput(const int &key, bool keydown) {
@@ -140,7 +140,7 @@ void turbohiker::World::updateSection() {
 }
 
 void turbohiker::World::newSection() {
-    canSpeed = true;
+  canSpeed = true;
   prunePassingHikers(); // remove hikers that are off screen
 
   double countchance = Random::instance()->Double();
@@ -222,7 +222,7 @@ void turbohiker::World::prunePassingHikers() {
   for (int i = 5; i < entities.size();
        i++) { // find indexes of entities that are already off-screen
     if (entities[i]->position().y() <
-            player->position().y() - entities[i]->size().y()) {
+        player->position().y() - entities[i]->size().y()) {
       to_delete.push_back(i);
     }
   }
@@ -285,81 +285,93 @@ bool turbohiker::World::areColliding(std::unique_ptr<Entity> &e1,
 }
 
 void turbohiker::World::updateNpcLogic(const double &delta) {
-    for (int i = 2; i < 5;i++) { // [2-4] will always be the npc players
-        auto npc = static_cast<turbohiker::RacingHiker *>(entities[i].get());
+  for (int i = 2; i < 5; i++) { // [2-4] will always be the npc players
+    auto npc = static_cast<turbohiker::RacingHiker *>(entities[i].get());
 
-        npc->cooldown -= delta; // decrement cooldown
-        if (npc->cooldown <= 0){npc->cooldown = 0;} // cap at 0
-        else if (npc->cooldown > 0){ continue;} // if on cooldown, no moves
+    npc->cooldown -= delta; // decrement cooldown
+    if (npc->cooldown <= 0) {
+      npc->cooldown = 0;
+    } // cap at 0
+    else if (npc->cooldown > 0) {
+      continue;
+    } // if on cooldown, no moves
 
-        std::tuple<double, bool> result = distanceEnemy(npc); // get distance to closest passing hiker and it's type
-        double dist = std::get<0>(result);
-        bool type = std::get<1>(result);
-        double rand = Random::instance()->Double();
+    std::tuple<double, bool> result = distanceEnemy(
+        npc); // get distance to closest passing hiker and it's type
+    double dist = std::get<0>(result);
+    bool type = std::get<1>(result);
+    double rand = Random::instance()->Double();
 
-        if(dist > 0 and dist < 6){ // if enemy exist in lane and is visible
-            if (rand < 1-dist/6){ // the nearer the enemy the more chance we go into "panick" branch
-                rand = Random::instance()->Double();
-                if (type){ // if stationary hiker
-                    if (rand < 0.6){ // try to shout rather than avoid
-                        npc->shout();
-                        handleShout(npc->position());
-                        npc->cooldown = 0.10;
-                    }else{
-                        npc->changeLane();
-                        npc->cooldown = 0.25;
-                    }
-                }else{ // moving hiker
-                    if (rand < 0.3){ // try to avoid rather than shout
-                        npc->shout();
-                        handleShout(npc->position());
-                        npc->cooldown = 0.10;
-                    }else{
-                        npc->changeLane();
-                        npc->cooldown = 0.25;
-                    }
-                }
-            }else{ // else we stay cool
-                rand = Random::instance()->Double();
-                if (rand < 0.5){ // try to slow down
-                    npc->slowDown();
-                    npc->cooldown = 0.5;
-                }else{          // and change lane
-                    npc->changeLane();
-                    npc->cooldown = 0.25;
-                }
-            }
-        }else if (rand < 0.5 and canSpeed){ // no enemy visible and allowed to speed up, speed up
-            npc->speedUp();
-            npc->cooldown = 1.5;
+    if (dist > 0 and dist < 6) { // if enemy exist in lane and is visible
+      if (rand < 1 - dist / 6) { // the nearer the enemy the more chance we go
+                                 // into "panick" branch
+        rand = Random::instance()->Double();
+        if (type) {         // if stationary hiker
+          if (rand < 0.6) { // try to shout rather than avoid
+            npc->shout();
+            handleShout(npc->position());
+            npc->cooldown = 0.10;
+          } else {
+            npc->changeLane();
+            npc->cooldown = 0.25;
+          }
+        } else {            // moving hiker
+          if (rand < 0.3) { // try to avoid rather than shout
+            npc->shout();
+            handleShout(npc->position());
+            npc->cooldown = 0.10;
+          } else {
+            npc->changeLane();
+            npc->cooldown = 0.25;
+          }
         }
-
-
-        if (npc->position().y() - entities[1]->position().y() < -4){ // we're too far behind
-            npc->setPos(Vector(npc->position().x(),entities[1]->position().y()-2)); // teleport ahead
-            npc->setSpeed(npc->speed_fast + 1); // speed up a little
-            npc->cooldown = 1.5;
+      } else { // else we stay cool
+        rand = Random::instance()->Double();
+        if (rand < 0.5) { // try to slow down
+          npc->slowDown();
+          npc->cooldown = 0.5;
+        } else { // and change lane
+          npc->changeLane();
+          npc->cooldown = 0.25;
         }
-        if (npc->position().y() - entities[1]->position().y() > 6){ // we're too far ahead
-            npc->setSpeed(npc->speed_normal); // slow down
-            npc->cooldown = 1.5;
-        }
+      }
+    } else if (rand < 0.5 and
+               canSpeed) { // no enemy visible and allowed to speed up, speed up
+      npc->speedUp();
+      npc->cooldown = 1.5;
     }
+
+    if (npc->position().y() - entities[1]->position().y() <
+        -4) { // we're too far behind
+      npc->setPos(Vector(npc->position().x(),
+                         entities[1]->position().y() - 2)); // teleport ahead
+      npc->setSpeed(npc->speed_fast + 1);                   // speed up a little
+      npc->cooldown = 1.5;
+    }
+    if (npc->position().y() - entities[1]->position().y() >
+        6) {                            // we're too far ahead
+      npc->setSpeed(npc->speed_normal); // slow down
+      npc->cooldown = 1.5;
+    }
+  }
 }
 
-std::tuple<double, bool> turbohiker::World::distanceEnemy(turbohiker::RacingHiker *npc) {
-    double dist = 0;
-    bool type = false; // false = hiker1 else hiker 2
+std::tuple<double, bool>
+turbohiker::World::distanceEnemy(turbohiker::RacingHiker *npc) {
+  double dist = 0;
+  bool type = false; // false = hiker1 else hiker 2
 
-    for (int i = 5; i < entities.size();i++) { // enemies
-        if (entities[i]->position().getLane() == npc->position().getLane() and entities[i]->position().y() > npc->position().y()) { // same lane and in front
-            double d = npc->position().distanceTo(entities[i]->position());
-            if (d > dist){ // closer
-                type = !(entities[i]->type() == PassHT1);
-                dist = d;
-            }
-        }
+  for (int i = 5; i < entities.size(); i++) { // enemies
+    if (entities[i]->position().getLane() == npc->position().getLane() and
+        entities[i]->position().y() >
+            npc->position().y()) { // same lane and in front
+      double d = npc->position().distanceTo(entities[i]->position());
+      if (d > dist) { // closer
+        type = !(entities[i]->type() == PassHT1);
+        dist = d;
+      }
     }
+  }
 
-    return {dist,type};
+  return {dist, type};
 }
