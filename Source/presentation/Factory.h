@@ -22,7 +22,7 @@ namespace turbohikerSFML {
     class Factory : public turbohiker::EntityFactory {
         /// weak pointer to the window object
         std::weak_ptr<sf::RenderWindow> window;
-
+        int i = -1;
     public:
         /**
          * must provide SFML window for SFML entity factory
@@ -53,6 +53,8 @@ namespace turbohikerSFML {
          * @return
          */
         turbohiker::PassingHiker2* makePassingHiker2(const int& initialLane) override;
+
+        turbohiker::RacingHiker* makeRacingHiker() override;
     };
 }
 

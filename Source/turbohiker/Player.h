@@ -22,8 +22,8 @@ namespace turbohiker {
         bool d = false;
 
     protected:
-        const double speed_normal = 4;
-        const double speed_slow = 2;
+        const double speed_normal = 5;
+        const double speed_slow = 4;
         const double speed_fast = 6;
 
     public:

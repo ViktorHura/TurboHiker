@@ -92,8 +92,17 @@ namespace turbohiker {
              * @return
              */
             int getLane() const;
+
+            /**
+             * distance to vec from this vec
+             * @param vec
+             * @return
+             */
+            double distanceTo(const Vector& vec2);
         };
 
+
+        int nextLane(int lane);
     }
 }
 

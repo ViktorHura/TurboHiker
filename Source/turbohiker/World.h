@@ -19,6 +19,12 @@ namespace turbohiker {
      */
     class World : public Entity  {
 
+        /**
+         * 0 : background Entity
+         * 1 : player Entity
+         * 2-4 : npc Entity
+         * 5-? : passing hikers
+         */
         std::vector<std::unique_ptr<Entity>> entities;
         std::unique_ptr<EntityFactory> factory;
 
@@ -29,7 +35,8 @@ namespace turbohiker {
         int h1ToSpawn = 3;
         int h2ToSpawn = 3;
 
-
+        bool canSpeed = false; // can npc's speed up yet?
+                                // flag will be set after first section, to give player a small head start
         void updateSection();
 
         void newSection();
@@ -58,6 +65,12 @@ namespace turbohiker {
 
         ///calculate potential new position based on current velocity
         Vector calcNewPos(std::unique_ptr<Entity>& entity, const double& delta);
+
+        /// update npc logic
+        void updateNpcLogic(const double& delta);
+
+        /// distance to closest enemy on same lane, 0 if no enemy in sight and type of enemy
+        std::tuple<double, bool> distanceEnemy(turbohiker::RacingHiker * npc);
 
     public:
         eType type() override;

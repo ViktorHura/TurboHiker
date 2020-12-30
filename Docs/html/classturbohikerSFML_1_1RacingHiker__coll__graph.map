@@ -1,0 +1,5 @@
+<map id="turbohikerSFML::RacingHiker" name="turbohikerSFML::RacingHiker">
+<area shape="rect" id="node1" title="SFML racing hiker presentation." alt="" coords="5,155,215,181"/>
+<area shape="rect" id="node2" href="$classturbohiker_1_1RacingHiker.html" title="abstract class to handle competing hiker logic" alt="" coords="23,80,197,107"/>
+<area shape="rect" id="node3" href="$classturbohiker_1_1Entity.html" title="most abstract game object" alt="" coords="43,5,177,32"/>
+</map>

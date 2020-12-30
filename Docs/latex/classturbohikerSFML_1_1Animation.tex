@@ -9,11 +9,125 @@ abstracts animations for the S\+F\+ML sprites
 
 {\ttfamily \#include $<$Animation.\+h$>$}
 
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classturbohikerSFML_1_1Animation_a88041118e0be26c4528d11fddaaf5455}{Animation}} (int frames, double framerate, bool playonce=false)
+\item 
+\mbox{\hyperlink{classturbohikerSFML_1_1Animation}{Animation}} \& \mbox{\hyperlink{classturbohikerSFML_1_1Animation_a68455aaa7eedb40741ae0f2beaf8f7e5}{set\+Rate}} (double framerate)
+\item 
+\mbox{\hyperlink{classturbohikerSFML_1_1Animation}{Animation}} \& \mbox{\hyperlink{classturbohikerSFML_1_1Animation_ad5eca4f05d0cb8e20d694ab6bc0aa820}{set\+Duration}} (double duration)
+\item 
+\mbox{\hyperlink{classturbohikerSFML_1_1Animation}{Animation}} \& \mbox{\hyperlink{classturbohikerSFML_1_1Animation_a6cb0d802faa3a972b98e66832c0ab9d1}{play}} (sf\+::\+Sprite \&sprite)
+\item 
+\mbox{\hyperlink{classturbohikerSFML_1_1Animation}{Animation}} \& \mbox{\hyperlink{classturbohikerSFML_1_1Animation_a547bd4b5f892298f55925466a51ba8a8}{stop}} (sf\+::\+Sprite \&sprite)
+\item 
+\mbox{\hyperlink{classturbohikerSFML_1_1Animation}{Animation}} \& \mbox{\hyperlink{classturbohikerSFML_1_1Animation_a6c427641cf21c1fdb50ad2bd1f00413f}{update}} (double delta, sf\+::\+Sprite \&sprite)
+\item 
+bool \mbox{\hyperlink{classturbohikerSFML_1_1Animation_a6d4cdd1144122a1eda44427c323c00f9}{is\+Playing}} ()
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 abstracts animations for the S\+F\+ML sprites 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classturbohikerSFML_1_1Animation_a88041118e0be26c4528d11fddaaf5455}\label{classturbohikerSFML_1_1Animation_a88041118e0be26c4528d11fddaaf5455}} 
+\index{turbohikerSFML::Animation@{turbohikerSFML::Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!turbohikerSFML::Animation@{turbohikerSFML::Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}}
+{\footnotesize\ttfamily turbohiker\+S\+F\+M\+L\+::\+Animation\+::\+Animation (\begin{DoxyParamCaption}\item[{int}]{frames,  }\item[{double}]{framerate,  }\item[{bool}]{playonce = {\ttfamily false} }\end{DoxyParamCaption})}
+
+create an animation object tilemap must be a rectangle built of frames, glued left to right each frame must be same size 
+\begin{DoxyParams}{Parameters}
+{\em frames} & \+: amount of frames in the tilemap \\
+\hline
+{\em framerate} & \\
+\hline
+{\em playonce} & \+: will only play once or loop \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classturbohikerSFML_1_1Animation_a6d4cdd1144122a1eda44427c323c00f9}\label{classturbohikerSFML_1_1Animation_a6d4cdd1144122a1eda44427c323c00f9}} 
+\index{turbohikerSFML::Animation@{turbohikerSFML::Animation}!isPlaying@{isPlaying}}
+\index{isPlaying@{isPlaying}!turbohikerSFML::Animation@{turbohikerSFML::Animation}}
+\doxysubsubsection{\texorpdfstring{isPlaying()}{isPlaying()}}
+{\footnotesize\ttfamily bool turbohiker\+S\+F\+M\+L\+::\+Animation\+::is\+Playing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+is playing? \mbox{\Hypertarget{classturbohikerSFML_1_1Animation_a6cb0d802faa3a972b98e66832c0ab9d1}\label{classturbohikerSFML_1_1Animation_a6cb0d802faa3a972b98e66832c0ab9d1}} 
+\index{turbohikerSFML::Animation@{turbohikerSFML::Animation}!play@{play}}
+\index{play@{play}!turbohikerSFML::Animation@{turbohikerSFML::Animation}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classturbohikerSFML_1_1Animation}{turbohiker\+S\+F\+M\+L\+::\+Animation}} \& turbohiker\+S\+F\+M\+L\+::\+Animation\+::play (\begin{DoxyParamCaption}\item[{sf\+::\+Sprite \&}]{sprite }\end{DoxyParamCaption})}
+
+start playing the animation 
+\begin{DoxyParams}{Parameters}
+{\em sprite} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohikerSFML_1_1Animation_ad5eca4f05d0cb8e20d694ab6bc0aa820}\label{classturbohikerSFML_1_1Animation_ad5eca4f05d0cb8e20d694ab6bc0aa820}} 
+\index{turbohikerSFML::Animation@{turbohikerSFML::Animation}!setDuration@{setDuration}}
+\index{setDuration@{setDuration}!turbohikerSFML::Animation@{turbohikerSFML::Animation}}
+\doxysubsubsection{\texorpdfstring{setDuration()}{setDuration()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classturbohikerSFML_1_1Animation}{turbohiker\+S\+F\+M\+L\+::\+Animation}} \& turbohiker\+S\+F\+M\+L\+::\+Animation\+::set\+Duration (\begin{DoxyParamCaption}\item[{double}]{duration }\end{DoxyParamCaption})}
+
+change the duration of this animation 
+\begin{DoxyParams}{Parameters}
+{\em duration} & \+: in seconds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohikerSFML_1_1Animation_a68455aaa7eedb40741ae0f2beaf8f7e5}\label{classturbohikerSFML_1_1Animation_a68455aaa7eedb40741ae0f2beaf8f7e5}} 
+\index{turbohikerSFML::Animation@{turbohikerSFML::Animation}!setRate@{setRate}}
+\index{setRate@{setRate}!turbohikerSFML::Animation@{turbohikerSFML::Animation}}
+\doxysubsubsection{\texorpdfstring{setRate()}{setRate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classturbohikerSFML_1_1Animation}{turbohiker\+S\+F\+M\+L\+::\+Animation}} \& turbohiker\+S\+F\+M\+L\+::\+Animation\+::set\+Rate (\begin{DoxyParamCaption}\item[{double}]{framerate }\end{DoxyParamCaption})}
+
+change the framerate of the animation 
+\begin{DoxyParams}{Parameters}
+{\em framerate} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohikerSFML_1_1Animation_a547bd4b5f892298f55925466a51ba8a8}\label{classturbohikerSFML_1_1Animation_a547bd4b5f892298f55925466a51ba8a8}} 
+\index{turbohikerSFML::Animation@{turbohikerSFML::Animation}!stop@{stop}}
+\index{stop@{stop}!turbohikerSFML::Animation@{turbohikerSFML::Animation}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classturbohikerSFML_1_1Animation}{turbohiker\+S\+F\+M\+L\+::\+Animation}} \& turbohiker\+S\+F\+M\+L\+::\+Animation\+::stop (\begin{DoxyParamCaption}\item[{sf\+::\+Sprite \&}]{sprite }\end{DoxyParamCaption})}
+
+stops playing the animation, resets internal state 
+\begin{DoxyParams}{Parameters}
+{\em sprite} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohikerSFML_1_1Animation_a6c427641cf21c1fdb50ad2bd1f00413f}\label{classturbohikerSFML_1_1Animation_a6c427641cf21c1fdb50ad2bd1f00413f}} 
+\index{turbohikerSFML::Animation@{turbohikerSFML::Animation}!update@{update}}
+\index{update@{update}!turbohikerSFML::Animation@{turbohikerSFML::Animation}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classturbohikerSFML_1_1Animation}{turbohiker\+S\+F\+M\+L\+::\+Animation}} \& turbohiker\+S\+F\+M\+L\+::\+Animation\+::update (\begin{DoxyParamCaption}\item[{double}]{delta,  }\item[{sf\+::\+Sprite \&}]{sprite }\end{DoxyParamCaption})}
+
+must be called each game frame, delta in seconds and a reference to sprite 
+\begin{DoxyParams}{Parameters}
+{\em delta} & \\
+\hline
+{\em sprite} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Source/presentation/Animation.\+h\end{DoxyCompactItemize}
+Source/presentation/Animation.\+h\item 
+Source/presentation/Animation.\+cpp\end{DoxyCompactItemize}

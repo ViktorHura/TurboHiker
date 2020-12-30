@@ -1,0 +1,100 @@
+\hypertarget{classturbohiker_1_1RacingHiker}{}\doxysection{turbohiker\+::Racing\+Hiker Class Reference}
+\label{classturbohiker_1_1RacingHiker}\index{turbohiker::RacingHiker@{turbohiker::RacingHiker}}
+
+
+abstract class to handle competing hiker logic  
+
+
+
+
+{\ttfamily \#include $<$Racing\+Hiker.\+h$>$}
+
+
+
+Inheritance diagram for turbohiker\+::Racing\+Hiker\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{classturbohiker_1_1RacingHiker__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for turbohiker\+::Racing\+Hiker\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classturbohiker_1_1RacingHiker__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classturbohiker_1_1RacingHiker_aabfcdcdb0d2e1e73221031c7b8288b0a}\label{classturbohiker_1_1RacingHiker_aabfcdcdb0d2e1e73221031c7b8288b0a}} 
+{\bfseries Racing\+Hiker} (int i)
+\item 
+e\+Type \mbox{\hyperlink{classturbohiker_1_1RacingHiker_a84e8c911ed0bdf0a7336e30d33e35ae8}{type}} () override
+\item 
+void \mbox{\hyperlink{classturbohiker_1_1RacingHiker_a2390d160ae9a84fc36c4b0fdbf52a52f}{update}} (const double \&delta) override
+\item 
+\mbox{\Hypertarget{classturbohiker_1_1RacingHiker_a50e9cd03ad628a649276efcc6ad0d84c}\label{classturbohiker_1_1RacingHiker_a50e9cd03ad628a649276efcc6ad0d84c}} 
+void {\bfseries change\+Lane} ()
+\item 
+\mbox{\Hypertarget{classturbohiker_1_1RacingHiker_a3f0cff67f5041ac99d4d6508c4c3ef3d}\label{classturbohiker_1_1RacingHiker_a3f0cff67f5041ac99d4d6508c4c3ef3d}} 
+void {\bfseries slow\+Down} ()
+\item 
+\mbox{\Hypertarget{classturbohiker_1_1RacingHiker_affa5b7bbefc8e3accac5edc793375bc7}\label{classturbohiker_1_1RacingHiker_affa5b7bbefc8e3accac5edc793375bc7}} 
+void {\bfseries speed\+Up} ()
+\item 
+\mbox{\Hypertarget{classturbohiker_1_1RacingHiker_ae8e1274718a47012333b4519539d845d}\label{classturbohiker_1_1RacingHiker_ae8e1274718a47012333b4519539d845d}} 
+virtual void {\bfseries shout} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classturbohiker_1_1RacingHiker_a8590ba97e347f6475577eb1544d99bfb}\label{classturbohiker_1_1RacingHiker_a8590ba97e347f6475577eb1544d99bfb}} 
+const double {\bfseries speed\+\_\+normal} = 5
+\item 
+\mbox{\Hypertarget{classturbohiker_1_1RacingHiker_a4d5711c07cff3faad0f01341c4a230da}\label{classturbohiker_1_1RacingHiker_a4d5711c07cff3faad0f01341c4a230da}} 
+const double {\bfseries speed\+\_\+slow} = 4
+\item 
+\mbox{\Hypertarget{classturbohiker_1_1RacingHiker_aab4f188884e68df1a222d306ccf15988}\label{classturbohiker_1_1RacingHiker_aab4f188884e68df1a222d306ccf15988}} 
+const double {\bfseries speed\+\_\+fast} = 6
+\item 
+\mbox{\Hypertarget{classturbohiker_1_1RacingHiker_a93f8e2683b8e99f970dd884399c5095e}\label{classturbohiker_1_1RacingHiker_a93f8e2683b8e99f970dd884399c5095e}} 
+double {\bfseries cooldown} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+abstract class to handle competing hiker logic 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classturbohiker_1_1RacingHiker_a84e8c911ed0bdf0a7336e30d33e35ae8}\label{classturbohiker_1_1RacingHiker_a84e8c911ed0bdf0a7336e30d33e35ae8}} 
+\index{turbohiker::RacingHiker@{turbohiker::RacingHiker}!type@{type}}
+\index{type@{type}!turbohiker::RacingHiker@{turbohiker::RacingHiker}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily turbohiker\+::e\+Type turbohiker\+::\+Racing\+Hiker\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+get entity type 
+
+Reimplemented from \mbox{\hyperlink{classturbohiker_1_1Entity_a541abe045ccb89baee34df5613b03d1a}{turbohiker\+::\+Entity}}.
+
+\mbox{\Hypertarget{classturbohiker_1_1RacingHiker_a2390d160ae9a84fc36c4b0fdbf52a52f}\label{classturbohiker_1_1RacingHiker_a2390d160ae9a84fc36c4b0fdbf52a52f}} 
+\index{turbohiker::RacingHiker@{turbohiker::RacingHiker}!update@{update}}
+\index{update@{update}!turbohiker::RacingHiker@{turbohiker::RacingHiker}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void turbohiker\+::\+Racing\+Hiker\+::update (\begin{DoxyParamCaption}\item[{const double \&}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+will update the entity\textquotesingle{}s internal state 
+
+Implements \mbox{\hyperlink{classturbohiker_1_1Entity_ab3900ff699741280f5d7dbfee3dfe039}{turbohiker\+::\+Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Source/turbohiker/Racing\+Hiker.\+h\item 
+Source/turbohiker/Racing\+Hiker.\+cpp\end{DoxyCompactItemize}

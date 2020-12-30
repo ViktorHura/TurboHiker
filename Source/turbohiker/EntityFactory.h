@@ -10,6 +10,7 @@
 #include "Background.h"
 #include "PassingHiker1.h"
 #include "PassingHiker2.h"
+#include "RacingHiker.h"
 #include <memory>
 
 namespace turbohiker {
@@ -30,6 +31,8 @@ namespace turbohiker {
         virtual turbohiker::PassingHiker1* makePassingHiker1() = 0;
 
         virtual turbohiker::PassingHiker2* makePassingHiker2(const int& initialLane) = 0;
+
+        virtual turbohiker::RacingHiker* makeRacingHiker() = 0;
     };
 }
 

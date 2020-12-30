@@ -34,20 +34,7 @@ void turbohiker::PassingHiker2::handleShout() {
     return;
   }
 
-  switch (position().getLane()) {
-  case 0:
-    desiredLane = 1;
-    break;
-  case 1:
-    desiredLane = 0;
-    break;
-  case 2:
-    desiredLane = 3;
-    break;
-  case 3:
-    desiredLane = 2;
-    break;
-  }
+  desiredLane = Utils::nextLane(position().getLane());
 
   react();
 }

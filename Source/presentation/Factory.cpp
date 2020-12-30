@@ -9,6 +9,7 @@
 #include "PassingHiker1.h"
 #include "PassingHiker2.h"
 #include "Player.h"
+#include "RacingHiker.h"
 #include <memory>
 
 turbohikerSFML::Factory::Factory(std::weak_ptr<sf::RenderWindow> w) {
@@ -32,4 +33,9 @@ turbohikerSFML::Factory::makePassingHiker2(const int &initialLane) {
   auto p = new turbohikerSFML::PassingHiker2(window);
   p->setDesired(initialLane);
   return p;
+}
+
+turbohiker::RacingHiker *turbohikerSFML::Factory::makeRacingHiker() {
+    i++;
+    return new turbohikerSFML::RacingHiker(window, i);
 }

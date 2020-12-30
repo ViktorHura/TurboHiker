@@ -14,6 +14,7 @@ namespace turbohiker
         BackT,
         PassHT1,
         PassHT2,
+        RacingH,
     };
 
     /**
