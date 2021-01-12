@@ -42,5 +42,5 @@ turbohiker::RacingHiker *turbohikerSFML::Factory::makeRacingHiker() {
 }
 
 turbohiker::ScoreObserver *turbohikerSFML::Factory::makeScoreObserver() {
-    return new turbohikerSFML::Scoreboard(window);
+  return new turbohikerSFML::Scoreboard(window);
 }

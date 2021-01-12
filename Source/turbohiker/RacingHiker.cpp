@@ -15,9 +15,9 @@ turbohiker::RacingHiker::RacingHiker(int i) {
 turbohiker::eType turbohiker::RacingHiker::type() { return RacingH; }
 
 void turbohiker::RacingHiker::update(const double &delta) {
-    if (frozen){
-        return;
-    }
+  if (frozen) {
+    return;
+  }
   Vector vel(0, 1);
 
   double destination = -3 + 2 * desiredlane;

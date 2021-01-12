@@ -6,9 +6,9 @@
 #include <iostream>
 
 void turbohiker::Player::update(const double &delta) {
-    if (frozen){
-        return;
-    }
+  if (frozen) {
+    return;
+  }
 
   Vector vel = Vector(0, 1);
   if (u) {
@@ -57,4 +57,3 @@ turbohiker::Player::Player() {
   setPos(Vector(3, 0));
   score_id = 3;
 }
-

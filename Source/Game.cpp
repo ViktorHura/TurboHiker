@@ -55,9 +55,9 @@ void Game::run() {
       if (event.type == sf::Event::EventType::KeyPressed) {
         if (!gameStarted) {
           gameStarted = true;
-        }else if (world->gameOver() and event.key == 57) {
-            reset();
-            continue;
+        } else if (world->gameOver() and event.key == 57) {
+          reset();
+          continue;
         } else {
           world->handleInput(event.key,
                              true); // pass keydown event to the world
@@ -100,13 +100,13 @@ void Game::initStartScreen() {
 }
 
 void Game::reset() {
-    turbohikerSFML::Transformation::instance()->reset();
+  turbohikerSFML::Transformation::instance()->reset();
 
-    // make entity factory
-    std::unique_ptr<turbohiker::EntityFactory> factory =
-            std::make_unique<turbohikerSFML::Factory>(window);
+  // make entity factory
+  std::unique_ptr<turbohiker::EntityFactory> factory =
+      std::make_unique<turbohikerSFML::Factory>(window);
 
-    // create world and give it a factory
-    world.reset();
-    world = std::make_unique<turbohiker::World>(std::move(factory));
+  // create world and give it a factory
+  world.reset();
+  world = std::make_unique<turbohiker::World>(std::move(factory));
 }

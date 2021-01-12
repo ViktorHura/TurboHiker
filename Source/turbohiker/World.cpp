@@ -68,7 +68,7 @@ void turbohiker::World::handleInput(const int &key, bool keydown) {
       entities[1].get()); // second entity will always be player thus static
   if (key == 57 and keydown) { // space
     player->shout();
-    handleShout(player->position(),player->scoreId());
+    handleShout(player->position(), player->scoreId());
   } else {
     player->handleInput(key, keydown); // let player handle the input
   }
@@ -94,7 +94,7 @@ void turbohiker::World::handlePhysics(const double &delta) {
 void turbohiker::World::handleCollisions(std::unique_ptr<Entity> &entity,
                                          const double &delta) {
 
-    std::set<std::set<int>> collisions;
+  std::set<std::set<int>> collisions;
 
   entity->setNextPos(
       calcNewPos(entity, delta)); // calculate the next potential pos
@@ -105,10 +105,10 @@ void turbohiker::World::handleCollisions(std::unique_ptr<Entity> &entity,
     } // don't check for itself
 
     if (areColliding(ep, entity)) {
-        std::set<int> collision;
-        collision.insert(entity->scoreId());
-        collision.insert(ep->scoreId());
-        collisions.insert(collision);
+      std::set<int> collision;
+      collision.insert(entity->scoreId());
+      collision.insert(ep->scoreId());
+      collisions.insert(collision);
 
       Vector away = entity->nextpos().add(
           ep->nextpos().scalar(-1)); // vector from other entity to entity
@@ -131,7 +131,7 @@ void turbohiker::World::handleCollisions(std::unique_ptr<Entity> &entity,
         Vector(-entity->velocity().x(), 0))); // remove horizontal component
   }
 
-    updateCollisionScores(collisions, delta);
+  updateCollisionScores(collisions, delta);
 }
 
 Vector turbohiker::World::calcNewPos(std::unique_ptr<Entity> &entity,
@@ -273,7 +273,7 @@ void turbohiker::World::handleShout(const Vector &player_pos, int originator) {
       auto hiker = dynamic_cast<turbohiker::PassingHiker1 *>(entities[i].get());
       if (hiker != nullptr) { // it's first type
         hiker->handleShout();
-        score->notify( originator, 3);
+        score->notify(originator, 3);
         break;
       }
       auto hiker2 =
@@ -281,7 +281,7 @@ void turbohiker::World::handleShout(const Vector &player_pos, int originator) {
       // second type
       if (hiker2 != nullptr) { // it's second type
         hiker2->handleShout();
-          score->notify( originator, 4);
+        score->notify(originator, 4);
         break;
       }
     }
@@ -401,43 +401,42 @@ turbohiker::World::distanceEnemy(turbohiker::RacingHiker *npc) {
 }
 
 void turbohiker::World::checkFinish() {
-    for (int i = 1; i < 5;i++) { // player and npc's
-        double topPos = entities[i]->position().y() + entities[i]->size().y()/2;
-        if (topPos > 186){
-            entities[i]->freeze();
-        }else if(topPos > 180){
-            if(score->notify(entities[i]->scoreId(),5)){
-                finished = true;
-            };
-        }
+  for (int i = 1; i < 5; i++) { // player and npc's
+    double topPos = entities[i]->position().y() + entities[i]->size().y() / 2;
+    if (topPos > 186) {
+      entities[i]->freeze();
+    } else if (topPos > 180) {
+      if (score->notify(entities[i]->scoreId(), 5)) {
+        finished = true;
+      };
     }
+  }
 }
 
-void turbohiker::World::updateCollisionScores(const std::set<std::set<int>> &new_set, const double& delta) {
-    for (const auto& collision : new_set){
-        int first = *std::next(collision.begin(), 0);
-        int second = *std::next(collision.begin(), 1);
+void turbohiker::World::updateCollisionScores(
+    const std::set<std::set<int>> &new_set, const double &delta) {
+  for (const auto &collision : new_set) {
+    int first = *std::next(collision.begin(), 0);
+    int second = *std::next(collision.begin(), 1);
 
-        if (first < 0 and second < 0){ // two passing hikers hit each other
-            continue;
-        }else if(first > 0 and second > 0){ // both are competing hikers
-            score->notify(first,2, delta);
-            score->notify(second,2, delta);
-        }else{
-            int subject;
-            int action;
-            if (first > 0){
-                subject = first;
-                action = std::abs(second)-1;
-            }else{
-                subject = second;
-                action = std::abs(first)-1;
-            }
-            score->notify(subject,action, delta);
-        }
+    if (first < 0 and second < 0) { // two passing hikers hit each other
+      continue;
+    } else if (first > 0 and second > 0) { // both are competing hikers
+      score->notify(first, 2, delta);
+      score->notify(second, 2, delta);
+    } else {
+      int subject;
+      int action;
+      if (first > 0) {
+        subject = first;
+        action = std::abs(second) - 1;
+      } else {
+        subject = second;
+        action = std::abs(first) - 1;
+      }
+      score->notify(subject, action, delta);
     }
+  }
 }
 
-bool turbohiker::World::gameOver() {
-    return finished;
-}
+bool turbohiker::World::gameOver() { return finished; }

@@ -49,17 +49,12 @@ turbohiker::Entity &turbohiker::Entity::setMass(const double &m) {
   return *this;
 }
 
-int turbohiker::Entity::scoreId() {
-    return score_id;
-}
+int turbohiker::Entity::scoreId() { return score_id; }
 
 void turbohiker::Entity::freeze() {
-    frozen = true;
-    setVel(Vector(0,0));
-    setPos(Vector(-3 + scoreId() * 2,position().y()+5));
-
+  frozen = true;
+  setVel(Vector(0, 0));
+  setPos(Vector(-3 + scoreId() * 2, position().y() + 5));
 }
 
-void turbohiker::Entity::unfreeze() {
-    frozen = false;
-}
+void turbohiker::Entity::unfreeze() { frozen = false; }

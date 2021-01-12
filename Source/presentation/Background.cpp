@@ -46,7 +46,7 @@ void turbohikerSFML::Background::draw(const double &delta) {
     }
   }
 
-  finish.setPosition(Transformation::instance()->pos(Vector(-2.5,176)));
+  finish.setPosition(Transformation::instance()->pos(Vector(-2.5, 176)));
   w->draw(finish);
 }
 
@@ -97,13 +97,13 @@ turbohikerSFML::Background::Background(std::weak_ptr<sf::RenderWindow> w) {
 
   // finish sprite
 
-    propTexture.loadFromFile("../Resources/PNG/environment/props.png");
-    // create chain sprite
-    finish.setTexture(propTexture);
-    // select chain from texture
-    finish.setTextureRect(sf::IntRect(432, 41, 92, 231));
-    // rescale
-    Transformation::instance()->rescaleSprite(Vector(1.5, 4), finish);
+  propTexture.loadFromFile("../Resources/PNG/environment/props.png");
+  // create chain sprite
+  finish.setTexture(propTexture);
+  // select chain from texture
+  finish.setTextureRect(sf::IntRect(432, 41, 92, 231));
+  // rescale
+  Transformation::instance()->rescaleSprite(Vector(1.5, 4), finish);
 
-    finish.rotate(180);
+  finish.rotate(180);
 }
