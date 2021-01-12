@@ -83,11 +83,18 @@ namespace turbohikerSFML {
         float x(const double &x) const;
 
         /**
-         * converts [-3,3] y coords to pixel coords in [window_height, 0]
+         * converts [-3,3] y coords to pixel coords in [window_height, 0], adjusting for camera
          * @param y
          * @return
          */
         float y(const double &y) const;
+
+        /**
+         * converts [-3,3] y coords to pixel coords in [window_height, 0], ignoring camera
+         * @param y
+         * @return
+         */
+        float yFixed(const double &y) const;
 
         /**
          * converts position vector
@@ -95,6 +102,13 @@ namespace turbohikerSFML {
          * @return
          */
         sf::Vector2f pos(const turbohiker::Utils::Vector& vec) const;
+
+        /**
+         * converts position vector, without accounting for the camera
+         * @param vec
+         * @return
+         */
+        sf::Vector2f posFixed(const turbohiker::Utils::Vector& vec) const;
 
         /**
          * converts size vector
@@ -110,6 +124,7 @@ namespace turbohikerSFML {
          */
         void rescaleSprite(const turbohiker::Utils::Vector& size, sf::Sprite& sprite);
 
+        void reset();
     };
 }
 

@@ -8,7 +8,9 @@
 #include <vector>
 #include "Entity.h"
 #include "EntityFactory.h"
+#include "ScoreSubject.h"
 #include <memory>
+#include <set>
 
 namespace turbohiker {
 
@@ -28,6 +30,8 @@ namespace turbohiker {
         std::vector<std::unique_ptr<Entity>> entities;
         std::unique_ptr<EntityFactory> factory;
 
+        std::unique_ptr<ScoreSubject> score;
+
         double sectionSize = 10;
         double section = 0;
         double maxSpawnVar = 8;
@@ -37,6 +41,9 @@ namespace turbohiker {
 
         bool canSpeed = false; // can npc's speed up yet?
                                 // flag will be set after first section, to give player a small head start
+
+        bool finished = false;
+
         void updateSection();
 
         void newSection();
@@ -55,7 +62,7 @@ namespace turbohiker {
         void prunePassingHikers();
 
         /// find the right passing hiker and invoke shout on it
-        void handleShout(const Vector& player_pos);
+        void handleShout(const Vector& player_pos, int originator);
 
         /// check and resolve collisions for a given entity
         void handleCollisions(std::unique_ptr<Entity>& entity, const double& delta);
@@ -72,6 +79,9 @@ namespace turbohiker {
         /// distance to closest enemy on same lane, 0 if no enemy in sight and type of enemy
         std::tuple<double, bool> distanceEnemy(turbohiker::RacingHiker * npc);
 
+        void checkFinish();
+
+        void updateCollisionScores(const std::set<std::set<int>>& new_set, const double& delta);
     public:
         eType type() override;
 
@@ -95,9 +105,11 @@ namespace turbohiker {
         /**
          * forwards inputs to player
          * @param key
+         * @param keydown
          */
         void handleInput(const int& key, bool keydown);
 
+        bool gameOver();
     };
 }
 

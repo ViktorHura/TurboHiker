@@ -9,11 +9,15 @@ turbohiker::RacingHiker::RacingHiker(int i) {
   setSpeed(speed_normal);
   setMass(0.5);
   desiredlane = i;
+  score_id = i;
 }
 
 turbohiker::eType turbohiker::RacingHiker::type() { return RacingH; }
 
 void turbohiker::RacingHiker::update(const double &delta) {
+    if (frozen){
+        return;
+    }
   Vector vel(0, 1);
 
   double destination = -3 + 2 * desiredlane;

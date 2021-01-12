@@ -11,6 +11,7 @@
 #include "PassingHiker1.h"
 #include "PassingHiker2.h"
 #include "RacingHiker.h"
+#include "ScoreObserver.h"
 #include <memory>
 
 namespace turbohiker {
@@ -33,6 +34,8 @@ namespace turbohiker {
         virtual turbohiker::PassingHiker2* makePassingHiker2(const int& initialLane) = 0;
 
         virtual turbohiker::RacingHiker* makeRacingHiker() = 0;
+
+        virtual turbohiker::ScoreObserver* makeScoreObserver() = 0;
     };
 }
 

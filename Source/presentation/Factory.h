@@ -22,6 +22,7 @@ namespace turbohikerSFML {
     class Factory : public turbohiker::EntityFactory {
         /// weak pointer to the window object
         std::weak_ptr<sf::RenderWindow> window;
+        /// npc counter
         int i = -1;
     public:
         /**
@@ -54,7 +55,17 @@ namespace turbohikerSFML {
          */
         turbohiker::PassingHiker2* makePassingHiker2(const int& initialLane) override;
 
+        /**
+         * makes racinghiker
+         * @return
+         */
         turbohiker::RacingHiker* makeRacingHiker() override;
+
+        /**
+         * makes scoreboard
+         * @return
+         */
+        turbohiker::ScoreObserver* makeScoreObserver() override;
     };
 }
 

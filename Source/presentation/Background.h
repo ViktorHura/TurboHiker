@@ -27,6 +27,9 @@ namespace turbohikerSFML {
 
         sf::Texture tilesTexture;
 
+        sf::Texture propTexture;
+        sf::Sprite finish;
+
         std::vector<sf::Sprite> backgroundSprites;
         std::vector<sf::Sprite> midgroundSprites;
 

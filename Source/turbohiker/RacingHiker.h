@@ -15,7 +15,6 @@ namespace turbohiker {
      * \brief abstract class to handle competing hiker logic
      */
     class RacingHiker : public Entity{
-        int action = 0;
         int desiredlane = 0;
 
     public:

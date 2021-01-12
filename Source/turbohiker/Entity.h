@@ -32,11 +32,23 @@ namespace turbohiker
         Vector size_{};
         double speed = 0;
         double mass_ = 1;
+    protected:
+        int score_id = 5;
+        bool frozen = false;
     public:
         /**
          * get entity type
          */
          virtual eType type();
+
+         /**
+          * get score id
+          */
+        virtual int scoreId();
+
+        void freeze();
+
+        void unfreeze();
 
         /**
          * draws the entity on screen

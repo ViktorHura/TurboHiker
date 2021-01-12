@@ -17,10 +17,14 @@ void turbohiker::World::update(const double &delta) {
     ep->update(delta);
   }
 
+  // make the npc's choose their moves
   updateNpcLogic(delta);
 
   // will check if velocity valid and actually update their positions
   handlePhysics(delta);
+
+  // check who has finished
+  checkFinish();
 }
 
 void turbohiker::World::draw(const double &delta) {
@@ -28,10 +32,18 @@ void turbohiker::World::draw(const double &delta) {
   for (const auto &ep : entities) {
     ep->draw(delta);
   }
+
+  // draw the scoreboard
+  score->draw(delta);
 }
 
 turbohiker::World::World(std::unique_ptr<EntityFactory> f) {
   factory = std::move(f);
+
+  // makes score subject
+  score = std::make_unique<ScoreSubject>();
+  // subscribes score observer to it
+  score->attach(factory->makeScoreObserver());
 
   // make background entity
   entities.push_back(std::unique_ptr<Entity>(factory->makeBackground()));
@@ -52,11 +64,11 @@ turbohiker::World::World(std::unique_ptr<EntityFactory> f) {
 }
 
 void turbohiker::World::handleInput(const int &key, bool keydown) {
-  auto player = static_cast<turbohiker::Player *>(
+  auto player = dynamic_cast<turbohiker::Player *>(
       entities[1].get()); // second entity will always be player thus static
   if (key == 57 and keydown) { // space
     player->shout();
-    handleShout(player->position());
+    handleShout(player->position(),player->scoreId());
   } else {
     player->handleInput(key, keydown); // let player handle the input
   }
@@ -81,6 +93,9 @@ void turbohiker::World::handlePhysics(const double &delta) {
 
 void turbohiker::World::handleCollisions(std::unique_ptr<Entity> &entity,
                                          const double &delta) {
+
+    std::set<std::set<int>> collisions;
+
   entity->setNextPos(
       calcNewPos(entity, delta)); // calculate the next potential pos
 
@@ -90,6 +105,11 @@ void turbohiker::World::handleCollisions(std::unique_ptr<Entity> &entity,
     } // don't check for itself
 
     if (areColliding(ep, entity)) {
+        std::set<int> collision;
+        collision.insert(entity->scoreId());
+        collision.insert(ep->scoreId());
+        collisions.insert(collision);
+
       Vector away = entity->nextpos().add(
           ep->nextpos().scalar(-1)); // vector from other entity to entity
       double pushforce = (entity->mass() / ep->mass()) *
@@ -110,6 +130,8 @@ void turbohiker::World::handleCollisions(std::unique_ptr<Entity> &entity,
     entity->setVel(entity->velocity().add(
         Vector(-entity->velocity().x(), 0))); // remove horizontal component
   }
+
+    updateCollisionScores(collisions, delta);
 }
 
 Vector turbohiker::World::calcNewPos(std::unique_ptr<Entity> &entity,
@@ -128,7 +150,7 @@ bool turbohiker::World::outOfBounds(std::unique_ptr<Entity> &entity) {
 }
 
 void turbohiker::World::updateSection() {
-  auto player = static_cast<turbohiker::Player *>(entities[1].get());
+  auto player = dynamic_cast<turbohiker::Player *>(entities[1].get());
 
   double sec = player->position().y() / sectionSize; // get player section
 
@@ -214,7 +236,7 @@ void turbohiker::World::spawnHiker(const int &lane) {
 }
 
 void turbohiker::World::prunePassingHikers() {
-  auto player = static_cast<turbohiker::Player *>(
+  auto player = dynamic_cast<turbohiker::Player *>(
       entities[1].get()); // player always will be second entity
 
   std::vector<int> to_delete;
@@ -238,7 +260,7 @@ void turbohiker::World::prunePassingHikers() {
   }
 }
 
-void turbohiker::World::handleShout(const Vector &player_pos) {
+void turbohiker::World::handleShout(const Vector &player_pos, int originator) {
   int player_lane = player_pos.getLane();
 
   for (int i = 0; i < entities.size(); i++) { // find the entity to shout at
@@ -251,13 +273,15 @@ void turbohiker::World::handleShout(const Vector &player_pos) {
       auto hiker = dynamic_cast<turbohiker::PassingHiker1 *>(entities[i].get());
       if (hiker != nullptr) { // it's first type
         hiker->handleShout();
+        score->notify( originator, 3);
         break;
       }
       auto hiker2 =
           dynamic_cast<turbohiker::PassingHiker2 *>(entities[i].get());
       // second type
-      if (hiker2 != nullptr) { // it's first type
+      if (hiker2 != nullptr) { // it's second type
         hiker2->handleShout();
+          score->notify( originator, 4);
         break;
       }
     }
@@ -286,7 +310,7 @@ bool turbohiker::World::areColliding(std::unique_ptr<Entity> &e1,
 
 void turbohiker::World::updateNpcLogic(const double &delta) {
   for (int i = 2; i < 5; i++) { // [2-4] will always be the npc players
-    auto npc = static_cast<turbohiker::RacingHiker *>(entities[i].get());
+    auto npc = dynamic_cast<turbohiker::RacingHiker *>(entities[i].get());
 
     npc->cooldown -= delta; // decrement cooldown
     if (npc->cooldown <= 0) {
@@ -309,7 +333,7 @@ void turbohiker::World::updateNpcLogic(const double &delta) {
         if (type) {         // if stationary hiker
           if (rand < 0.6) { // try to shout rather than avoid
             npc->shout();
-            handleShout(npc->position());
+            handleShout(npc->position(), npc->scoreId());
             npc->cooldown = 0.10;
           } else {
             npc->changeLane();
@@ -318,7 +342,7 @@ void turbohiker::World::updateNpcLogic(const double &delta) {
         } else {            // moving hiker
           if (rand < 0.3) { // try to avoid rather than shout
             npc->shout();
-            handleShout(npc->position());
+            handleShout(npc->position(), npc->scoreId());
             npc->cooldown = 0.10;
           } else {
             npc->changeLane();
@@ -374,4 +398,46 @@ turbohiker::World::distanceEnemy(turbohiker::RacingHiker *npc) {
   }
 
   return {dist, type};
+}
+
+void turbohiker::World::checkFinish() {
+    for (int i = 1; i < 5;i++) { // player and npc's
+        double topPos = entities[i]->position().y() + entities[i]->size().y()/2;
+        if (topPos > 186){
+            entities[i]->freeze();
+        }else if(topPos > 180){
+            if(score->notify(entities[i]->scoreId(),5)){
+                finished = true;
+            };
+        }
+    }
+}
+
+void turbohiker::World::updateCollisionScores(const std::set<std::set<int>> &new_set, const double& delta) {
+    for (const auto& collision : new_set){
+        int first = *std::next(collision.begin(), 0);
+        int second = *std::next(collision.begin(), 1);
+
+        if (first < 0 and second < 0){ // two passing hikers hit each other
+            continue;
+        }else if(first > 0 and second > 0){ // both are competing hikers
+            score->notify(first,2, delta);
+            score->notify(second,2, delta);
+        }else{
+            int subject;
+            int action;
+            if (first > 0){
+                subject = first;
+                action = std::abs(second)-1;
+            }else{
+                subject = second;
+                action = std::abs(first)-1;
+            }
+            score->notify(subject,action, delta);
+        }
+    }
+}
+
+bool turbohiker::World::gameOver() {
+    return finished;
 }

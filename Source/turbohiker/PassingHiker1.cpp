@@ -17,6 +17,7 @@ turbohiker::PassingHiker1::PassingHiker1() {
   setSpeed(speed);
   setVel(Vector(0, -1)); // moving toward player
   setMass(2);
+  score_id = -1;
 }
 
 void turbohiker::PassingHiker1::handleShout() {

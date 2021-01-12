@@ -3,7 +3,6 @@
 //
 
 #include "Entity.h"
-#include <iostream>
 
 Vector turbohiker::Entity::position() const { return pos; }
 
@@ -48,4 +47,19 @@ double turbohiker::Entity::mass() const { return mass_; }
 turbohiker::Entity &turbohiker::Entity::setMass(const double &m) {
   mass_ = m;
   return *this;
+}
+
+int turbohiker::Entity::scoreId() {
+    return score_id;
+}
+
+void turbohiker::Entity::freeze() {
+    frozen = true;
+    setVel(Vector(0,0));
+    setPos(Vector(-3 + scoreId() * 2,position().y()+5));
+
+}
+
+void turbohiker::Entity::unfreeze() {
+    frozen = false;
 }

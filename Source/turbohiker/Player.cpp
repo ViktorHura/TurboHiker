@@ -6,6 +6,10 @@
 #include <iostream>
 
 void turbohiker::Player::update(const double &delta) {
+    if (frozen){
+        return;
+    }
+
   Vector vel = Vector(0, 1);
   if (u) {
     setSpeed(speed_fast); // speed up
@@ -51,4 +55,6 @@ turbohiker::Player::Player() {
   setSpeed(speed_normal);
   setMass(1);
   setPos(Vector(3, 0));
+  score_id = 3;
 }
+

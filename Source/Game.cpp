@@ -1,11 +1,9 @@
 #include "Game.h"
 #include <chrono>
-#include <iostream>
 #include <memory>
 
 #include "presentation/Factory.h"
 #include "presentation/Transformation.h"
-#include "turbohiker/EntityFactory.h"
 
 using namespace std::chrono;
 
@@ -57,6 +55,9 @@ void Game::run() {
       if (event.type == sf::Event::EventType::KeyPressed) {
         if (!gameStarted) {
           gameStarted = true;
+        }else if (world->gameOver() and event.key == 57) {
+            reset();
+            continue;
         } else {
           world->handleInput(event.key,
                              true); // pass keydown event to the world
@@ -86,7 +87,7 @@ void Game::run() {
 void Game::drawStartScreen() { window->draw(startText); }
 
 void Game::initStartScreen() {
-  font.loadFromFile("../Resources/fonts/arial.ttf");
+  font.loadFromFile("../Resources/fonts/Arial Unicode MS.ttf");
   startText.setFont(font);
   startText.setString("press any key to start");
   startText.setCharacterSize(
@@ -96,4 +97,16 @@ void Game::initStartScreen() {
                         turbohikerSFML::Transformation::instance()->y(0));
 
   startText.setFillColor(sf::Color::White);
+}
+
+void Game::reset() {
+    turbohikerSFML::Transformation::instance()->reset();
+
+    // make entity factory
+    std::unique_ptr<turbohiker::EntityFactory> factory =
+            std::make_unique<turbohikerSFML::Factory>(window);
+
+    // create world and give it a factory
+    world.reset();
+    world = std::make_unique<turbohiker::World>(std::move(factory));
 }

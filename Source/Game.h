@@ -31,6 +31,8 @@ class Game {
     /// inits start screen
     void initStartScreen();
 
+    void reset();
+
 public:
     /**
      * Constructs the game, world, opens the window and starts the game loop
@@ -41,7 +43,6 @@ public:
      * @param height initial height of window in pixels
      */
     Game(int width, int height);
-
 
 
 };

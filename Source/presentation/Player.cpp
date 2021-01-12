@@ -37,7 +37,8 @@ void turbohikerSFML::Player::draw(const double &delta) {
   }
 
   // bouding rectangle for debug
-  /*sf::RectangleShape rectangle(Transformation::instance()->size(size()));
+  /*
+  sf::RectangleShape rectangle(Transformation::instance()->size(size()));
   rectangle.setPosition(Transformation::instance()->pos(position().add(Vector(-size().x()/2,
   -size().y()/2))));
 

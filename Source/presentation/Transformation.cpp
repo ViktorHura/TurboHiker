@@ -38,7 +38,7 @@ float turbohikerSFML::Transformation::y(const double &y) const {
   std::shared_ptr<sf::RenderWindow> w =
       window.lock(); // share window temporarily
 
-  return (double(w->getSize().y) / 2.0 -
+  return static_cast<float>(double(w->getSize().y) / 2.0 -
           double(w->getSize().y) / 6.0 * (y - y_pos)); // narrowing to float
 }
 
@@ -46,7 +46,7 @@ float turbohikerSFML::Transformation::x(const double &x) const {
   std::shared_ptr<sf::RenderWindow> w =
       window.lock(); // share window temporarily
 
-  return (double(w->getSize().x) / 8.0 * x +
+  return static_cast<float>(double(w->getSize().x) / 8.0 * x +
           double(w->getSize().x) / 2.0); // narrowing to float
 }
 
@@ -92,3 +92,21 @@ double turbohikerSFML::Transformation::getYdelta() const { return y_delta; }
 double turbohikerSFML::Transformation::getPspeed() { return p_speed; }
 
 void turbohikerSFML::Transformation::setPspeed(const double &p) { p_speed = p; }
+
+sf::Vector2f turbohikerSFML::Transformation::posFixed(const turbohiker::Utils::Vector &vec) const {
+    return {x(vec.x()), yFixed(vec.y())};
+}
+
+float turbohikerSFML::Transformation::yFixed(const double &y) const {
+    std::shared_ptr<sf::RenderWindow> w =
+            window.lock(); // share window temporarily
+
+    return static_cast<float>(double(w->getSize().y) / 2.0 -
+            double(w->getSize().y) / 6.0 * (y)); // narrowing to float
+}
+
+void turbohikerSFML::Transformation::reset() {
+    y_pos = 0;
+    y_pos_old = 0;
+    y_delta = 0;
+}

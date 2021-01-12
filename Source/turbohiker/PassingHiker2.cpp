@@ -10,6 +10,7 @@ turbohiker::PassingHiker2::PassingHiker2() {
   setSpeed(speed);
   setVel(Vector(0, -1)); // moving toward player
   setMass(3);
+  score_id = -2;
 }
 
 turbohiker::eType turbohiker::PassingHiker2::type() { return PassHT2; }
