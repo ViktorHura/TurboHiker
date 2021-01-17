@@ -44,7 +44,6 @@ namespace turbohiker {
          *  3 : shouted at passinghiker 1
          *  4 : shouted at passinghiker 2
          *  5 : arrived at finish
-         *  6 : reset the game
          *
          * @param entity
          * @param action

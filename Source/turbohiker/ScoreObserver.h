@@ -20,7 +20,7 @@ namespace turbohiker {
                 -200, // hit passinghiker 2 (per second)
                 -100, // hit another competitor (per second)
                 -100,  // shouted at passinghiker 1
-                -100,  // shouted at passinghiker 2
+                -50,  // shouted at passinghiker 2
                 1000, // finish bonus constant
         };
 
@@ -48,7 +48,6 @@ namespace turbohiker {
          *  3 : shouted at passinghiker 1
          *  4 : shouted at passinghiker 2
          *  5 : arrived at finish
-         *  6 : reset game
          *
          * @param entity
          * @param action
