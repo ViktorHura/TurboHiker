@@ -12,6 +12,8 @@
 #include <SFML/Graphics/CircleShape.hpp>
 #include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/Text.hpp>
+#include <SFML/Audio/Sound.hpp>
+#include <SFML/Audio/SoundBuffer.hpp>
 #include "../turbohiker/PassingHiker1.h"
 #include "Animation.h"
 
@@ -34,6 +36,9 @@ namespace turbohikerSFML {
 
         sf::Font font;
         sf::Text reactText;
+
+        sf::SoundBuffer pBuf;
+        sf::Sound ping;
 
         static std::vector<std::wstring> reactions;
 

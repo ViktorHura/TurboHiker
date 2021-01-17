@@ -22,22 +22,28 @@ double \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_a78f545d7998f25e2b
 \item 
 void \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_a592e12300a99481d4ebee682fcf0ff9a}{set\+Pspeed}} (const double \&p)
 \item 
-int \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_a9ea0386132d44f433368a3b2290644a0}{text\+Size}} (const double \&\mbox{\hyperlink{classturbohikerSFML_1_1Transformation_ad7953957d32c75fe5641fbf6168ef306}{size}}) const
+unsigned int \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_aa09c0ca76d4e834ee88c5fa370d48821}{text\+Size}} (const double \&\mbox{\hyperlink{classturbohikerSFML_1_1Transformation_ad7953957d32c75fe5641fbf6168ef306}{size}}) const
 \item 
 float \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_af858be989616c7734ade1d972f4ea445}{x}} (const double \&x) const
 \item 
 float \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_a128826c27f43905c1116af52e63d38a2}{y}} (const double \&y) const
 \item 
+float \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_a1e53f3c3ccda09cd5363be9a38d79a38}{y\+Fixed}} (const double \&\mbox{\hyperlink{classturbohikerSFML_1_1Transformation_a128826c27f43905c1116af52e63d38a2}{y}}) const
+\item 
 sf\+::\+Vector2f \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_af417809e903670f64c22141f4309e0a2}{pos}} (const \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{turbohiker\+::\+Utils\+::\+Vector}} \&vec) const
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_a0680c8a8142e573d4df272799c467cd2}{pos\+Fixed}} (const \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{turbohiker\+::\+Utils\+::\+Vector}} \&vec) const
 \item 
 sf\+::\+Vector2f \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_ad7953957d32c75fe5641fbf6168ef306}{size}} (const \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{turbohiker\+::\+Utils\+::\+Vector}} \&vec) const
 \item 
-void \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_a250d08dd9071e7d0180f0c9d211cb8ad}{rescale\+Sprite}} (const \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{turbohiker\+::\+Utils\+::\+Vector}} \&\mbox{\hyperlink{classturbohikerSFML_1_1Transformation_ad7953957d32c75fe5641fbf6168ef306}{size}}, sf\+::\+Sprite \&sprite)
+void \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_ace751a0a712cb06411d51d6a37b2579b}{reset}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{classturbohikerSFML_1_1Transformation}{Transformation}} $\ast$ \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_a97f92a410ca95695c838ed28178d81f7}{instance}} (std\+::weak\+\_\+ptr$<$ sf\+::\+Render\+Window $>$ w=\{\})
+\item 
+static void \mbox{\hyperlink{classturbohikerSFML_1_1Transformation_a250d08dd9071e7d0180f0c9d211cb8ad}{rescale\+Sprite}} (const \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{turbohiker\+::\+Utils\+::\+Vector}} \&\mbox{\hyperlink{classturbohikerSFML_1_1Transformation_ad7953957d32c75fe5641fbf6168ef306}{size}}, sf\+::\+Sprite \&sprite)
 \end{DoxyCompactItemize}
 
 
@@ -93,11 +99,25 @@ converts position vector
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classturbohikerSFML_1_1Transformation_a0680c8a8142e573d4df272799c467cd2}\label{classturbohikerSFML_1_1Transformation_a0680c8a8142e573d4df272799c467cd2}} 
+\index{turbohikerSFML::Transformation@{turbohikerSFML::Transformation}!posFixed@{posFixed}}
+\index{posFixed@{posFixed}!turbohikerSFML::Transformation@{turbohikerSFML::Transformation}}
+\doxysubsubsection{\texorpdfstring{posFixed()}{posFixed()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f turbohiker\+S\+F\+M\+L\+::\+Transformation\+::pos\+Fixed (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{turbohiker\+::\+Utils\+::\+Vector}} \&}]{vec }\end{DoxyParamCaption}) const}
+
+converts position vector, without accounting for the camera 
+\begin{DoxyParams}{Parameters}
+{\em vec} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \mbox{\Hypertarget{classturbohikerSFML_1_1Transformation_a250d08dd9071e7d0180f0c9d211cb8ad}\label{classturbohikerSFML_1_1Transformation_a250d08dd9071e7d0180f0c9d211cb8ad}} 
 \index{turbohikerSFML::Transformation@{turbohikerSFML::Transformation}!rescaleSprite@{rescaleSprite}}
 \index{rescaleSprite@{rescaleSprite}!turbohikerSFML::Transformation@{turbohikerSFML::Transformation}}
 \doxysubsubsection{\texorpdfstring{rescaleSprite()}{rescaleSprite()}}
-{\footnotesize\ttfamily void turbohiker\+S\+F\+M\+L\+::\+Transformation\+::rescale\+Sprite (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{turbohiker\+::\+Utils\+::\+Vector}} \&}]{size,  }\item[{sf\+::\+Sprite \&}]{sprite }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void turbohiker\+S\+F\+M\+L\+::\+Transformation\+::rescale\+Sprite (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classturbohiker_1_1Utils_1_1Vector}{turbohiker\+::\+Utils\+::\+Vector}} \&}]{size,  }\item[{sf\+::\+Sprite \&}]{sprite }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 rescales sprite to a size\+Vector 
 \begin{DoxyParams}{Parameters}
@@ -106,7 +126,13 @@ rescales sprite to a size\+Vector
 {\em sprite} & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classturbohikerSFML_1_1Transformation_a592e12300a99481d4ebee682fcf0ff9a}\label{classturbohikerSFML_1_1Transformation_a592e12300a99481d4ebee682fcf0ff9a}} 
+\mbox{\Hypertarget{classturbohikerSFML_1_1Transformation_ace751a0a712cb06411d51d6a37b2579b}\label{classturbohikerSFML_1_1Transformation_ace751a0a712cb06411d51d6a37b2579b}} 
+\index{turbohikerSFML::Transformation@{turbohikerSFML::Transformation}!reset@{reset}}
+\index{reset@{reset}!turbohikerSFML::Transformation@{turbohikerSFML::Transformation}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void turbohiker\+S\+F\+M\+L\+::\+Transformation\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+resets everything for a new game \mbox{\Hypertarget{classturbohikerSFML_1_1Transformation_a592e12300a99481d4ebee682fcf0ff9a}\label{classturbohikerSFML_1_1Transformation_a592e12300a99481d4ebee682fcf0ff9a}} 
 \index{turbohikerSFML::Transformation@{turbohikerSFML::Transformation}!setPspeed@{setPspeed}}
 \index{setPspeed@{setPspeed}!turbohikerSFML::Transformation@{turbohikerSFML::Transformation}}
 \doxysubsubsection{\texorpdfstring{setPspeed()}{setPspeed()}}
@@ -142,11 +168,11 @@ converts size vector
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classturbohikerSFML_1_1Transformation_a9ea0386132d44f433368a3b2290644a0}\label{classturbohikerSFML_1_1Transformation_a9ea0386132d44f433368a3b2290644a0}} 
+\mbox{\Hypertarget{classturbohikerSFML_1_1Transformation_aa09c0ca76d4e834ee88c5fa370d48821}\label{classturbohikerSFML_1_1Transformation_aa09c0ca76d4e834ee88c5fa370d48821}} 
 \index{turbohikerSFML::Transformation@{turbohikerSFML::Transformation}!textSize@{textSize}}
 \index{textSize@{textSize}!turbohikerSFML::Transformation@{turbohikerSFML::Transformation}}
 \doxysubsubsection{\texorpdfstring{textSize()}{textSize()}}
-{\footnotesize\ttfamily int turbohiker\+S\+F\+M\+L\+::\+Transformation\+::text\+Size (\begin{DoxyParamCaption}\item[{const double \&}]{size }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily unsigned int turbohiker\+S\+F\+M\+L\+::\+Transformation\+::text\+Size (\begin{DoxyParamCaption}\item[{const double \&}]{size }\end{DoxyParamCaption}) const}
 
 converts 1 text\+Size unit to 1/10 screen diagonal 
 \begin{DoxyParams}{Parameters}
@@ -176,7 +202,21 @@ converts \mbox{[}-\/4,4\mbox{]} x coords to pixel coords in \mbox{[}0, window\+\
 \doxysubsubsection{\texorpdfstring{y()}{y()}}
 {\footnotesize\ttfamily float turbohiker\+S\+F\+M\+L\+::\+Transformation\+::y (\begin{DoxyParamCaption}\item[{const double \&}]{y }\end{DoxyParamCaption}) const}
 
-converts \mbox{[}-\/3,3\mbox{]} y coords to pixel coords in \mbox{[}window\+\_\+height, 0\mbox{]} 
+converts \mbox{[}-\/3,3\mbox{]} y coords to pixel coords in \mbox{[}window\+\_\+height, 0\mbox{]}, adjusting for camera 
+\begin{DoxyParams}{Parameters}
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohikerSFML_1_1Transformation_a1e53f3c3ccda09cd5363be9a38d79a38}\label{classturbohikerSFML_1_1Transformation_a1e53f3c3ccda09cd5363be9a38d79a38}} 
+\index{turbohikerSFML::Transformation@{turbohikerSFML::Transformation}!yFixed@{yFixed}}
+\index{yFixed@{yFixed}!turbohikerSFML::Transformation@{turbohikerSFML::Transformation}}
+\doxysubsubsection{\texorpdfstring{yFixed()}{yFixed()}}
+{\footnotesize\ttfamily float turbohiker\+S\+F\+M\+L\+::\+Transformation\+::y\+Fixed (\begin{DoxyParamCaption}\item[{const double \&}]{y }\end{DoxyParamCaption}) const}
+
+converts \mbox{[}-\/3,3\mbox{]} y coords to pixel coords in \mbox{[}window\+\_\+height, 0\mbox{]}, ignoring camera 
 \begin{DoxyParams}{Parameters}
 {\em y} & \\
 \hline

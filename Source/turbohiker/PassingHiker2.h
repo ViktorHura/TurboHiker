@@ -21,7 +21,12 @@ class PassingHiker2 : public PassingHiker1 {
 
     public:
         PassingHiker2();
+        ~PassingHiker2() override = default;
 
+        /**
+         * set desired lane to go to
+         * @param l
+         */
         void setDesired(const int& l);
 
         eType type() override;
@@ -30,7 +35,7 @@ class PassingHiker2 : public PassingHiker1 {
 
         void handleShout() override;
 
-        virtual void react() override = 0;
+        void react() override = 0;
     };
 
 }

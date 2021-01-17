@@ -40,8 +40,9 @@ Collaboration diagram for turbohiker\+S\+F\+ML\+::Factory\+:\nopagebreak
 \item 
 \mbox{\hyperlink{classturbohiker_1_1PassingHiker2}{turbohiker\+::\+Passing\+Hiker2}} $\ast$ \mbox{\hyperlink{classturbohikerSFML_1_1Factory_a4de5cd45d3d0c61723f40796eafe02a6}{make\+Passing\+Hiker2}} (const int \&initial\+Lane) override
 \item 
-\mbox{\Hypertarget{classturbohikerSFML_1_1Factory_a09e33f80293b6c217c9ae4c1701f4e75}\label{classturbohikerSFML_1_1Factory_a09e33f80293b6c217c9ae4c1701f4e75}} 
-\mbox{\hyperlink{classturbohiker_1_1RacingHiker}{turbohiker\+::\+Racing\+Hiker}} $\ast$ {\bfseries make\+Racing\+Hiker} () override
+\mbox{\hyperlink{classturbohiker_1_1RacingHiker}{turbohiker\+::\+Racing\+Hiker}} $\ast$ \mbox{\hyperlink{classturbohikerSFML_1_1Factory_a09e33f80293b6c217c9ae4c1701f4e75}{make\+Racing\+Hiker}} () override
+\item 
+\mbox{\hyperlink{classturbohiker_1_1ScoreObserver}{turbohiker\+::\+Score\+Observer}} $\ast$ \mbox{\hyperlink{classturbohikerSFML_1_1Factory_a43a1e147d02a6481c8ac5434b2e79821}{make\+Score\+Observer}} () override
 \end{DoxyCompactItemize}
 
 
@@ -109,6 +110,32 @@ Implements \mbox{\hyperlink{classturbohiker_1_1EntityFactory}{turbohiker\+::\+En
 {\footnotesize\ttfamily \mbox{\hyperlink{classturbohiker_1_1Player}{turbohiker\+::\+Player}} $\ast$ turbohiker\+S\+F\+M\+L\+::\+Factory\+::make\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 makes player \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classturbohiker_1_1EntityFactory}{turbohiker\+::\+Entity\+Factory}}.
+
+\mbox{\Hypertarget{classturbohikerSFML_1_1Factory_a09e33f80293b6c217c9ae4c1701f4e75}\label{classturbohikerSFML_1_1Factory_a09e33f80293b6c217c9ae4c1701f4e75}} 
+\index{turbohikerSFML::Factory@{turbohikerSFML::Factory}!makeRacingHiker@{makeRacingHiker}}
+\index{makeRacingHiker@{makeRacingHiker}!turbohikerSFML::Factory@{turbohikerSFML::Factory}}
+\doxysubsubsection{\texorpdfstring{makeRacingHiker()}{makeRacingHiker()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classturbohiker_1_1RacingHiker}{turbohiker\+::\+Racing\+Hiker}} $\ast$ turbohiker\+S\+F\+M\+L\+::\+Factory\+::make\+Racing\+Hiker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+makes racinghiker \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classturbohiker_1_1EntityFactory}{turbohiker\+::\+Entity\+Factory}}.
+
+\mbox{\Hypertarget{classturbohikerSFML_1_1Factory_a43a1e147d02a6481c8ac5434b2e79821}\label{classturbohikerSFML_1_1Factory_a43a1e147d02a6481c8ac5434b2e79821}} 
+\index{turbohikerSFML::Factory@{turbohikerSFML::Factory}!makeScoreObserver@{makeScoreObserver}}
+\index{makeScoreObserver@{makeScoreObserver}!turbohikerSFML::Factory@{turbohikerSFML::Factory}}
+\doxysubsubsection{\texorpdfstring{makeScoreObserver()}{makeScoreObserver()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classturbohiker_1_1ScoreObserver}{turbohiker\+::\+Score\+Observer}} $\ast$ turbohiker\+S\+F\+M\+L\+::\+Factory\+::make\+Score\+Observer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+makes scoreboard \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
 

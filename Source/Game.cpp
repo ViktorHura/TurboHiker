@@ -27,6 +27,12 @@ Game::Game(int width, int height) {
   // init start screen
   initStartScreen();
 
+    // init background music
+    sBuf.loadFromFile("../Resources/sounds/ambient.ogg");
+    backgroundMusic.setBuffer(sBuf);
+    backgroundMusic.setLoop(true);
+    backgroundMusic.setVolume(75);
+
   // start gameloop
   run();
 }
@@ -55,15 +61,15 @@ void Game::run() {
       if (event.type == sf::Event::EventType::KeyPressed) {
         if (!gameStarted) {
           gameStarted = true;
-        } else if (world->gameOver() and event.key == 57) {
+            backgroundMusic.play();
+        } else if (world->gameOver() and event.key == 57) { // game finished and pressed space
           reset();
-          continue;
         } else {
           world->handleInput(event.key,
                              true); // pass keydown event to the world
         }
       }
-      // Respond to key pressed events
+      // Respond to key released events
       if (event.type == sf::Event::EventType::KeyReleased) {
         if (gameStarted) {
           world->handleInput(event.key, false); // pass keyup event to the world
@@ -100,13 +106,14 @@ void Game::initStartScreen() {
 }
 
 void Game::reset() {
+    // reset transform singleton
   turbohikerSFML::Transformation::instance()->reset();
 
   // make entity factory
   std::unique_ptr<turbohiker::EntityFactory> factory =
       std::make_unique<turbohikerSFML::Factory>(window);
 
-  // create world and give it a factory
+  // reset world and give it a new factory
   world.reset();
   world = std::make_unique<turbohiker::World>(std::move(factory));
 }

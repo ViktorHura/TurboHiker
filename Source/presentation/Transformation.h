@@ -73,7 +73,7 @@ namespace turbohikerSFML {
          * @param size
          * @return
          */
-        int textSize(const double &size) const;
+        unsigned int textSize(const double &size) const;
 
         /**
          * converts [-4,4] x coords to pixel coords in [0, window_width]
@@ -122,8 +122,11 @@ namespace turbohikerSFML {
          * @param size
          * @param sprite
          */
-        void rescaleSprite(const turbohiker::Utils::Vector& size, sf::Sprite& sprite);
+        static void rescaleSprite(const turbohiker::Utils::Vector& size, sf::Sprite& sprite);
 
+        /**
+         * resets everything for a new game
+         */
         void reset();
     };
 }

@@ -48,7 +48,7 @@ turbohikerSFML::PassingHiker2::PassingHiker2(
   sprite.setTextureRect(sf::IntRect(0, 0, 49, 49));
 
   sprite.setTexture(texture);
-  Transformation::instance()->rescaleSprite(size(), sprite);
+  Transformation::rescaleSprite(size(), sprite);
 
   sprite.rotate(90);
 
@@ -63,14 +63,19 @@ turbohikerSFML::PassingHiker2::PassingHiker2(
 
   reactText.setFillColor(sf::Color::Green);
   reactText.setStyle(sf::Text::Bold);
+
+    pBuf.loadFromFile("../Resources/sounds/reacts.wav");
+    ping.setBuffer(pBuf);
+    ping.setPitch(0.7);
 }
 
 void turbohikerSFML::PassingHiker2::react() {
   reactTime = 2;
 
-  int i = turbohiker::Random::instance()->Int(
+  int i = turbohiker::Random::Int(
       0, reactions.size() - 1); // choose random reaction
   reactText.setString(reactions[i]);
+  ping.play();
 }
 
 std::vector<std::wstring> turbohikerSFML::PassingHiker2::reactions = {

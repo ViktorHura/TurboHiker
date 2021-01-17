@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['factory_7',['Factory',['../classturbohikerSFML_1_1Factory.html',1,'turbohikerSFML::Factory'],['../classturbohikerSFML_1_1Factory.html#ae973152074abda37d2f1e5a91beb6edb',1,'turbohikerSFML::Factory::Factory()']]]
+  ['entity_8',['Entity',['../classturbohiker_1_1Entity.html',1,'turbohiker']]],
+  ['entityfactory_9',['EntityFactory',['../classturbohiker_1_1EntityFactory.html',1,'turbohiker']]]
 ];

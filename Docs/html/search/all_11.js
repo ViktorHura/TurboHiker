@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_58',['x',['../classturbohikerSFML_1_1Transformation.html#af858be989616c7734ade1d972f4ea445',1,'turbohikerSFML::Transformation::x()'],['../classturbohiker_1_1Utils_1_1Vector.html#ac714fe7e508c9035f34f32b9e49cb231',1,'turbohiker::Utils::Vector::x()']]]
+  ['world_78',['World',['../classturbohiker_1_1World.html',1,'turbohiker::World'],['../classturbohiker_1_1World.html#affbedeb932e12f0482248586588ed0b3',1,'turbohiker::World::World()']]]
 ];

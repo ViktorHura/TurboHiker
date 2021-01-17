@@ -20,6 +20,7 @@ namespace turbohiker {
         std::vector<std::unique_ptr<ScoreObserver>> observers;
     public:
         ScoreSubject() = default;
+        ~ScoreSubject() = default;
 
         /**
          * attaches observer to this subject
@@ -51,6 +52,10 @@ namespace turbohiker {
          */
         bool notify(int entity, int action, const double& delta = 1);
 
+        /**
+         * send draw command to observers
+         * @param delta
+         */
         void draw(const double& delta);
     };
 }

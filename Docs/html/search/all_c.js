@@ -1,18 +1,8 @@
 var searchData=
 [
-  ['scalar_33',['scalar',['../classturbohiker_1_1Utils_1_1Vector.html#a50054f7d7fdf33e81313c98ab53baada',1,'turbohiker::Utils::Vector']]],
-  ['set_34',['set',['../classturbohiker_1_1Utils_1_1Vector.html#a71520586e4c9f9ed655d8552de038a1a',1,'turbohiker::Utils::Vector::set(const double &amp;x, const double &amp;y)'],['../classturbohiker_1_1Utils_1_1Vector.html#ab320673891b570a9cb7ff4a395921ddf',1,'turbohiker::Utils::Vector::set(const Vector &amp;vec2)']]],
-  ['setduration_35',['setDuration',['../classturbohikerSFML_1_1Animation.html#ad5eca4f05d0cb8e20d694ab6bc0aa820',1,'turbohikerSFML::Animation']]],
-  ['setmass_36',['setMass',['../classturbohiker_1_1Entity.html#afc34699fe9925bb7af82baea2d67dd36',1,'turbohiker::Entity']]],
-  ['setnextpos_37',['setNextPos',['../classturbohiker_1_1Entity.html#aa2347c33e1017e3869dc64bd2953da8c',1,'turbohiker::Entity']]],
-  ['setpos_38',['setPos',['../classturbohiker_1_1Entity.html#aba2e994fc1e9c7e8727de6125db138aa',1,'turbohiker::Entity']]],
-  ['setpspeed_39',['setPspeed',['../classturbohikerSFML_1_1Transformation.html#a592e12300a99481d4ebee682fcf0ff9a',1,'turbohikerSFML::Transformation']]],
-  ['setrate_40',['setRate',['../classturbohikerSFML_1_1Animation.html#a68455aaa7eedb40741ae0f2beaf8f7e5',1,'turbohikerSFML::Animation']]],
-  ['setsize_41',['setSize',['../classturbohiker_1_1Entity.html#ab6e718e33c8887a10cef3177792c15e8',1,'turbohiker::Entity']]],
-  ['setspeed_42',['setSpeed',['../classturbohiker_1_1Entity.html#aff1f054d13477b98fc52b09502296198',1,'turbohiker::Entity']]],
-  ['setvel_43',['setVel',['../classturbohiker_1_1Entity.html#a05f2e859579b77559036c635d045d6c8',1,'turbohiker::Entity']]],
-  ['setypos_44',['setYpos',['../classturbohikerSFML_1_1Transformation.html#ab16516b8be688d796ea70b051f615335',1,'turbohikerSFML::Transformation']]],
-  ['shout_45',['shout',['../classturbohikerSFML_1_1Player.html#ad844d033fdd679e11ab2e6723167ac31',1,'turbohikerSFML::Player::shout()'],['../classturbohiker_1_1Player.html#a7bd6b86e6e6c45f64d81339864c66e04',1,'turbohiker::Player::shout()']]],
-  ['size_46',['size',['../classturbohikerSFML_1_1Transformation.html#ad7953957d32c75fe5641fbf6168ef306',1,'turbohikerSFML::Transformation::size()'],['../classturbohiker_1_1Entity.html#a8cb21337c2d6d1c53d61f6cf7ba7bd9d',1,'turbohiker::Entity::size()']]],
-  ['stop_47',['stop',['../classturbohikerSFML_1_1Animation.html#a547bd4b5f892298f55925466a51ba8a8',1,'turbohikerSFML::Animation']]]
+  ['racinghiker_41',['RacingHiker',['../classturbohikerSFML_1_1RacingHiker.html',1,'turbohikerSFML::RacingHiker'],['../classturbohiker_1_1RacingHiker.html',1,'turbohiker::RacingHiker'],['../classturbohikerSFML_1_1RacingHiker.html#afd8a010fe7b4103705caaac5a014d71c',1,'turbohikerSFML::RacingHiker::RacingHiker()'],['../classturbohiker_1_1RacingHiker.html#aabfcdcdb0d2e1e73221031c7b8288b0a',1,'turbohiker::RacingHiker::RacingHiker()']]],
+  ['random_42',['Random',['../classturbohiker_1_1Random.html',1,'turbohiker']]],
+  ['react_43',['react',['../classturbohikerSFML_1_1PassingHiker1.html#a6a89ab7ff25692aadee41c659c8ac87f',1,'turbohikerSFML::PassingHiker1::react()'],['../classturbohikerSFML_1_1PassingHiker2.html#af6b500e92f698dc7b692bef321c8c6c5',1,'turbohikerSFML::PassingHiker2::react()'],['../classturbohiker_1_1PassingHiker1.html#a0fb96bb4a0c1c1b85d96f8921b8bd152',1,'turbohiker::PassingHiker1::react()'],['../classturbohiker_1_1PassingHiker2.html#a9f20b2e8aec8d744881aef073abb8fb6',1,'turbohiker::PassingHiker2::react()']]],
+  ['rescalesprite_44',['rescaleSprite',['../classturbohikerSFML_1_1Transformation.html#a250d08dd9071e7d0180f0c9d211cb8ad',1,'turbohikerSFML::Transformation']]],
+  ['reset_45',['reset',['../classturbohikerSFML_1_1Transformation.html#ace751a0a712cb06411d51d6a37b2579b',1,'turbohikerSFML::Transformation']]]
 ];

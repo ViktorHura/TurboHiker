@@ -13,7 +13,8 @@ bool turbohiker::ScoreSubject::notify(int entity, int action,
   bool rtn = false;
   for (const auto &observer : observers) {
     if (observer->update(entity, action, delta)) {
-      rtn = true;
+      rtn = true; // if a single observer says that game is over, it is over
+      break;
     }
   }
   return rtn;

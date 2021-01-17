@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['game_8',['Game',['../classGame.html',1,'Game'],['../classGame.html#a5bc07cf8947858f32637943836cc6f8e',1,'Game::Game()']]],
-  ['getlane_9',['getLane',['../classturbohiker_1_1Utils_1_1Vector.html#ae57f4f817c71984c77c72670f778edf4',1,'turbohiker::Utils::Vector']]],
-  ['getpspeed_10',['getPspeed',['../classturbohikerSFML_1_1Transformation.html#a78f545d7998f25e2bf834e9bf4966b0b',1,'turbohikerSFML::Transformation']]],
-  ['getspeed_11',['getSpeed',['../classturbohiker_1_1Entity.html#a65316c05ed5f94f7fe8a5d7e9f323278',1,'turbohiker::Entity']]],
-  ['getydelta_12',['getYdelta',['../classturbohikerSFML_1_1Transformation.html#a81fc6bb1349456cb89a6c7de5a245791',1,'turbohikerSFML::Transformation']]]
+  ['factory_10',['Factory',['../classturbohikerSFML_1_1Factory.html',1,'turbohikerSFML::Factory'],['../classturbohikerSFML_1_1Factory.html#ae973152074abda37d2f1e5a91beb6edb',1,'turbohikerSFML::Factory::Factory()']]],
+  ['freeze_11',['freeze',['../classturbohiker_1_1Entity.html#a96e3a1e83c964d856369c60bdb5b17fd',1,'turbohiker::Entity']]]
 ];

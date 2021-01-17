@@ -2,6 +2,6 @@
 
 int main()
 {
-  Game game(800, 600);
+  Game game(960, 720);
   return 0;
 }

@@ -17,16 +17,23 @@ namespace turbohiker {
     class PassingHiker1 : public Entity {
     protected:
         double speed = 2;
-        double reactTime = 0;
+        double reactTime = 0; // used for visual rep
     public:
         PassingHiker1();
+        ~PassingHiker1() override = default;
 
         eType type() override;
 
         void update(const double& delta) override;
 
+        /**
+         * handle being shouted at
+         */
         virtual void handleShout();
 
+        /**
+         * react to shout (visual handler)
+         */
         virtual void react() = 0;
     };
 

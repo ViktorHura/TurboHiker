@@ -23,7 +23,7 @@ turbohikerSFML::Transformation::instance(std::weak_ptr<sf::RenderWindow> w) {
 turbohikerSFML::Transformation *turbohikerSFML::Transformation::_instance =
     nullptr;
 
-int turbohikerSFML::Transformation::textSize(const double &size) const {
+unsigned int turbohikerSFML::Transformation::textSize(const double &size) const {
   std::shared_ptr<sf::RenderWindow> w =
       window.lock(); // share window temporarily
 
@@ -60,8 +60,8 @@ sf::Vector2f turbohikerSFML::Transformation::size(
     const turbohiker::Utils::Vector &vec) const {
   std::shared_ptr<sf::RenderWindow> w = window.lock();
 
-  float x_ = double(w->getSize().x) / 8.0 * vec.x();
-  float y_ = double(w->getSize().y) / 6.0 * vec.y();
+  float x_ = static_cast<float>(double(w->getSize().x) / 8.0 * vec.x());
+  float y_ = static_cast<float>(double(w->getSize().y) / 6.0 * vec.y());
 
   return {x_, y_};
 }

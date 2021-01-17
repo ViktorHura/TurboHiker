@@ -24,11 +24,11 @@ namespace turbohiker {
                 1000, // finish bonus constant
         };
 
+        // for each competitor, if they finished
         std::vector<bool> finished = {false,false,false,false};
 
     protected:
-        virtual void reset();
-
+        // for each competitor, their scores
         std::vector<double> scores = {0,0,0,0};
         int runnersFinished = 0;
     public:

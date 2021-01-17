@@ -24,6 +24,8 @@ namespace turbohiker {
         public:
             Vector()= default;
 
+            ~Vector() = default;
+
             /**
              * Create a 2D vector
              * @param x
@@ -85,6 +87,10 @@ namespace turbohiker {
              */
             Vector& normalize();
 
+            /**
+             * vector to string for debugging
+             * @return string
+             */
             std::string toString();
 
             /**
@@ -101,7 +107,11 @@ namespace turbohiker {
             double distanceTo(const Vector& vec2);
         };
 
-
+        /**
+         * gives the next to go to based on your current lane
+         * @param current lane
+         * @return next lane
+         */
         int nextLane(int lane);
     }
 }

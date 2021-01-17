@@ -5,7 +5,6 @@
 #include "World.h"
 #include "Random.h"
 #include <algorithm>
-#include <iostream>
 #include <memory>
 
 void turbohiker::World::update(const double &delta) {
@@ -54,6 +53,7 @@ turbohiker::World::World(std::unique_ptr<EntityFactory> f) {
   std::unique_ptr<Entity> c2(factory->makeRacingHiker());
   std::unique_ptr<Entity> c3(factory->makeRacingHiker());
 
+  // position them
   c1->setPos(Vector(-3, 0));
   c2->setPos(Vector(-1, 0));
   c3->setPos(Vector(1, 0));
@@ -65,7 +65,7 @@ turbohiker::World::World(std::unique_ptr<EntityFactory> f) {
 
 void turbohiker::World::handleInput(const int &key, bool keydown) {
   auto player = dynamic_cast<turbohiker::Player *>(
-      entities[1].get()); // second entity will always be player thus static
+      entities[1].get()); // second entity will always be player
   if (key == 57 and keydown) { // space
     player->shout();
     handleShout(player->position(), player->scoreId());
@@ -81,10 +81,10 @@ void turbohiker::World::handlePhysics(const double &delta) {
   for (auto &ep : entities) {
     if (ep->type() == BackT) {
       continue;
-    } // optimisation
+    } // background has no physics
 
     handleCollisions(ep,
-                     delta); // will modify velocity if there are any collisions
+                     delta); // will modify velocity to resolve any collisions
 
     // calculate final new position
     ep->setPos(calcNewPos(ep, delta)); // set new pos
@@ -94,7 +94,7 @@ void turbohiker::World::handlePhysics(const double &delta) {
 void turbohiker::World::handleCollisions(std::unique_ptr<Entity> &entity,
                                          const double &delta) {
 
-  std::set<std::set<int>> collisions;
+  std::set<std::set<int>> collisions; // store all collisions to for later
 
   entity->setNextPos(
       calcNewPos(entity, delta)); // calculate the next potential pos
@@ -105,7 +105,7 @@ void turbohiker::World::handleCollisions(std::unique_ptr<Entity> &entity,
     } // don't check for itself
 
     if (areColliding(ep, entity)) {
-      std::set<int> collision;
+      std::set<int> collision; // note the collision
       collision.insert(entity->scoreId());
       collision.insert(ep->scoreId());
       collisions.insert(collision);
@@ -131,7 +131,7 @@ void turbohiker::World::handleCollisions(std::unique_ptr<Entity> &entity,
         Vector(-entity->velocity().x(), 0))); // remove horizontal component
   }
 
-  updateCollisionScores(collisions, delta);
+  updateCollisionScores(collisions, delta); // pass the collisions to scoreboard
 }
 
 Vector turbohiker::World::calcNewPos(std::unique_ptr<Entity> &entity,
@@ -165,7 +165,7 @@ void turbohiker::World::newSection() {
   canSpeed = true;
   prunePassingHikers(); // remove hikers that are off screen
 
-  double countchance = Random::instance()->Double();
+  double countchance = Random::Double();
   int spawncount;
   // 20% chance to spawn just one passing hiker
   // 50% chance to spawn two hikers
@@ -194,7 +194,7 @@ std::vector<int> turbohiker::World::chooseLanes(const int &count) {
 
   std::vector<int> choice = {0, 1, 2, 3}; // remaining choice of lanes
   for (int i = 0; i < count; i++) {       // amount of times to choose
-    int r = Random::instance()->Int(0, choice.size() -
+    int r = Random::Int(0, choice.size() -
                                            1); // choose from remaining choices
     lanes.push_back(choice[r]);                // save choice
     choice.erase(choice.begin() + r);          // remove from remaining choices
@@ -212,21 +212,20 @@ void turbohiker::World::spawnHiker(const int &lane) {
   } else if (h1ToSpawn > 0 and h2ToSpawn <= 0) {
     spawntype = false;
   } else { // choose randomly between the two, 50%
-    spawntype = Random::instance()->Int(0, 1);
+    spawntype = Random::Int(0, 1);
   }
 
   if (spawntype) {
     hiker = factory->makePassingHiker1();
     h2ToSpawn--;
   } else {
-
     hiker = factory->makePassingHiker2(lane);
     h1ToSpawn--;
   }
 
   // position at top of section + a random distance < maxSpawnVar
   double posY =
-      (section + 1) * sectionSize + Random::instance()->Double(0, maxSpawnVar);
+      (section + 1) * sectionSize + Random::Double(0, maxSpawnVar);
 
   double posX = -3 + 2 * lane; // positon in correct lane
 
@@ -249,41 +248,40 @@ void turbohiker::World::prunePassingHikers() {
     }
   }
 
+    for (const auto& d : to_delete){ // call the destructor of each deleted entity
+        entities[d].reset();
+    }
+
   // following piece of code is from stackoverflow, what I understand is that
   // it sorts to_deleted vector and deletes the needed indexes from back to
   // front to avoid a shift messing up the indexes
   std::sort(to_delete.begin(),
             to_delete.end()); // Make sure the container is sorted
+
+    // iterator magic
   for (std::reverse_iterator<std::vector<int>::iterator> j = to_delete.rbegin();
        j != to_delete.rend(); ++j) {
     entities.erase(entities.begin() + *j);
   }
 }
 
-void turbohiker::World::handleShout(const Vector &player_pos, int originator) {
-  int player_lane = player_pos.getLane();
+void turbohiker::World::handleShout(const Vector &pos, int originator) {
+  int lane = pos.getLane();
 
-  for (int i = 0; i < entities.size(); i++) { // find the entity to shout at
-    if (entities[i]->position().getLane() == player_lane &&
-        entities[i]->position().y() >
-            player_pos.y() && // must be in same lane and in front of player
-        (entities[i]->type() == PassHT1 ||
-         entities[i]->type() == PassHT2)) { // must be a passing hiker
+  for (auto & entity : entities) { // find the entity to shout at
+    if (entity->position().getLane() == lane &&
+        entity->position().y() >
+        pos.y() && // must be in same lane and in front of player
+        (entity->type() == PassHT1 ||
+         entity->type() == PassHT2)) { // must be a passing hiker
 
-      auto hiker = dynamic_cast<turbohiker::PassingHiker1 *>(entities[i].get());
-      if (hiker != nullptr) { // it's first type
-        hiker->handleShout();
-        score->notify(originator, 3);
-        break;
-      }
-      auto hiker2 =
-          dynamic_cast<turbohiker::PassingHiker2 *>(entities[i].get());
-      // second type
-      if (hiker2 != nullptr) { // it's second type
-        hiker2->handleShout();
-        score->notify(originator, 4);
-        break;
-      }
+      auto hiker = dynamic_cast<turbohiker::PassingHiker1 *>(entity.get());
+        hiker->handleShout(); // pass the event to hiker
+         if( hiker->type() == PassHT1){ // notify scoreboard
+             score->notify(originator, 3);
+         }else{
+             score->notify(originator, 4);
+         }
     }
   }
 }
@@ -324,12 +322,12 @@ void turbohiker::World::updateNpcLogic(const double &delta) {
         npc); // get distance to closest passing hiker and it's type
     double dist = std::get<0>(result);
     bool type = std::get<1>(result);
-    double rand = Random::instance()->Double();
+    double rand = Random::Double();
 
     if (dist > 0 and dist < 6) { // if enemy exist in lane and is visible
       if (rand < 1 - dist / 6) { // the nearer the enemy the more chance we go
                                  // into "panick" branch
-        rand = Random::instance()->Double();
+        rand = Random::Double();
         if (type) {         // if stationary hiker
           if (rand < 0.6) { // try to shout rather than avoid
             npc->shout();
@@ -350,7 +348,7 @@ void turbohiker::World::updateNpcLogic(const double &delta) {
           }
         }
       } else { // else we stay cool
-        rand = Random::instance()->Double();
+        rand = Random::Double();
         if (rand < 0.5) { // try to slow down
           npc->slowDown();
           npc->cooldown = 0.5;
@@ -388,7 +386,7 @@ turbohiker::World::distanceEnemy(turbohiker::RacingHiker *npc) {
   for (int i = 5; i < entities.size(); i++) { // enemies
     if (entities[i]->position().getLane() == npc->position().getLane() and
         entities[i]->position().y() >
-            npc->position().y()) { // same lane and in front
+            npc->position().y()) { // same lane and in front of npc
       double d = npc->position().distanceTo(entities[i]->position());
       if (d > dist) { // closer
         type = !(entities[i]->type() == PassHT1);
@@ -403,19 +401,19 @@ turbohiker::World::distanceEnemy(turbohiker::RacingHiker *npc) {
 void turbohiker::World::checkFinish() {
   for (int i = 1; i < 5; i++) { // player and npc's
     double topPos = entities[i]->position().y() + entities[i]->size().y() / 2;
-    if (topPos > 186) {
+    if (topPos > 186) { // past screen
       entities[i]->freeze();
-    } else if (topPos > 180) {
-      if (score->notify(entities[i]->scoreId(), 5)) {
+    } else if (topPos > 180) { // past finish
+      if (score->notify(entities[i]->scoreId(), 5)) { // notify scoreboard, and if all competitors finished, we say game finished
         finished = true;
-      };
+      }
     }
   }
 }
 
 void turbohiker::World::updateCollisionScores(
     const std::set<std::set<int>> &new_set, const double &delta) {
-  for (const auto &collision : new_set) {
+  for (const auto &collision : new_set) { // go over each collision
     int first = *std::next(collision.begin(), 0);
     int second = *std::next(collision.begin(), 1);
 
@@ -424,15 +422,15 @@ void turbohiker::World::updateCollisionScores(
     } else if (first > 0 and second > 0) { // both are competing hikers
       score->notify(first, 2, delta);
       score->notify(second, 2, delta);
-    } else {
+    } else { // a competitor and a passing hiker
       int subject;
       int action;
-      if (first > 0) {
+      if (first > 0) { // first is the competitor
         subject = first;
-        action = std::abs(second) - 1;
-      } else {
+        action = std::abs(second) - 1; // scoreID -> scoreboard action
+      } else { // second is the competitor
         subject = second;
-        action = std::abs(first) - 1;
+        action = std::abs(first) - 1; // scoreID -> scoreboard action
       }
       score->notify(subject, action, delta);
     }
@@ -440,3 +438,11 @@ void turbohiker::World::updateCollisionScores(
 }
 
 bool turbohiker::World::gameOver() { return finished; }
+
+turbohiker::World::~World() {
+    for (auto& e : entities){ // destroy all entities
+        e.reset();
+    }
+    score.reset(); // destroy score
+    factory.reset(); // destroy factor
+}

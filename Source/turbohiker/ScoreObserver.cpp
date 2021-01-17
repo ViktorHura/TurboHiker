@@ -13,14 +13,7 @@ bool turbohiker::ScoreObserver::update(int entity, int action,
       finished[entity] = true;
       runnersFinished++;
     }
-  } else {
-    reset();
   }
   return (runnersFinished == 4);
 }
 
-void turbohiker::ScoreObserver::reset() {
-  scores = {0, 0, 0, 0};
-  runnersFinished = 0;
-  finished = {false, false, false, false};
-}

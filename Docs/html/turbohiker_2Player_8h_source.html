@@ -98,22 +98,24 @@ $(function() {
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classturbohiker_1_1Player.html#ae6e21f0e5f81e0314ac7115f5c71ddc9">update</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; delta) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classturbohiker_1_1Player.html#adf4934ae25e54e9807ad3fc1e908ccb2">handleInput</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; key, <span class="keywordtype">bool</span> keydown);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classturbohiker_1_1Player.html#a7bd6b86e6e6c45f64d81339864c66e04">shout</a>() = 0;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    };</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif //TURBOHIKER_PLAYER_H</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        ~<a class="code" href="classturbohiker_1_1Player.html">Player</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classturbohiker_1_1Player.html#adf4934ae25e54e9807ad3fc1e908ccb2">handleInput</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; key, <span class="keywordtype">bool</span> keydown);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classturbohiker_1_1Player.html#a7bd6b86e6e6c45f64d81339864c66e04">shout</a>() = 0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    };</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif //TURBOHIKER_PLAYER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassturbohiker_1_1Player_html_adf4934ae25e54e9807ad3fc1e908ccb2"><div class="ttname"><a href="classturbohiker_1_1Player.html#adf4934ae25e54e9807ad3fc1e908ccb2">turbohiker::Player::handleInput</a></div><div class="ttdeci">void handleInput(const int &amp;key, bool keydown)</div><div class="ttdef"><b>Definition:</b> Player.cpp:30</div></div>
+<div class="ttc" id="aclassturbohiker_1_1Player_html_adf4934ae25e54e9807ad3fc1e908ccb2"><div class="ttname"><a href="classturbohiker_1_1Player.html#adf4934ae25e54e9807ad3fc1e908ccb2">turbohiker::Player::handleInput</a></div><div class="ttdeci">void handleInput(const int &amp;key, bool keydown)</div><div class="ttdef"><b>Definition:</b> Player.cpp:33</div></div>
 <div class="ttc" id="aclassturbohiker_1_1Player_html_a7bd6b86e6e6c45f64d81339864c66e04"><div class="ttname"><a href="classturbohiker_1_1Player.html#a7bd6b86e6e6c45f64d81339864c66e04">turbohiker::Player::shout</a></div><div class="ttdeci">virtual void shout()=0</div></div>
 <div class="ttc" id="aclassturbohiker_1_1Player_html"><div class="ttname"><a href="classturbohiker_1_1Player.html">turbohiker::Player</a></div><div class="ttdoc">abstract class to handle player logic</div><div class="ttdef"><b>Definition:</b> Player.h:17</div></div>
 <div class="ttc" id="aclassturbohiker_1_1Entity_html"><div class="ttname"><a href="classturbohiker_1_1Entity.html">turbohiker::Entity</a></div><div class="ttdoc">most abstract game object</div><div class="ttdef"><b>Definition:</b> Entity.h:28</div></div>
-<div class="ttc" id="aclassturbohiker_1_1Player_html_aa1979e28b052e4755f397bb0be37ffa6"><div class="ttname"><a href="classturbohiker_1_1Player.html#aa1979e28b052e4755f397bb0be37ffa6">turbohiker::Player::type</a></div><div class="ttdeci">eType type() override</div><div class="ttdef"><b>Definition:</b> Player.cpp:47</div></div>
-<div class="ttc" id="aclassturbohiker_1_1Player_html_ae6e21f0e5f81e0314ac7115f5c71ddc9"><div class="ttname"><a href="classturbohiker_1_1Player.html#ae6e21f0e5f81e0314ac7115f5c71ddc9">turbohiker::Player::update</a></div><div class="ttdeci">void update(const double &amp;delta) override</div><div class="ttdef"><b>Definition:</b> Player.cpp:8</div></div>
+<div class="ttc" id="aclassturbohiker_1_1Player_html_aa1979e28b052e4755f397bb0be37ffa6"><div class="ttname"><a href="classturbohiker_1_1Player.html#aa1979e28b052e4755f397bb0be37ffa6">turbohiker::Player::type</a></div><div class="ttdeci">eType type() override</div><div class="ttdef"><b>Definition:</b> Player.cpp:50</div></div>
+<div class="ttc" id="aclassturbohiker_1_1Player_html_ae6e21f0e5f81e0314ac7115f5c71ddc9"><div class="ttname"><a href="classturbohiker_1_1Player.html#ae6e21f0e5f81e0314ac7115f5c71ddc9">turbohiker::Player::update</a></div><div class="ttdeci">void update(const double &amp;delta) override</div><div class="ttdef"><b>Definition:</b> Player.cpp:7</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

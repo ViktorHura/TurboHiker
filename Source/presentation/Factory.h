@@ -31,6 +31,8 @@ namespace turbohikerSFML {
          */
         explicit Factory(std::weak_ptr<sf::RenderWindow> w);
 
+        ~Factory() = default;
+
         /**
          * makes player
          * @return

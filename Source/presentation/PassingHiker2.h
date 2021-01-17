@@ -11,6 +11,8 @@
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/Text.hpp>
+#include <SFML/Audio/Sound.hpp>
+#include <SFML/Audio/SoundBuffer.hpp>
 #include "../turbohiker/PassingHiker2.h"
 #include "Animation.h"
 
@@ -33,9 +35,13 @@ namespace turbohikerSFML {
         sf::Font font;
         sf::Text reactText;
 
+        sf::SoundBuffer pBuf;
+        sf::Sound ping;
+
         static std::vector<std::wstring> reactions;
     public:
         explicit PassingHiker2(std::weak_ptr<sf::RenderWindow> w);
+        ~PassingHiker2() override = default;
 
         void draw(const double& delta) override;
 

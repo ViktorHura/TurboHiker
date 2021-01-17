@@ -49,7 +49,7 @@ turbohikerSFML::Scoreboard::Scoreboard(std::weak_ptr<sf::RenderWindow> w) {
 
 bool compareSc(const std::tuple<int, double> &f,
                const std::tuple<int, double> &s) {
-  return std::get<1>(f) > std::get<1>(s);
+  return std::get<1>(f) > std::get<1>(s); // double > double2
 }
 
 void turbohikerSFML::Scoreboard::DrawSummary(
@@ -61,21 +61,20 @@ void turbohikerSFML::Scoreboard::DrawSummary(
   summaryText.setPosition(
       Transformation::instance()->posFixed(turbohiker::Utils::Vector(-2, 2)));
 
-  if (!ranked) {
+  if (sorted.empty()) {
     resultString = "Results\n\n";
 
     sorted.clear();
-    for (int i = 0; i < scores.size(); i++) {
+    for (int i = 0; i < scores.size(); i++) { // fill sorted vec
       std::tuple<int, double> tmp(i, scores[i]);
       sorted.push_back(tmp);
     }
 
-    std::sort(sorted.begin(), sorted.end(), compareSc);
-    ranked = true;
+    std::sort(sorted.begin(), sorted.end(), compareSc); // sort sorted vec
 
     for (int i = 0; i < sorted.size(); i++) {
-      std::string val = std::to_string(std::get<1>(sorted[i]));
-      val.erase(val.end() - 4, val.end());
+      std::string val = std::to_string(std::get<1>(sorted[i])); // score value
+      val.erase(val.end() - 4, val.end()); // remove last 4 digits
 
       resultString += "#" + std::to_string(i + 1) + " " +
                       intToName(std::get<0>(sorted[i])) + " : " + val + "\n";
@@ -103,9 +102,4 @@ std::string turbohikerSFML::Scoreboard::intToName(const int &i) {
   default: // if something goes wrong
     return "Error";
   }
-}
-
-void turbohikerSFML::Scoreboard::reset() {
-  ScoreObserver::reset();
-  ranked = false;
 }

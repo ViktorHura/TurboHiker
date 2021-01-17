@@ -11,7 +11,7 @@ namespace turbohiker {
 
     /**
      * \class Player
-     *
+     * \ingroup turbohiker
      * \brief abstract class to handle player logic
      */
     class Player : public Entity {
@@ -33,6 +33,8 @@ namespace turbohiker {
 
         void update(const double& delta) override;
 
+        ~Player() override = default;
+
         /**
          * take input, updates u l d r, vars
          * @param key
@@ -40,7 +42,7 @@ namespace turbohiker {
         void handleInput(const int& key, bool keydown);
 
         /**
-         * visual
+         * visual handler for shout
          */
         virtual void shout() = 0;
 

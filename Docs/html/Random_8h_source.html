@@ -81,21 +81,25 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keyword">static</span> <a class="code" href="classturbohiker_1_1Random.html">Random</a> *_instance;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="classturbohiker_1_1Random.html">Random</a>();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">static</span> <a class="code" href="classturbohiker_1_1Random.html">Random</a> *instance();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">double</span> Double();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">double</span> Double(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; min, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; max);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">int</span> Int(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; min, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; max);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    };</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif //TURBOHIKER_RANDOM_H</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        ~<a class="code" href="classturbohiker_1_1Random.html">Random</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">static</span> <a class="code" href="classturbohiker_1_1Random.html">Random</a> *<a class="code" href="classturbohiker_1_1Random.html#ab05229beb30229451c9de591df5d9df5">instance</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="classturbohiker_1_1Random.html#a266e98d7fa8ce11294a7899b3dd0668e">Double</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="classturbohiker_1_1Random.html#a266e98d7fa8ce11294a7899b3dd0668e">Double</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; min, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; max);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="classturbohiker_1_1Random.html#a7a4981cf09df87c00c30bc88f530d6a3">Int</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; min, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; max);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif //TURBOHIKER_RANDOM_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassturbohiker_1_1Random_html_a266e98d7fa8ce11294a7899b3dd0668e"><div class="ttname"><a href="classturbohiker_1_1Random.html#a266e98d7fa8ce11294a7899b3dd0668e">turbohiker::Random::Double</a></div><div class="ttdeci">static double Double()</div><div class="ttdef"><b>Definition:</b> Random.cpp:32</div></div>
+<div class="ttc" id="aclassturbohiker_1_1Random_html_a7a4981cf09df87c00c30bc88f530d6a3"><div class="ttname"><a href="classturbohiker_1_1Random.html#a7a4981cf09df87c00c30bc88f530d6a3">turbohiker::Random::Int</a></div><div class="ttdeci">static int Int(const int &amp;min, const int &amp;max)</div><div class="ttdef"><b>Definition:</b> Random.cpp:24</div></div>
 <div class="ttc" id="aclassturbohiker_1_1Random_html"><div class="ttname"><a href="classturbohiker_1_1Random.html">turbohiker::Random</a></div><div class="ttdoc">singleton to generate pseudo random numbers</div><div class="ttdef"><b>Definition:</b> Random.h:14</div></div>
+<div class="ttc" id="aclassturbohiker_1_1Random_html_ab05229beb30229451c9de591df5d9df5"><div class="ttname"><a href="classturbohiker_1_1Random.html#ab05229beb30229451c9de591df5d9df5">turbohiker::Random::instance</a></div><div class="ttdeci">static Random * instance()</div><div class="ttdef"><b>Definition:</b> Random.cpp:9</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

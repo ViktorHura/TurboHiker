@@ -8,6 +8,8 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <memory>
 #include <SFML/Graphics/Texture.hpp>
+#include <SFML/Audio/Sound.hpp>
+#include <SFML/Audio/SoundBuffer.hpp>
 #include "../turbohiker/RacingHiker.h"
 #include "Animation.h"
 
@@ -29,6 +31,9 @@ namespace turbohikerSFML {
         sf::Sprite sonarSprite; // sonar sprite
         Animation sonarAnim; // sonar animation object
 
+        sf::SoundBuffer pBuf;
+        sf::Sound ping;
+
         double defaultframerate = 10;
     public:
         /**
@@ -36,6 +41,7 @@ namespace turbohikerSFML {
          * @param w
          */
         explicit RacingHiker(std::weak_ptr<sf::RenderWindow> w, int i);
+        ~RacingHiker() override = default;
 
         void draw(const double& delta) override;
 

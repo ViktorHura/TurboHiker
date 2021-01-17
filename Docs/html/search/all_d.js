@@ -1,8 +1,25 @@
 var searchData=
 [
-  ['textsize_48',['textSize',['../classturbohikerSFML_1_1Transformation.html#a9ea0386132d44f433368a3b2290644a0',1,'turbohikerSFML::Transformation']]],
-  ['transformation_49',['Transformation',['../classturbohikerSFML_1_1Transformation.html',1,'turbohikerSFML']]],
-  ['turbohiker_50',['Turbohiker',['../group__turbohiker.html',1,'']]],
-  ['turbohikersfml_51',['TurbohikerSFML',['../group__turbohikerSFML.html',1,'']]],
-  ['type_52',['type',['../classturbohiker_1_1Background.html#a666b1c379fa1e9a97dd66f14b12ae464',1,'turbohiker::Background::type()'],['../classturbohiker_1_1Entity.html#a541abe045ccb89baee34df5613b03d1a',1,'turbohiker::Entity::type()'],['../classturbohiker_1_1PassingHiker1.html#ab4434514f063b580129cf810c162eb34',1,'turbohiker::PassingHiker1::type()'],['../classturbohiker_1_1PassingHiker2.html#af8b5f4e36f010bdfd1bff360a1a8b0c8',1,'turbohiker::PassingHiker2::type()'],['../classturbohiker_1_1Player.html#aa1979e28b052e4755f397bb0be37ffa6',1,'turbohiker::Player::type()'],['../classturbohiker_1_1RacingHiker.html#a84e8c911ed0bdf0a7336e30d33e35ae8',1,'turbohiker::RacingHiker::type()'],['../classturbohiker_1_1World.html#a13a6afa24dd061015914bc185ea15c25',1,'turbohiker::World::type()']]]
+  ['scalar_46',['scalar',['../classturbohiker_1_1Utils_1_1Vector.html#a50054f7d7fdf33e81313c98ab53baada',1,'turbohiker::Utils::Vector']]],
+  ['scoreboard_47',['Scoreboard',['../classturbohikerSFML_1_1Scoreboard.html',1,'turbohikerSFML']]],
+  ['scoreid_48',['scoreId',['../classturbohiker_1_1Entity.html#a343b875e0c7660a267a4aa75a407541e',1,'turbohiker::Entity']]],
+  ['scoreobserver_49',['ScoreObserver',['../classturbohiker_1_1ScoreObserver.html',1,'turbohiker']]],
+  ['scoresubject_50',['ScoreSubject',['../classturbohiker_1_1ScoreSubject.html',1,'turbohiker']]],
+  ['set_51',['set',['../classturbohiker_1_1Utils_1_1Vector.html#a71520586e4c9f9ed655d8552de038a1a',1,'turbohiker::Utils::Vector::set(const double &amp;x, const double &amp;y)'],['../classturbohiker_1_1Utils_1_1Vector.html#ab320673891b570a9cb7ff4a395921ddf',1,'turbohiker::Utils::Vector::set(const Vector &amp;vec2)']]],
+  ['setdesired_52',['setDesired',['../classturbohiker_1_1PassingHiker2.html#a338e80d3dd5a9421125f25abda89fdb7',1,'turbohiker::PassingHiker2']]],
+  ['setduration_53',['setDuration',['../classturbohikerSFML_1_1Animation.html#ad5eca4f05d0cb8e20d694ab6bc0aa820',1,'turbohikerSFML::Animation']]],
+  ['setmass_54',['setMass',['../classturbohiker_1_1Entity.html#afc34699fe9925bb7af82baea2d67dd36',1,'turbohiker::Entity']]],
+  ['setnextpos_55',['setNextPos',['../classturbohiker_1_1Entity.html#aa2347c33e1017e3869dc64bd2953da8c',1,'turbohiker::Entity']]],
+  ['setpos_56',['setPos',['../classturbohiker_1_1Entity.html#aba2e994fc1e9c7e8727de6125db138aa',1,'turbohiker::Entity']]],
+  ['setpspeed_57',['setPspeed',['../classturbohikerSFML_1_1Transformation.html#a592e12300a99481d4ebee682fcf0ff9a',1,'turbohikerSFML::Transformation']]],
+  ['setrate_58',['setRate',['../classturbohikerSFML_1_1Animation.html#a68455aaa7eedb40741ae0f2beaf8f7e5',1,'turbohikerSFML::Animation']]],
+  ['setsize_59',['setSize',['../classturbohiker_1_1Entity.html#ab6e718e33c8887a10cef3177792c15e8',1,'turbohiker::Entity']]],
+  ['setspeed_60',['setSpeed',['../classturbohiker_1_1Entity.html#aff1f054d13477b98fc52b09502296198',1,'turbohiker::Entity']]],
+  ['setvel_61',['setVel',['../classturbohiker_1_1Entity.html#a05f2e859579b77559036c635d045d6c8',1,'turbohiker::Entity']]],
+  ['setypos_62',['setYpos',['../classturbohikerSFML_1_1Transformation.html#ab16516b8be688d796ea70b051f615335',1,'turbohikerSFML::Transformation']]],
+  ['shout_63',['shout',['../classturbohikerSFML_1_1Player.html#ad844d033fdd679e11ab2e6723167ac31',1,'turbohikerSFML::Player::shout()'],['../classturbohikerSFML_1_1RacingHiker.html#a6a092c120922c2f6433f02e87da7dc01',1,'turbohikerSFML::RacingHiker::shout()'],['../classturbohiker_1_1Player.html#a7bd6b86e6e6c45f64d81339864c66e04',1,'turbohiker::Player::shout()'],['../classturbohiker_1_1RacingHiker.html#ae8e1274718a47012333b4519539d845d',1,'turbohiker::RacingHiker::shout()']]],
+  ['size_64',['size',['../classturbohikerSFML_1_1Transformation.html#ad7953957d32c75fe5641fbf6168ef306',1,'turbohikerSFML::Transformation::size()'],['../classturbohiker_1_1Entity.html#a8cb21337c2d6d1c53d61f6cf7ba7bd9d',1,'turbohiker::Entity::size()']]],
+  ['slowdown_65',['slowDown',['../classturbohiker_1_1RacingHiker.html#a3f0cff67f5041ac99d4d6508c4c3ef3d',1,'turbohiker::RacingHiker']]],
+  ['speedup_66',['speedUp',['../classturbohiker_1_1RacingHiker.html#affa5b7bbefc8e3accac5edc793375bc7',1,'turbohiker::RacingHiker']]],
+  ['stop_67',['stop',['../classturbohikerSFML_1_1Animation.html#a547bd4b5f892298f55925466a51ba8a8',1,'turbohikerSFML::Animation']]]
 ];

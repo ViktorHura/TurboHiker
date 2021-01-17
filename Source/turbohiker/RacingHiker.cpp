@@ -20,8 +20,9 @@ void turbohiker::RacingHiker::update(const double &delta) {
   }
   Vector vel(0, 1);
 
+  // move to desired lane
   double destination = -3 + 2 * desiredlane;
-  double dir = double(destination - position().x());
+  double dir = (destination - position().x());
   vel.add(Vector(dir, 0).normalize());
 
   setVel(vel);

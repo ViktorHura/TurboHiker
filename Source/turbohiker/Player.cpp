@@ -3,7 +3,6 @@
 //
 
 #include "Player.h"
-#include <iostream>
 
 void turbohiker::Player::update(const double &delta) {
   if (frozen) {

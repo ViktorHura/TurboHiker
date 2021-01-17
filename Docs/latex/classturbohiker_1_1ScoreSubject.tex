@@ -1,0 +1,76 @@
+\hypertarget{classturbohiker_1_1ScoreSubject}{}\doxysection{turbohiker\+::Score\+Subject Class Reference}
+\label{classturbohiker_1_1ScoreSubject}\index{turbohiker::ScoreSubject@{turbohiker::ScoreSubject}}
+
+
+gathers score information, registers and notifies observers  
+
+
+
+
+{\ttfamily \#include $<$Score\+Subject.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classturbohiker_1_1ScoreSubject_a51c069d2fc4cea1145403bae3ecfd31f}{attach}} (\mbox{\hyperlink{classturbohiker_1_1ScoreObserver}{Score\+Observer}} $\ast$observer)
+\item 
+bool \mbox{\hyperlink{classturbohiker_1_1ScoreSubject_a431d865cd124e67b061c1c07d452b8e4}{notify}} (int entity, int action, const double \&delta=1)
+\item 
+void \mbox{\hyperlink{classturbohiker_1_1ScoreSubject_a65eebdf6e817feb9991544ef297134ba}{draw}} (const double \&delta)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+gathers score information, registers and notifies observers 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classturbohiker_1_1ScoreSubject_a51c069d2fc4cea1145403bae3ecfd31f}\label{classturbohiker_1_1ScoreSubject_a51c069d2fc4cea1145403bae3ecfd31f}} 
+\index{turbohiker::ScoreSubject@{turbohiker::ScoreSubject}!attach@{attach}}
+\index{attach@{attach}!turbohiker::ScoreSubject@{turbohiker::ScoreSubject}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}}
+{\footnotesize\ttfamily void turbohiker\+::\+Score\+Subject\+::attach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classturbohiker_1_1ScoreObserver}{turbohiker\+::\+Score\+Observer}} $\ast$}]{observer }\end{DoxyParamCaption})}
+
+attaches observer to this subject 
+\begin{DoxyParams}{Parameters}
+{\em observer} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classturbohiker_1_1ScoreSubject_a65eebdf6e817feb9991544ef297134ba}\label{classturbohiker_1_1ScoreSubject_a65eebdf6e817feb9991544ef297134ba}} 
+\index{turbohiker::ScoreSubject@{turbohiker::ScoreSubject}!draw@{draw}}
+\index{draw@{draw}!turbohiker::ScoreSubject@{turbohiker::ScoreSubject}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void turbohiker\+::\+Score\+Subject\+::draw (\begin{DoxyParamCaption}\item[{const double \&}]{delta }\end{DoxyParamCaption})}
+
+send draw command to observers 
+\begin{DoxyParams}{Parameters}
+{\em delta} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classturbohiker_1_1ScoreSubject_a431d865cd124e67b061c1c07d452b8e4}\label{classturbohiker_1_1ScoreSubject_a431d865cd124e67b061c1c07d452b8e4}} 
+\index{turbohiker::ScoreSubject@{turbohiker::ScoreSubject}!notify@{notify}}
+\index{notify@{notify}!turbohiker::ScoreSubject@{turbohiker::ScoreSubject}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily bool turbohiker\+::\+Score\+Subject\+::notify (\begin{DoxyParamCaption}\item[{int}]{entity,  }\item[{int}]{action,  }\item[{const double \&}]{delta = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+notifies all observers of the event
+
+entities 0 \+: npc0 1 \+: npc1 2 \+: npc2 3 \+: player
+
+actions 0 \+: hit passinghiker 1 1 \+: hit passinghiker 2 2 \+: hit another competitor 3 \+: shouted at passinghiker 1 4 \+: shouted at passinghiker 2 5 \+: arrived at finish 6 \+: reset the game
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & \\
+\hline
+{\em action} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool if game is over or not 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Source/turbohiker/Score\+Subject.\+h\item 
+Source/turbohiker/Score\+Subject.\+cpp\end{DoxyCompactItemize}

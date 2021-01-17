@@ -39,7 +39,10 @@ void \mbox{\hyperlink{classturbohiker_1_1World_a817977fa83d814d6baea11a8840320d5
 void \mbox{\hyperlink{classturbohiker_1_1World_a4de8a90f1bfa63770a410e21dfc25f2e}{update}} (const double \&delta) override
 \item 
 void \mbox{\hyperlink{classturbohiker_1_1World_ae14589f74fea888654b460b9cd82c358}{handle\+Input}} (const int \&key, bool keydown)
+\item 
+bool \mbox{\hyperlink{classturbohiker_1_1World_aa7fab54a71dfd3c900a89f9349b598e0}{game\+Over}} ()
 \end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
@@ -70,6 +73,15 @@ will draw all entities on screen
 
 Implements \mbox{\hyperlink{classturbohiker_1_1Entity_a093ac07845ad9b0abc077d986e04cccc}{turbohiker\+::\+Entity}}.
 
+\mbox{\Hypertarget{classturbohiker_1_1World_aa7fab54a71dfd3c900a89f9349b598e0}\label{classturbohiker_1_1World_aa7fab54a71dfd3c900a89f9349b598e0}} 
+\index{turbohiker::World@{turbohiker::World}!gameOver@{gameOver}}
+\index{gameOver@{gameOver}!turbohiker::World@{turbohiker::World}}
+\doxysubsubsection{\texorpdfstring{gameOver()}{gameOver()}}
+{\footnotesize\ttfamily bool turbohiker\+::\+World\+::game\+Over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+have all racers reached the end? \begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classturbohiker_1_1World_ae14589f74fea888654b460b9cd82c358}\label{classturbohiker_1_1World_ae14589f74fea888654b460b9cd82c358}} 
 \index{turbohiker::World@{turbohiker::World}!handleInput@{handleInput}}
 \index{handleInput@{handleInput}!turbohiker::World@{turbohiker::World}}
@@ -79,6 +91,8 @@ Implements \mbox{\hyperlink{classturbohiker_1_1Entity_a093ac07845ad9b0abc077d986
 forwards inputs to player 
 \begin{DoxyParams}{Parameters}
 {\em key} & \\
+\hline
+{\em keydown} & \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classturbohiker_1_1World_a13a6afa24dd061015914bc185ea15c25}\label{classturbohiker_1_1World_a13a6afa24dd061015914bc185ea15c25}} 

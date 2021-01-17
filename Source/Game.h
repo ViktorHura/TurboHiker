@@ -10,6 +10,8 @@
 
 #include <SFML/Graphics.hpp>
 #include <memory>
+#include <SFML/Audio/Sound.hpp>
+#include <SFML/Audio/SoundBuffer.hpp>
 #include "turbohiker/World.h"
 
 class Game {
@@ -22,6 +24,9 @@ class Game {
 
     std::unique_ptr<turbohiker::World> world;
 
+    sf::SoundBuffer sBuf;
+    sf::Sound backgroundMusic;
+
     /// start the game loop after construction
     void run();
 
@@ -31,6 +36,7 @@ class Game {
     /// inits start screen
     void initStartScreen();
 
+    /// resets the game
     void reset();
 
 public:

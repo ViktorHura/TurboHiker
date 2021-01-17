@@ -87,25 +87,29 @@ $(function() {
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classturbohiker_1_1PassingHiker2.html">PassingHiker2</a>();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">void</span> setDesired(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; l);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        eType <a class="code" href="classturbohiker_1_1PassingHiker2.html#af8b5f4e36f010bdfd1bff360a1a8b0c8">type</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classturbohiker_1_1PassingHiker2.html#a2160e15051f6270d86afdae2b1bbd7df">update</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; delta) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">void</span> handleShout() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> react() <span class="keyword">override</span> = 0;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    };</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        ~<a class="code" href="classturbohiker_1_1PassingHiker2.html">PassingHiker2</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classturbohiker_1_1PassingHiker2.html#a338e80d3dd5a9421125f25abda89fdb7">setDesired</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; l);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        eType <a class="code" href="classturbohiker_1_1PassingHiker2.html#af8b5f4e36f010bdfd1bff360a1a8b0c8">type</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classturbohiker_1_1PassingHiker2.html#a2160e15051f6270d86afdae2b1bbd7df">update</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; delta) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classturbohiker_1_1PassingHiker2.html#a3e02e06f80114e95d835f4a8b4b4d9db">handleShout</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif //TURBOHIKER_PASSINGHIKER2_H</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classturbohiker_1_1PassingHiker2.html#a9f20b2e8aec8d744881aef073abb8fb6">react</a>() <span class="keyword">override</span> = 0;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    };</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif //TURBOHIKER_PASSINGHIKER2_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassturbohiker_1_1PassingHiker2_html"><div class="ttname"><a href="classturbohiker_1_1PassingHiker2.html">turbohiker::PassingHiker2</a></div><div class="ttdoc">abstract class to handle static hiker logic</div><div class="ttdef"><b>Definition:</b> PassingHiker2.h:18</div></div>
-<div class="ttc" id="aclassturbohiker_1_1PassingHiker2_html_af8b5f4e36f010bdfd1bff360a1a8b0c8"><div class="ttname"><a href="classturbohiker_1_1PassingHiker2.html#af8b5f4e36f010bdfd1bff360a1a8b0c8">turbohiker::PassingHiker2::type</a></div><div class="ttdeci">eType type() override</div><div class="ttdef"><b>Definition:</b> PassingHiker2.cpp:15</div></div>
-<div class="ttc" id="aclassturbohiker_1_1PassingHiker2_html_a2160e15051f6270d86afdae2b1bbd7df"><div class="ttname"><a href="classturbohiker_1_1PassingHiker2.html#a2160e15051f6270d86afdae2b1bbd7df">turbohiker::PassingHiker2::update</a></div><div class="ttdeci">void update(const double &amp;delta) override</div><div class="ttdef"><b>Definition:</b> PassingHiker2.cpp:17</div></div>
+<div class="ttc" id="aclassturbohiker_1_1PassingHiker2_html_af8b5f4e36f010bdfd1bff360a1a8b0c8"><div class="ttname"><a href="classturbohiker_1_1PassingHiker2.html#af8b5f4e36f010bdfd1bff360a1a8b0c8">turbohiker::PassingHiker2::type</a></div><div class="ttdeci">eType type() override</div><div class="ttdef"><b>Definition:</b> PassingHiker2.cpp:16</div></div>
+<div class="ttc" id="aclassturbohiker_1_1PassingHiker2_html_a338e80d3dd5a9421125f25abda89fdb7"><div class="ttname"><a href="classturbohiker_1_1PassingHiker2.html#a338e80d3dd5a9421125f25abda89fdb7">turbohiker::PassingHiker2::setDesired</a></div><div class="ttdeci">void setDesired(const int &amp;l)</div><div class="ttdef"><b>Definition:</b> PassingHiker2.cpp:39</div></div>
+<div class="ttc" id="aclassturbohiker_1_1PassingHiker2_html_a3e02e06f80114e95d835f4a8b4b4d9db"><div class="ttname"><a href="classturbohiker_1_1PassingHiker2.html#a3e02e06f80114e95d835f4a8b4b4d9db">turbohiker::PassingHiker2::handleShout</a></div><div class="ttdeci">void handleShout() override</div><div class="ttdef"><b>Definition:</b> PassingHiker2.cpp:28</div></div>
+<div class="ttc" id="aclassturbohiker_1_1PassingHiker2_html_a2160e15051f6270d86afdae2b1bbd7df"><div class="ttname"><a href="classturbohiker_1_1PassingHiker2.html#a2160e15051f6270d86afdae2b1bbd7df">turbohiker::PassingHiker2::update</a></div><div class="ttdeci">void update(const double &amp;delta) override</div><div class="ttdef"><b>Definition:</b> PassingHiker2.cpp:18</div></div>
+<div class="ttc" id="aclassturbohiker_1_1PassingHiker2_html_a9f20b2e8aec8d744881aef073abb8fb6"><div class="ttname"><a href="classturbohiker_1_1PassingHiker2.html#a9f20b2e8aec8d744881aef073abb8fb6">turbohiker::PassingHiker2::react</a></div><div class="ttdeci">void react() override=0</div></div>
 <div class="ttc" id="aclassturbohiker_1_1PassingHiker1_html"><div class="ttname"><a href="classturbohiker_1_1PassingHiker1.html">turbohiker::PassingHiker1</a></div><div class="ttdoc">abstract class to handle moving hiker logic</div><div class="ttdef"><b>Definition:</b> PassingHiker1.h:17</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

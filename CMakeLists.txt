@@ -23,4 +23,4 @@ ADD_LIBRARY( turbohiker STATIC ${turbohiker_src} )
 SET( src Source/Game.cpp Source/presentation/Transformation.cpp Source/presentation/Factory.cpp Source/presentation/Player.cpp Source/presentation/Background.cpp Source/presentation/PassingHiker1.cpp Source/presentation/PassingHiker2.cpp  Source/presentation/Animation.cpp Source/presentation/RacingHiker.cpp Source/presentation/RacingHiker.h Source/presentation/Scoreboard.cpp Source/presentation/Scoreboard.h)
 add_executable(TurboHiker main.cpp ${src})
 
-target_link_libraries (TurboHiker turbohiker sfml-graphics sfml-window sfml-system)
+target_link_libraries (TurboHiker turbohiker sfml-graphics sfml-window sfml-system sfml-audio)

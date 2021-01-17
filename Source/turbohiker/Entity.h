@@ -33,7 +33,7 @@ namespace turbohiker
         double speed = 0;
         double mass_ = 1;
     protected:
-        int score_id = 5;
+        int score_id = 5; // used for scoring
         bool frozen = false;
     public:
         /**
@@ -41,14 +41,17 @@ namespace turbohiker
          */
          virtual eType type();
 
+         virtual ~Entity() = default;
+
          /**
           * get score id
           */
         virtual int scoreId();
 
+        /**
+         * freeze entity
+         */
         void freeze();
-
-        void unfreeze();
 
         /**
          * draws the entity on screen

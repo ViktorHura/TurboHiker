@@ -9,28 +9,74 @@ singleton to generate pseudo random numbers
 
 {\ttfamily \#include $<$Random.\+h$>$}
 
-\doxysubsection*{Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{classturbohiker_1_1Random_a266e98d7fa8ce11294a7899b3dd0668e}\label{classturbohiker_1_1Random_a266e98d7fa8ce11294a7899b3dd0668e}} 
-double {\bfseries Double} ()
-\item 
-\mbox{\Hypertarget{classturbohiker_1_1Random_aef0f78559b6006c9b46288074f4cd070}\label{classturbohiker_1_1Random_aef0f78559b6006c9b46288074f4cd070}} 
-double {\bfseries Double} (const double \&min, const double \&max)
-\item 
-\mbox{\Hypertarget{classturbohiker_1_1Random_a7a4981cf09df87c00c30bc88f530d6a3}\label{classturbohiker_1_1Random_a7a4981cf09df87c00c30bc88f530d6a3}} 
-int {\bfseries Int} (const int \&min, const int \&max)
-\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classturbohiker_1_1Random_ab05229beb30229451c9de591df5d9df5}\label{classturbohiker_1_1Random_ab05229beb30229451c9de591df5d9df5}} 
-static \mbox{\hyperlink{classturbohiker_1_1Random}{Random}} $\ast$ {\bfseries instance} ()
+static \mbox{\hyperlink{classturbohiker_1_1Random}{Random}} $\ast$ \mbox{\hyperlink{classturbohiker_1_1Random_ab05229beb30229451c9de591df5d9df5}{instance}} ()
+\item 
+static double \mbox{\hyperlink{classturbohiker_1_1Random_a266e98d7fa8ce11294a7899b3dd0668e}{Double}} ()
+\item 
+static double \mbox{\hyperlink{classturbohiker_1_1Random_aef0f78559b6006c9b46288074f4cd070}{Double}} (const double \&min, const double \&max)
+\item 
+static int \mbox{\hyperlink{classturbohiker_1_1Random_a7a4981cf09df87c00c30bc88f530d6a3}{Int}} (const int \&min, const int \&max)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 singleton to generate pseudo random numbers 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classturbohiker_1_1Random_a266e98d7fa8ce11294a7899b3dd0668e}\label{classturbohiker_1_1Random_a266e98d7fa8ce11294a7899b3dd0668e}} 
+\index{turbohiker::Random@{turbohiker::Random}!Double@{Double}}
+\index{Double@{Double}!turbohiker::Random@{turbohiker::Random}}
+\doxysubsubsection{\texorpdfstring{Double()}{Double()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double turbohiker\+::\+Random\+::\+Double (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+random double in \mbox{[}0,1\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohiker_1_1Random_aef0f78559b6006c9b46288074f4cd070}\label{classturbohiker_1_1Random_aef0f78559b6006c9b46288074f4cd070}} 
+\index{turbohiker::Random@{turbohiker::Random}!Double@{Double}}
+\index{Double@{Double}!turbohiker::Random@{turbohiker::Random}}
+\doxysubsubsection{\texorpdfstring{Double()}{Double()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double turbohiker\+::\+Random\+::\+Double (\begin{DoxyParamCaption}\item[{const double \&}]{min,  }\item[{const double \&}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & \\
+\hline
+{\em max} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+random double between min and max 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohiker_1_1Random_ab05229beb30229451c9de591df5d9df5}\label{classturbohiker_1_1Random_ab05229beb30229451c9de591df5d9df5}} 
+\index{turbohiker::Random@{turbohiker::Random}!instance@{instance}}
+\index{instance@{instance}!turbohiker::Random@{turbohiker::Random}}
+\doxysubsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classturbohiker_1_1Random}{turbohiker\+::\+Random}} $\ast$ turbohiker\+::\+Random\+::instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+get instance \begin{DoxyReturn}{Returns}
+instance 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classturbohiker_1_1Random_a7a4981cf09df87c00c30bc88f530d6a3}\label{classturbohiker_1_1Random_a7a4981cf09df87c00c30bc88f530d6a3}} 
+\index{turbohiker::Random@{turbohiker::Random}!Int@{Int}}
+\index{Int@{Int}!turbohiker::Random@{turbohiker::Random}}
+\doxysubsubsection{\texorpdfstring{Int()}{Int()}}
+{\footnotesize\ttfamily int turbohiker\+::\+Random\+::\+Int (\begin{DoxyParamCaption}\item[{const int \&}]{min,  }\item[{const int \&}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & \\
+\hline
+{\em max} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+random int between min and max 
+\end{DoxyReturn}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

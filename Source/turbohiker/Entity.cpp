@@ -54,7 +54,5 @@ int turbohiker::Entity::scoreId() { return score_id; }
 void turbohiker::Entity::freeze() {
   frozen = true;
   setVel(Vector(0, 0));
-  setPos(Vector(-3 + scoreId() * 2, position().y() + 5));
+  setPos(Vector(-3 + scoreId() * 2, position().y() + 10));
 }
-
-void turbohiker::Entity::unfreeze() { frozen = false; }

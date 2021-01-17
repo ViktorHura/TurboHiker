@@ -15,15 +15,33 @@ namespace turbohiker {
         static Random *_instance;
 
         explicit Random();
+        ~Random() = default;
 
     public:
+        /**
+         * get instance
+         * @return instance
+         */
         static Random *instance();
 
-        double Double();
+        /**
+         * @return random double in [0,1]
+         */
+        static double Double();
 
-        double Double(const double& min, const double& max);
+        /**
+         * @param min
+         * @param max
+         * @return random double between min and max
+         */
+        static double Double(const double& min, const double& max);
 
-        int Int(const int& min, const int& max);
+        /**
+         * @param min
+         * @param max
+         * @return random int between min and max
+         */
+        static int Int(const int& min, const int& max);
     };
 }
 

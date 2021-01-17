@@ -4,7 +4,6 @@
 
 #include "PassingHiker1.h"
 #include "Random.h"
-#include <iostream>
 
 turbohiker::eType turbohiker::PassingHiker1::type() { return PassHT1; }
 
@@ -21,7 +20,7 @@ turbohiker::PassingHiker1::PassingHiker1() {
 }
 
 void turbohiker::PassingHiker1::handleShout() {
-  bool slowdown = Random::instance()->Int(0, 1); // 50%
+  bool slowdown = Random::Int(0, 1); // 50%
   if (slowdown) {
     setSpeed(speed / 2);
     react();

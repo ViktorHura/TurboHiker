@@ -36,6 +36,12 @@ void turbohikerSFML::Player::draw(const double &delta) {
     w->draw(sonarSprite); // draw sprite
   }
 
+  if (backgroundSound.getStatus() != backgroundSound.Playing){
+      backgroundSound.play();
+  }
+
+  backgroundSound.setPitch(static_cast<float>(1.0 * getSpeed() / speed_normal));
+
   // bouding rectangle for debug
   /*
   sf::RectangleShape rectangle(Transformation::instance()->size(size()));
@@ -54,7 +60,7 @@ turbohikerSFML::Player::Player(std::weak_ptr<sf::RenderWindow> w) {
 
   // rescale sprite to fit player collision rectangle, we flip x and y because
   // we will rotate the sprite afterwards
-  Transformation::instance()->rescaleSprite(Vector(size().y(), size().x()),
+  Transformation::rescaleSprite(Vector(size().y(), size().x()),
                                             sprite);
 
   sprite.setTexture(texture);
@@ -67,9 +73,25 @@ turbohikerSFML::Player::Player(std::weak_ptr<sf::RenderWindow> w) {
   sonarSprite.setTextureRect(sf::IntRect(0, 0, 50, 50));
   sonarSprite.setTexture(sonarTexture);
 
-  Transformation::instance()->rescaleSprite(Vector(1, 1), sonarSprite);
+  Transformation::rescaleSprite(Vector(1, 1), sonarSprite);
 
   sonarAnim = Animation(5, 0, true).setDuration(0.5);
+
+  pBuf.loadFromFile("../Resources/sounds/ping.ogg");
+  ping.setBuffer(pBuf);
+
+  sBuf.loadFromFile("../Resources/sounds/swimf.ogg");
+  backgroundSound.setBuffer(sBuf);
+  backgroundSound.setLoop(true);
+  backgroundSound.setVolume(70);
+
 }
 
-void turbohikerSFML::Player::shout() { sonarAnim.play(sonarSprite); }
+void turbohikerSFML::Player::shout() {
+    sonarAnim.play(sonarSprite);
+    ping.play();
+}
+
+turbohikerSFML::Player::~Player() {
+    backgroundSound.stop();
+}

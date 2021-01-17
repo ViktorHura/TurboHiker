@@ -65,7 +65,7 @@ turbohikerSFML::Background::Background(std::weak_ptr<sf::RenderWindow> w) {
   // select chain from texture
   chain.setTextureRect(sf::IntRect(469, 0, 11, 960));
   // rescale
-  Transformation::instance()->rescaleSprite(Vector(0.215, 18.75), chain);
+  Transformation::rescaleSprite(Vector(0.215, 18.75), chain);
 
   sf::Sprite backgroundSprite;
   sf::Sprite midgroundSprite;
@@ -73,7 +73,7 @@ turbohikerSFML::Background::Background(std::weak_ptr<sf::RenderWindow> w) {
   // create background sprite, rescale and rotate
   backgroundSprite.setTexture(backgroundTexture);
 
-  Transformation::instance()->rescaleSprite(Vector(18.75, 10),
+  Transformation::rescaleSprite(Vector(18.75, 10),
                                             backgroundSprite);
 
   backgroundSprite.rotate(-90);
@@ -81,7 +81,7 @@ turbohikerSFML::Background::Background(std::weak_ptr<sf::RenderWindow> w) {
   // create midground sprite, rescale and rotate
   midgroundSprite.setTexture(midgroundTexture);
 
-  Transformation::instance()->rescaleSprite(Vector(18.75, 10), midgroundSprite);
+  Transformation::rescaleSprite(Vector(18.75, 10), midgroundSprite);
 
   midgroundSprite.rotate(-90);
 
@@ -103,7 +103,7 @@ turbohikerSFML::Background::Background(std::weak_ptr<sf::RenderWindow> w) {
   // select chain from texture
   finish.setTextureRect(sf::IntRect(432, 41, 92, 231));
   // rescale
-  Transformation::instance()->rescaleSprite(Vector(1.5, 4), finish);
+  Transformation::rescaleSprite(Vector(1.5, 4), finish);
 
   finish.rotate(180);
 }

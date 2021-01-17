@@ -1,0 +1,69 @@
+\hypertarget{classturbohiker_1_1ScoreObserver}{}\doxysection{turbohiker\+::Score\+Observer Class Reference}
+\label{classturbohiker_1_1ScoreObserver}\index{turbohiker::ScoreObserver@{turbohiker::ScoreObserver}}
+
+
+observes the score object, holds score counts  
+
+
+
+
+{\ttfamily \#include $<$Score\+Observer.\+h$>$}
+
+
+
+Inheritance diagram for turbohiker\+::Score\+Observer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{classturbohiker_1_1ScoreObserver__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classturbohiker_1_1ScoreObserver_a2e49a18f35004048097076ed4228450f}{update}} (int entity, int action, const double \&delta)
+\item 
+\mbox{\Hypertarget{classturbohiker_1_1ScoreObserver_a2833fb7bfc1e35d48d964d540fce4c99}\label{classturbohiker_1_1ScoreObserver_a2833fb7bfc1e35d48d964d540fce4c99}} 
+virtual void {\bfseries draw} (const double \&delta)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classturbohiker_1_1ScoreObserver_ad43dfe1f08b133b5eec9fb8f36303f6e}\label{classturbohiker_1_1ScoreObserver_ad43dfe1f08b133b5eec9fb8f36303f6e}} 
+std\+::vector$<$ double $>$ {\bfseries scores} = \{0,0,0,0\}
+\item 
+\mbox{\Hypertarget{classturbohiker_1_1ScoreObserver_addb4f4b785fe91742d1fb2481a476992}\label{classturbohiker_1_1ScoreObserver_addb4f4b785fe91742d1fb2481a476992}} 
+int {\bfseries runners\+Finished} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+observes the score object, holds score counts 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classturbohiker_1_1ScoreObserver_a2e49a18f35004048097076ed4228450f}\label{classturbohiker_1_1ScoreObserver_a2e49a18f35004048097076ed4228450f}} 
+\index{turbohiker::ScoreObserver@{turbohiker::ScoreObserver}!update@{update}}
+\index{update@{update}!turbohiker::ScoreObserver@{turbohiker::ScoreObserver}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily bool turbohiker\+::\+Score\+Observer\+::update (\begin{DoxyParamCaption}\item[{int}]{entity,  }\item[{int}]{action,  }\item[{const double \&}]{delta }\end{DoxyParamCaption})}
+
+entities 0 \+: npc0 1 \+: npc1 2 \+: npc2 3 \+: player
+
+actions 0 \+: hit passinghiker 1 1 \+: hit passinghiker 2 2 \+: hit another competitor 3 \+: shouted at passinghiker 1 4 \+: shouted at passinghiker 2 5 \+: arrived at finish 6 \+: reset game
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & \\
+\hline
+{\em action} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether everyone arrived yet 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Source/turbohiker/Score\+Observer.\+h\item 
+Source/turbohiker/Score\+Observer.\+cpp\end{DoxyCompactItemize}

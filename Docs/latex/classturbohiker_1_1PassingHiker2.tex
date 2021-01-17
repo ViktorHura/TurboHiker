@@ -30,18 +30,15 @@ Collaboration diagram for turbohiker\+::Passing\+Hiker2\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classturbohiker_1_1PassingHiker2_a338e80d3dd5a9421125f25abda89fdb7}\label{classturbohiker_1_1PassingHiker2_a338e80d3dd5a9421125f25abda89fdb7}} 
-void {\bfseries set\+Desired} (const int \&l)
+void \mbox{\hyperlink{classturbohiker_1_1PassingHiker2_a338e80d3dd5a9421125f25abda89fdb7}{set\+Desired}} (const int \&l)
 \item 
 e\+Type \mbox{\hyperlink{classturbohiker_1_1PassingHiker2_af8b5f4e36f010bdfd1bff360a1a8b0c8}{type}} () override
 \item 
 void \mbox{\hyperlink{classturbohiker_1_1PassingHiker2_a2160e15051f6270d86afdae2b1bbd7df}{update}} (const double \&delta) override
 \item 
-\mbox{\Hypertarget{classturbohiker_1_1PassingHiker2_a3e02e06f80114e95d835f4a8b4b4d9db}\label{classturbohiker_1_1PassingHiker2_a3e02e06f80114e95d835f4a8b4b4d9db}} 
-void {\bfseries handle\+Shout} () override
+void \mbox{\hyperlink{classturbohiker_1_1PassingHiker2_a3e02e06f80114e95d835f4a8b4b4d9db}{handle\+Shout}} () override
 \item 
-\mbox{\Hypertarget{classturbohiker_1_1PassingHiker2_acca325241ea1d5c00d4c36a3e7f40152}\label{classturbohiker_1_1PassingHiker2_acca325241ea1d5c00d4c36a3e7f40152}} 
-virtual void {\bfseries react} () override=0
+void \mbox{\hyperlink{classturbohiker_1_1PassingHiker2_a9f20b2e8aec8d744881aef073abb8fb6}{react}} () override=0
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -55,6 +52,41 @@ int {\bfseries desired\+Lane} = 0
 abstract class to handle static hiker logic 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classturbohiker_1_1PassingHiker2_a3e02e06f80114e95d835f4a8b4b4d9db}\label{classturbohiker_1_1PassingHiker2_a3e02e06f80114e95d835f4a8b4b4d9db}} 
+\index{turbohiker::PassingHiker2@{turbohiker::PassingHiker2}!handleShout@{handleShout}}
+\index{handleShout@{handleShout}!turbohiker::PassingHiker2@{turbohiker::PassingHiker2}}
+\doxysubsubsection{\texorpdfstring{handleShout()}{handleShout()}}
+{\footnotesize\ttfamily void turbohiker\+::\+Passing\+Hiker2\+::handle\+Shout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+handle being shouted at 
+
+Reimplemented from \mbox{\hyperlink{classturbohiker_1_1PassingHiker1_a334a0e651c5d250447cee876c17613eb}{turbohiker\+::\+Passing\+Hiker1}}.
+
+\mbox{\Hypertarget{classturbohiker_1_1PassingHiker2_a9f20b2e8aec8d744881aef073abb8fb6}\label{classturbohiker_1_1PassingHiker2_a9f20b2e8aec8d744881aef073abb8fb6}} 
+\index{turbohiker::PassingHiker2@{turbohiker::PassingHiker2}!react@{react}}
+\index{react@{react}!turbohiker::PassingHiker2@{turbohiker::PassingHiker2}}
+\doxysubsubsection{\texorpdfstring{react()}{react()}}
+{\footnotesize\ttfamily void turbohiker\+::\+Passing\+Hiker2\+::react (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [pure virtual]}}
+
+react to shout (visual handler) 
+
+Implements \mbox{\hyperlink{classturbohiker_1_1PassingHiker1_a0fb96bb4a0c1c1b85d96f8921b8bd152}{turbohiker\+::\+Passing\+Hiker1}}.
+
+
+
+Implemented in \mbox{\hyperlink{classturbohikerSFML_1_1PassingHiker2_af6b500e92f698dc7b692bef321c8c6c5}{turbohiker\+S\+F\+M\+L\+::\+Passing\+Hiker2}}.
+
+\mbox{\Hypertarget{classturbohiker_1_1PassingHiker2_a338e80d3dd5a9421125f25abda89fdb7}\label{classturbohiker_1_1PassingHiker2_a338e80d3dd5a9421125f25abda89fdb7}} 
+\index{turbohiker::PassingHiker2@{turbohiker::PassingHiker2}!setDesired@{setDesired}}
+\index{setDesired@{setDesired}!turbohiker::PassingHiker2@{turbohiker::PassingHiker2}}
+\doxysubsubsection{\texorpdfstring{setDesired()}{setDesired()}}
+{\footnotesize\ttfamily void turbohiker\+::\+Passing\+Hiker2\+::set\+Desired (\begin{DoxyParamCaption}\item[{const int \&}]{l }\end{DoxyParamCaption})}
+
+set desired lane to go to 
+\begin{DoxyParams}{Parameters}
+{\em l} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classturbohiker_1_1PassingHiker2_af8b5f4e36f010bdfd1bff360a1a8b0c8}\label{classturbohiker_1_1PassingHiker2_af8b5f4e36f010bdfd1bff360a1a8b0c8}} 
 \index{turbohiker::PassingHiker2@{turbohiker::PassingHiker2}!type@{type}}
 \index{type@{type}!turbohiker::PassingHiker2@{turbohiker::PassingHiker2}}

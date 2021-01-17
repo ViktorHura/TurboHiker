@@ -1,0 +1,4 @@
+<map id="turbohikerSFML::Scoreboard" name="turbohikerSFML::Scoreboard">
+<area shape="rect" id="node1" title="SFML scoreboard presentation." alt="" coords="5,80,209,107"/>
+<area shape="rect" id="node2" href="$classturbohiker_1_1ScoreObserver.html" title="observes the score object, holds score counts" alt="" coords="12,5,203,32"/>
+</map>

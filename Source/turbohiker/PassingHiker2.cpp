@@ -18,19 +18,15 @@ turbohiker::eType turbohiker::PassingHiker2::type() { return PassHT2; }
 void turbohiker::PassingHiker2::update(const double &delta) {
 
   double destination = -3 + 2 * desiredLane;
-
-  double dir = double(destination - position().x()) * 1.75;
-  // if (dir != 0){
-  //     dir = dir/std::abs(dir);
-  // }
-
+  // move to desired lane
+  double dir = (destination - position().x()) * 1.75;
   Vector vel = Vector(dir, 0);
 
   setVel(vel); // reset vel
 }
 
 void turbohiker::PassingHiker2::handleShout() {
-  bool ignore = Random::instance()->Int(0, 1); // 50%
+  bool ignore = Random::Int(0, 1); // 50%
   if (ignore) {
     return;
   }
