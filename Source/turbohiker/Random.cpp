@@ -14,7 +14,7 @@ turbohiker::Random *turbohiker::Random::instance() {
 }
 
 turbohiker::Random::Random() {
-    // good enough pseudo random
+  // good enough pseudo random
   srand(time(nullptr));
   // srand(0);
 }

@@ -64,16 +64,16 @@ turbohikerSFML::PassingHiker2::PassingHiker2(
   reactText.setFillColor(sf::Color::Green);
   reactText.setStyle(sf::Text::Bold);
 
-    pBuf.loadFromFile("../Resources/sounds/reacts.wav");
-    ping.setBuffer(pBuf);
-    ping.setPitch(0.7);
+  pBuf.loadFromFile("../Resources/sounds/reacts.wav");
+  ping.setBuffer(pBuf);
+  ping.setPitch(0.7);
 }
 
 void turbohikerSFML::PassingHiker2::react() {
   reactTime = 2;
 
-  int i = turbohiker::Random::Int(
-      0, reactions.size() - 1); // choose random reaction
+  int i = turbohiker::Random::Int(0, reactions.size() -
+                                         1); // choose random reaction
   reactText.setString(reactions[i]);
   ping.play();
 }

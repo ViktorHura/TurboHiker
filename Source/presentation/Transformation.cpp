@@ -23,7 +23,8 @@ turbohikerSFML::Transformation::instance(std::weak_ptr<sf::RenderWindow> w) {
 turbohikerSFML::Transformation *turbohikerSFML::Transformation::_instance =
     nullptr;
 
-unsigned int turbohikerSFML::Transformation::textSize(const double &size) const {
+unsigned int
+turbohikerSFML::Transformation::textSize(const double &size) const {
   std::shared_ptr<sf::RenderWindow> w =
       window.lock(); // share window temporarily
 

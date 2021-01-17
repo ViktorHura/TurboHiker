@@ -65,7 +65,7 @@ turbohiker::World::World(std::unique_ptr<EntityFactory> f) {
 
 void turbohiker::World::handleInput(const int &key, bool keydown) {
   auto player = dynamic_cast<turbohiker::Player *>(
-      entities[1].get()); // second entity will always be player
+      entities[1].get());      // second entity will always be player
   if (key == 57 and keydown) { // space
     player->shout();
     handleShout(player->position(), player->scoreId());
@@ -194,8 +194,7 @@ std::vector<int> turbohiker::World::chooseLanes(const int &count) {
 
   std::vector<int> choice = {0, 1, 2, 3}; // remaining choice of lanes
   for (int i = 0; i < count; i++) {       // amount of times to choose
-    int r = Random::Int(0, choice.size() -
-                                           1); // choose from remaining choices
+    int r = Random::Int(0, choice.size() - 1); // choose from remaining choices
     lanes.push_back(choice[r]);                // save choice
     choice.erase(choice.begin() + r);          // remove from remaining choices
   }
@@ -224,8 +223,7 @@ void turbohiker::World::spawnHiker(const int &lane) {
   }
 
   // position at top of section + a random distance < maxSpawnVar
-  double posY =
-      (section + 1) * sectionSize + Random::Double(0, maxSpawnVar);
+  double posY = (section + 1) * sectionSize + Random::Double(0, maxSpawnVar);
 
   double posX = -3 + 2 * lane; // positon in correct lane
 
@@ -248,9 +246,10 @@ void turbohiker::World::prunePassingHikers() {
     }
   }
 
-    for (const auto& d : to_delete){ // call the destructor of each deleted entity
-        entities[d].reset();
-    }
+  for (const auto &d :
+       to_delete) { // call the destructor of each deleted entity
+    entities[d].reset();
+  }
 
   // following piece of code is from stackoverflow, what I understand is that
   // it sorts to_deleted vector and deletes the needed indexes from back to
@@ -258,7 +257,7 @@ void turbohiker::World::prunePassingHikers() {
   std::sort(to_delete.begin(),
             to_delete.end()); // Make sure the container is sorted
 
-    // iterator magic
+  // iterator magic
   for (std::reverse_iterator<std::vector<int>::iterator> j = to_delete.rbegin();
        j != to_delete.rend(); ++j) {
     entities.erase(entities.begin() + *j);
@@ -268,20 +267,20 @@ void turbohiker::World::prunePassingHikers() {
 void turbohiker::World::handleShout(const Vector &pos, int originator) {
   int lane = pos.getLane();
 
-  for (auto & entity : entities) { // find the entity to shout at
+  for (auto &entity : entities) { // find the entity to shout at
     if (entity->position().getLane() == lane &&
         entity->position().y() >
-        pos.y() && // must be in same lane and in front of player
+            pos.y() && // must be in same lane and in front of player
         (entity->type() == PassHT1 ||
          entity->type() == PassHT2)) { // must be a passing hiker
 
       auto hiker = dynamic_cast<turbohiker::PassingHiker1 *>(entity.get());
-        hiker->handleShout(); // pass the event to hiker
-         if( hiker->type() == PassHT1){ // notify scoreboard
-             score->notify(originator, 3);
-         }else{
-             score->notify(originator, 4);
-         }
+      hiker->handleShout();           // pass the event to hiker
+      if (hiker->type() == PassHT1) { // notify scoreboard
+        score->notify(originator, 3);
+      } else {
+        score->notify(originator, 4);
+      }
     }
   }
 }
@@ -404,7 +403,9 @@ void turbohiker::World::checkFinish() {
     if (topPos > 186) { // past screen
       entities[i]->freeze();
     } else if (topPos > 180) { // past finish
-      if (score->notify(entities[i]->scoreId(), 5)) { // notify scoreboard, and if all competitors finished, we say game finished
+      if (score->notify(entities[i]->scoreId(),
+                        5)) { // notify scoreboard, and if all competitors
+                              // finished, we say game finished
         finished = true;
       }
     }
@@ -428,7 +429,7 @@ void turbohiker::World::updateCollisionScores(
       if (first > 0) { // first is the competitor
         subject = first;
         action = std::abs(second) - 1; // scoreID -> scoreboard action
-      } else { // second is the competitor
+      } else {                         // second is the competitor
         subject = second;
         action = std::abs(first) - 1; // scoreID -> scoreboard action
       }
@@ -440,9 +441,9 @@ void turbohiker::World::updateCollisionScores(
 bool turbohiker::World::gameOver() { return finished; }
 
 turbohiker::World::~World() {
-    for (auto& e : entities){ // destroy all entities
-        e.reset();
-    }
-    score.reset(); // destroy score
-    factory.reset(); // destroy factor
+  for (auto &e : entities) { // destroy all entities
+    e.reset();
+  }
+  score.reset();   // destroy score
+  factory.reset(); // destroy factor
 }

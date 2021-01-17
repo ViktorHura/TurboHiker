@@ -41,8 +41,7 @@ turbohikerSFML::RacingHiker::RacingHiker(std::weak_ptr<sf::RenderWindow> w,
 
   // rescale sprite to fit player collision rectangle, we flip x and y because
   // we will rotate the sprite afterwards
-  Transformation::rescaleSprite(Vector(size().y(), size().x()),
-                                            sprite);
+  Transformation::rescaleSprite(Vector(size().y(), size().x()), sprite);
 
   sprite.setTexture(texture);
   sprite.rotate(-90);
@@ -59,12 +58,12 @@ turbohikerSFML::RacingHiker::RacingHiker(std::weak_ptr<sf::RenderWindow> w,
 
   sonarAnim = Animation(5, 0, true).setDuration(0.5);
 
-    pBuf.loadFromFile("../Resources/sounds/ping.ogg");
-    ping.setBuffer(pBuf);
-    ping.setPitch(1.6+0.6*i);
+  pBuf.loadFromFile("../Resources/sounds/ping.ogg");
+  ping.setBuffer(pBuf);
+  ping.setPitch(1.6 + 0.6 * i);
 }
 
 void turbohikerSFML::RacingHiker::shout() {
-    sonarAnim.play(sonarSprite);
-    ping.play();
+  sonarAnim.play(sonarSprite);
+  ping.play();
 }

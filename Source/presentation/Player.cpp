@@ -36,8 +36,8 @@ void turbohikerSFML::Player::draw(const double &delta) {
     w->draw(sonarSprite); // draw sprite
   }
 
-  if (backgroundSound.getStatus() != backgroundSound.Playing){
-      backgroundSound.play();
+  if (backgroundSound.getStatus() != backgroundSound.Playing) {
+    backgroundSound.play();
   }
 
   backgroundSound.setPitch(static_cast<float>(1.0 * getSpeed() / speed_normal));
@@ -60,8 +60,7 @@ turbohikerSFML::Player::Player(std::weak_ptr<sf::RenderWindow> w) {
 
   // rescale sprite to fit player collision rectangle, we flip x and y because
   // we will rotate the sprite afterwards
-  Transformation::rescaleSprite(Vector(size().y(), size().x()),
-                                            sprite);
+  Transformation::rescaleSprite(Vector(size().y(), size().x()), sprite);
 
   sprite.setTexture(texture);
   sprite.rotate(-90);
@@ -84,14 +83,11 @@ turbohikerSFML::Player::Player(std::weak_ptr<sf::RenderWindow> w) {
   backgroundSound.setBuffer(sBuf);
   backgroundSound.setLoop(true);
   backgroundSound.setVolume(70);
-
 }
 
 void turbohikerSFML::Player::shout() {
-    sonarAnim.play(sonarSprite);
-    ping.play();
+  sonarAnim.play(sonarSprite);
+  ping.play();
 }
 
-turbohikerSFML::Player::~Player() {
-    backgroundSound.stop();
-}
+turbohikerSFML::Player::~Player() { backgroundSound.stop(); }

@@ -27,11 +27,11 @@ Game::Game(int width, int height) {
   // init start screen
   initStartScreen();
 
-    // init background music
-    sBuf.loadFromFile("../Resources/sounds/ambient.ogg");
-    backgroundMusic.setBuffer(sBuf);
-    backgroundMusic.setLoop(true);
-    backgroundMusic.setVolume(75);
+  // init background music
+  sBuf.loadFromFile("../Resources/sounds/ambient.ogg");
+  backgroundMusic.setBuffer(sBuf);
+  backgroundMusic.setLoop(true);
+  backgroundMusic.setVolume(75);
 
   // start gameloop
   run();
@@ -61,8 +61,9 @@ void Game::run() {
       if (event.type == sf::Event::EventType::KeyPressed) {
         if (!gameStarted) {
           gameStarted = true;
-            backgroundMusic.play();
-        } else if (world->gameOver() and event.key == 57) { // game finished and pressed space
+          backgroundMusic.play();
+        } else if (world->gameOver() and
+                   event.key == 57) { // game finished and pressed space
           reset();
         } else {
           world->handleInput(event.key,
@@ -106,7 +107,7 @@ void Game::initStartScreen() {
 }
 
 void Game::reset() {
-    // reset transform singleton
+  // reset transform singleton
   turbohikerSFML::Transformation::instance()->reset();
 
   // make entity factory

@@ -73,8 +73,7 @@ turbohikerSFML::Background::Background(std::weak_ptr<sf::RenderWindow> w) {
   // create background sprite, rescale and rotate
   backgroundSprite.setTexture(backgroundTexture);
 
-  Transformation::rescaleSprite(Vector(18.75, 10),
-                                            backgroundSprite);
+  Transformation::rescaleSprite(Vector(18.75, 10), backgroundSprite);
 
   backgroundSprite.rotate(-90);
 
